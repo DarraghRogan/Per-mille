@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0224C85924963AD400EEC521 /* DataLoaderTwitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */; };
+		02285AED24922D6F0088A719 /* StatusBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02285AEC24922D6F0088A719 /* StatusBarButton.swift */; };
+		02B7EEF82491899800738B62 /* DataLoaderYouTube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */; };
+		02B7EEFA2491995400738B62 /* DataLoaderInstagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */; };
 		02E9E8D3248CE7160086352A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9E8D2248CE7160086352A /* AppDelegate.swift */; };
 		02E9E8D5248CE7160086352A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9E8D4248CE7160086352A /* ViewController.swift */; };
 		02E9E8D7248CE71D0086352A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02E9E8D6248CE71D0086352A /* Assets.xcassets */; };
@@ -14,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderTwitter.swift; sourceTree = "<group>"; };
+		02285AEC24922D6F0088A719 /* StatusBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarButton.swift; sourceTree = "<group>"; };
+		02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderYouTube.swift; sourceTree = "<group>"; };
+		02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderInstagram.swift; sourceTree = "<group>"; };
 		02E9E8CF248CE7160086352A /* CreatorMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreatorMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E9E8D2248CE7160086352A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02E9E8D4248CE7160086352A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +67,10 @@
 				02E9E8D8248CE71D0086352A /* Main.storyboard */,
 				02E9E8DB248CE71D0086352A /* Info.plist */,
 				02E9E8DC248CE71D0086352A /* CreatorMenu.entitlements */,
+				02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */,
+				0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */,
+				02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */,
+				02285AEC24922D6F0088A719 /* StatusBarButton.swift */,
 			);
 			path = CreatorMenu;
 			sourceTree = "<group>";
@@ -133,8 +145,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B7EEF82491899800738B62 /* DataLoaderYouTube.swift in Sources */,
 				02E9E8D5248CE7160086352A /* ViewController.swift in Sources */,
 				02E9E8D3248CE7160086352A /* AppDelegate.swift in Sources */,
+				02B7EEFA2491995400738B62 /* DataLoaderInstagram.swift in Sources */,
+				0224C85924963AD400EEC521 /* DataLoaderTwitter.swift in Sources */,
+				02285AED24922D6F0088A719 /* StatusBarButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
