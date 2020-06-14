@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021DC36C24969E3400BD6002 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021DC36B24969E3400BD6002 /* NetworkExtension.framework */; };
 		0224C85924963AD400EEC521 /* DataLoaderTwitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */; };
 		02285AED24922D6F0088A719 /* StatusBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02285AEC24922D6F0088A719 /* StatusBarButton.swift */; };
 		0288C5A22496544E0074E25F /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5A12496544E0074E25F /* APIKeys.swift */; };
@@ -20,13 +21,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		021DC36924969E3400BD6002 /* Per milleRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Per milleRelease.entitlements"; sourceTree = "<group>"; };
+		021DC36B24969E3400BD6002 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderTwitter.swift; sourceTree = "<group>"; };
 		02285AEC24922D6F0088A719 /* StatusBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarButton.swift; sourceTree = "<group>"; };
 		0288C5A12496544E0074E25F /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		0288C5A3249655F20074E25F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderYouTube.swift; sourceTree = "<group>"; };
 		02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderInstagram.swift; sourceTree = "<group>"; };
-		02E9E8CF248CE7160086352A /* CreatorMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreatorMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02E9E8CF248CE7160086352A /* Per mille.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Per mille.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E9E8D2248CE7160086352A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02E9E8D4248CE7160086352A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		02E9E8D6248CE71D0086352A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,31 +43,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				021DC36C24969E3400BD6002 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		021DC36A24969E3400BD6002 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				021DC36B24969E3400BD6002 /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		02E9E8C6248CE7160086352A = {
 			isa = PBXGroup;
 			children = (
-				02E9E8D1248CE7160086352A /* CreatorMenu */,
+				02E9E8D1248CE7160086352A /* Per mille */,
 				02E9E8D0248CE7160086352A /* Products */,
+				021DC36A24969E3400BD6002 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		02E9E8D0248CE7160086352A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				02E9E8CF248CE7160086352A /* CreatorMenu.app */,
+				02E9E8CF248CE7160086352A /* Per mille.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		02E9E8D1248CE7160086352A /* CreatorMenu */ = {
+		02E9E8D1248CE7160086352A /* Per mille */ = {
 			isa = PBXGroup;
 			children = (
+				021DC36924969E3400BD6002 /* Per milleRelease.entitlements */,
 				02E9E8D2248CE7160086352A /* AppDelegate.swift */,
 				0288C5A3249655F20074E25F /* .gitignore */,
 				0288C5A12496544E0074E25F /* APIKeys.swift */,
@@ -78,15 +92,15 @@
 				02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */,
 				02285AEC24922D6F0088A719 /* StatusBarButton.swift */,
 			);
-			path = CreatorMenu;
+			path = "Per mille";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		02E9E8CE248CE7160086352A /* CreatorMenu */ = {
+		02E9E8CE248CE7160086352A /* Per mille */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 02E9E8DF248CE71D0086352A /* Build configuration list for PBXNativeTarget "CreatorMenu" */;
+			buildConfigurationList = 02E9E8DF248CE71D0086352A /* Build configuration list for PBXNativeTarget "Per mille" */;
 			buildPhases = (
 				02E9E8CB248CE7160086352A /* Sources */,
 				02E9E8CC248CE7160086352A /* Frameworks */,
@@ -96,9 +110,9 @@
 			);
 			dependencies = (
 			);
-			name = CreatorMenu;
+			name = "Per mille";
 			productName = CreatorMenu;
-			productReference = 02E9E8CF248CE7160086352A /* CreatorMenu.app */;
+			productReference = 02E9E8CF248CE7160086352A /* Per mille.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -116,7 +130,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 02E9E8CA248CE7160086352A /* Build configuration list for PBXProject "CreatorMenu" */;
+			buildConfigurationList = 02E9E8CA248CE7160086352A /* Build configuration list for PBXProject "Per mille" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -129,7 +143,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				02E9E8CE248CE7160086352A /* CreatorMenu */,
+				02E9E8CE248CE7160086352A /* Per mille */,
 			);
 		};
 /* End PBXProject section */
@@ -293,18 +307,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CreatorMenu/CreatorMenu.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Per mille/Per mille.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VDLCQ62KZH;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = CreatorMenu/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Per mille/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Darragh-Rogan.CreatorMenu";
+				PRODUCT_BUNDLE_IDENTIFIER = "Darragh-Rogan.Per-mille";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -313,18 +329,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CreatorMenu/CreatorMenu.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Per mille/Per milleRelease.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VDLCQ62KZH;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = CreatorMenu/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Per mille/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Darragh-Rogan.CreatorMenu";
+				PRODUCT_BUNDLE_IDENTIFIER = "Darragh-Rogan.Per-mille";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -332,7 +350,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		02E9E8CA248CE7160086352A /* Build configuration list for PBXProject "CreatorMenu" */ = {
+		02E9E8CA248CE7160086352A /* Build configuration list for PBXProject "Per mille" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				02E9E8DD248CE71D0086352A /* Debug */,
@@ -341,7 +359,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		02E9E8DF248CE71D0086352A /* Build configuration list for PBXNativeTarget "CreatorMenu" */ = {
+		02E9E8DF248CE71D0086352A /* Build configuration list for PBXNativeTarget "Per mille" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				02E9E8E0248CE71D0086352A /* Debug */,

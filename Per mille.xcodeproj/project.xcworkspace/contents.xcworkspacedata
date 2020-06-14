@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:CreatorMenu.xcodeproj">
+      location = "self:/Users/darragh/Documents/CreatorMenu/Per mille.xcodeproj">
    </FileRef>
 </Workspace>

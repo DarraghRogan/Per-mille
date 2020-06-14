@@ -103,7 +103,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menuRefresh()
         
 // draw in the menu items at app startup
-        statusItem.button?.title = "⤨ "
+        statusItem.button?.title = "‰"
         //String(DataLoader().newsData.totalResults)
         statusItem.button?.target = self
         statusItem.menu = menu
