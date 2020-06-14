@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0224C85924963AD400EEC521 /* DataLoaderTwitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */; };
 		02285AED24922D6F0088A719 /* StatusBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02285AEC24922D6F0088A719 /* StatusBarButton.swift */; };
+		0288C5A22496544E0074E25F /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5A12496544E0074E25F /* APIKeys.swift */; };
+		0288C5A4249655F20074E25F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0288C5A3249655F20074E25F /* .gitignore */; };
 		02B7EEF82491899800738B62 /* DataLoaderYouTube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */; };
 		02B7EEFA2491995400738B62 /* DataLoaderInstagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */; };
 		02E9E8D3248CE7160086352A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9E8D2248CE7160086352A /* AppDelegate.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderTwitter.swift; sourceTree = "<group>"; };
 		02285AEC24922D6F0088A719 /* StatusBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarButton.swift; sourceTree = "<group>"; };
+		0288C5A12496544E0074E25F /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		0288C5A3249655F20074E25F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderYouTube.swift; sourceTree = "<group>"; };
 		02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderInstagram.swift; sourceTree = "<group>"; };
 		02E9E8CF248CE7160086352A /* CreatorMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreatorMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				02E9E8D2248CE7160086352A /* AppDelegate.swift */,
+				0288C5A3249655F20074E25F /* .gitignore */,
+				0288C5A12496544E0074E25F /* APIKeys.swift */,
 				02E9E8D4248CE7160086352A /* ViewController.swift */,
 				02E9E8D6248CE71D0086352A /* Assets.xcassets */,
 				02E9E8D8248CE71D0086352A /* Main.storyboard */,
@@ -134,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02E9E8D7248CE71D0086352A /* Assets.xcassets in Resources */,
+				0288C5A4249655F20074E25F /* .gitignore in Resources */,
 				02E9E8DA248CE71D0086352A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +154,7 @@
 			files = (
 				02B7EEF82491899800738B62 /* DataLoaderYouTube.swift in Sources */,
 				02E9E8D5248CE7160086352A /* ViewController.swift in Sources */,
+				0288C5A22496544E0074E25F /* APIKeys.swift in Sources */,
 				02E9E8D3248CE7160086352A /* AppDelegate.swift in Sources */,
 				02B7EEFA2491995400738B62 /* DataLoaderInstagram.swift in Sources */,
 				0224C85924963AD400EEC521 /* DataLoaderTwitter.swift in Sources */,

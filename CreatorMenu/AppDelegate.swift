@@ -11,16 +11,172 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    // Define the Menu
+     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+     let menu = NSMenu()
+    
+    // Define the variables which need to be updated as data is loaded
+    lazy var instagramFollowers : NSMenuItem = {
+        return NSMenuItem(title: "Followers: Please Refresh", action: nil, keyEquivalent: "")
+     }()
+    lazy var instagramAverageLikes : NSMenuItem = {
+        return NSMenuItem(title: "Average Likes: Please Refresh", action: nil, keyEquivalent: "")
+     }()
 
+    lazy var twitterScreenName : NSMenuItem = {
+        return NSMenuItem(title: "Screen Name: Please Refresh", action: nil, keyEquivalent: "")
+     }()
+    
+    lazy var twitterFollowers : NSMenuItem = {
+        return NSMenuItem(title: "Followers: Please Refresh", action: nil, keyEquivalent: "")
+     }()
+    
+/*    lazy var youTubeTitle : NSMenuItem = {
+        return NSMenuItem(title: "Channel: Please Refresh", action: nil, keyEquivalent: "")
+     }()
+ */
+    lazy var youTubeViews : NSMenuItem = {
+        return NSMenuItem(title: "Lifetime Views: Please Refresh", action: nil, keyEquivalent: "")
+     }()
+    lazy var youTubeSubscribers : NSMenuItem = {
+        return NSMenuItem(title: "Subscribers: Please Refresh", action: nil, keyEquivalent: "")
+     }()
+    
+    // The function to manually run the data loaders, by loading the data, changing th emnu bar to say loading, then after a delay filling in the correct data
+        
+    @objc func menuRefresh() {
+        DataLoaderInstagram().loadInstagramData()
+        self.instagramFollowers.title = "Followers: Loading, please wait"
+        self.instagramAverageLikes.title = "Average Likes: Loading, please wait"
+    
+        DataLoaderTwitter().loadTwitterData()
+        self.twitterScreenName.title = "Screen Name: Loading, please wait"
+        self.twitterFollowers.title = "Followers: Loading, please wait"
+        
+        DataLoaderYouTube().loadYouTubeData()
+//        self.youTubeTitle.title = "Channel: Loading, please wait"
+        self.youTubeSubscribers.title = "Subscribers: Loading, please wait"
+        self.youTubeViews.title = "Lifetime Views: Loading, please wait"
+    
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7.0, execute: {
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+            self.instagramFollowers.title = "Followers: \(String(instagramData.follower))"
+            self.instagramAverageLikes.title = "Average Likes: \(String(instagramData.average_like))"
+            
+            self.twitterScreenName.title = "Screen Name: \(String(twitterData.screen_name))"
+            self.twitterFollowers.title = "Followers: \(String(twitterData.followers))"
+            
+//            self.youTubeTitle.title = "Title: \(youTubeData.items?[0].snippet.title)"
+            self.youTubeSubscribers.title = "Subscribers: \(Int((youTubeData.items?[0].statistics.subscriberCount)!) ?? 0)"
+            self.youTubeViews.title = "Lifetime Views: \(Int((youTubeData.items?[0].statistics.viewCount)!) ?? 0)"
+        })
+
+// Periodically update the menu every 30 minutes to see the current info
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1800.0, execute: {
+            self.menuRefresh()
+        })
+        
     }
 
+    
+// Define how to open web addresses from menu
+
+    @objc func openInstagramCreator(){
+        NSWorkspace.shared.open(URL(string: "https://www.instagram.com")!)
+    }
+
+    @objc func openTwitter(){
+        NSWorkspace.shared.open(URL(string: "https://analytics.twitter.com")!)
+    }
+    
+    @objc func openYouTubeStudio(){
+        NSWorkspace.shared.open(URL(string: "https://studio.youtube.com")!)
+ }
+    
+
+    
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // Insert code here to initialize your application
+       
+// Run the dataloaders at app startup
+
+        menuRefresh()
+        
+// draw in the menu items at app startup
+        statusItem.button?.title = "⤨ "
+        //String(DataLoader().newsData.totalResults)
+        statusItem.button?.target = self
+        statusItem.menu = menu
+        
+        menu.addItem(
+            NSMenuItem(
+                title: "Instagram",
+                action: #selector(openInstagramCreator),
+                keyEquivalent: "i"
+                )
+            )
+        
+        menu.addItem(instagramFollowers)
+        
+        menu.addItem(instagramAverageLikes)
+        
+        menu.addItem(
+            NSMenuItem.separator()
+            )
+        
+        menu.addItem(
+        NSMenuItem(
+            title: "Twitter",
+            action: #selector(openTwitter),
+            keyEquivalent: "t"
+            )
+        )
+
+        menu.addItem(twitterScreenName)
+        
+        menu.addItem(twitterFollowers)
+        
+        menu.addItem(
+            NSMenuItem.separator()
+            )
+        
+        menu.addItem(
+        NSMenuItem(
+            title: "YouTube Studio",
+            action: #selector(openYouTubeStudio),
+            keyEquivalent: "y"
+            )
+        )
+        
+//        menu.addItem(youTubeTitle)
+        
+        menu.addItem(youTubeSubscribers)
+
+        menu.addItem(youTubeViews)
+        
+        menu.addItem(
+            NSMenuItem.separator()
+            )
+
+        menu.addItem(
+            NSMenuItem(
+                title: "Refresh (automatically every 30 mins)",
+                action: #selector(AppDelegate.menuRefresh),
+                keyEquivalent: "r"
+                )
+            )
+        
+        menu.addItem(
+            NSMenuItem(
+                title: "Quit",
+                action: Selector("terminate:"),
+                keyEquivalent: "q")
+                    )
+
+        }
+
+        
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
-
 }
-
