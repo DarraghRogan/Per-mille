@@ -104,7 +104,7 @@ var youTubeData = YouTubeDataStructure()
             "Accept": "application/json"
         ]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=UClt25f9gZu4_M3sxpAAJ4QQ&key=\(APIKeyYouTube)")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=\(AppDelegate().defaults.object(forKey:"YouTubeChannelID") as? String ?? String())&key=\(APIKeyYouTube)")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
                                                 timeoutInterval: 10.0)
         request.httpMethod = "GET"

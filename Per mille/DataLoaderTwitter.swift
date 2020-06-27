@@ -46,7 +46,7 @@ var twitterData = TwitterDataStructure()
             "x-rapidapi-key": "\(APIKeyRapidAPI)"
         ]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "https://peerreach-peerreach-subscription.p.rapidapi.com/user/lookup.json?screen_name=darraghrogan")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://peerreach-peerreach-subscription.p.rapidapi.com/user/lookup.json?screen_name=\(AppDelegate().defaults.object(forKey:"TwitterHandle") as? String ?? String())")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
                                                 timeoutInterval: 10.0)
         request.httpMethod = "GET"
@@ -57,7 +57,6 @@ var twitterData = TwitterDataStructure()
             if (error != nil) {
                 print(error)
             } else {
-
                 let httpResponse = response as? HTTPURLResponse
 //                print(httpResponse)
                 //Parse JSON

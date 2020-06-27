@@ -31,7 +31,7 @@ var instagramData = InstagramDataStructure()
             "x-rapidapi-key": "\(APIKeyRapidAPI)"
         ]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "https://easy-instagram-service.p.rapidapi.com/username?username=darraghrogan")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://easy-instagram-service.p.rapidapi.com/username?username=\(AppDelegate().defaults.object(forKey:"InstagramUsername") as? String ?? String())")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
                                             timeoutInterval: 10.0)
         request.httpMethod = "GET"
