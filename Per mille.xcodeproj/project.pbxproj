@@ -151,22 +151,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		02DDA49C24A774E700F163A9 /* LauncherApplication */ = {
-			isa = PBXGroup;
-			children = (
-				02DDA49D24A774E700F163A9 /* Info.plist */,
-			);
-			path = LauncherApplication;
-			sourceTree = "<group>";
-		};
 		02DDA4A624A7751E00F163A9 /* LauncherApplication */ = {
 			isa = PBXGroup;
 			children = (
 				02DDA4A724A7751E00F163A9 /* AppDelegate.swift */,
 				02DDA4AB24A7752500F163A9 /* Assets.xcassets */,
+				02DDA49D24A774E700F163A9 /* Info.plist */,
+				02DDA4B124A7752500F163A9 /* LauncherApplication.entitlements */,
 				02DDA4AD24A7752500F163A9 /* Main.storyboard */,
 				02DDA4B024A7752500F163A9 /* Info.plist */,
-				02DDA4B124A7752500F163A9 /* LauncherApplication.entitlements */,
 			);
 			path = LauncherApplication;
 			sourceTree = "<group>";
@@ -175,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				02E9E8D1248CE7160086352A /* Per mille */,
-				02DDA49C24A774E700F163A9 /* LauncherApplication */,
 				02DDA4A624A7751E00F163A9 /* LauncherApplication */,
 				02E9E8D0248CE7160086352A /* Products */,
 				021DC36A24969E3400BD6002 /* Frameworks */,
@@ -194,18 +186,18 @@
 		02E9E8D1248CE7160086352A /* Per mille */ = {
 			isa = PBXGroup;
 			children = (
-				021DC36924969E3400BD6002 /* Per milleRelease.entitlements */,
-				02E9E8D2248CE7160086352A /* AppDelegate.swift */,
 				0288C5A3249655F20074E25F /* .gitignore */,
 				0288C5A12496544E0074E25F /* APIKeys.swift */,
-				02E9E8D4248CE7160086352A /* ViewController.swift */,
+				02E9E8D2248CE7160086352A /* AppDelegate.swift */,
 				02E9E8D6248CE71D0086352A /* Assets.xcassets */,
-				02E9E8D8248CE71D0086352A /* Main.storyboard */,
-				02E9E8DB248CE71D0086352A /* Info.plist */,
-				0201FB502496A0B7000AD0E8 /* Per mille.entitlements */,
-				02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */,
-				0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */,
 				02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */,
+				0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */,
+				02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */,
+				02E9E8DB248CE71D0086352A /* Info.plist */,
+				02E9E8D8248CE71D0086352A /* Main.storyboard */,
+				0201FB502496A0B7000AD0E8 /* Per mille.entitlements */,
+				021DC36924969E3400BD6002 /* Per milleRelease.entitlements */,
+				02E9E8D4248CE7160086352A /* ViewController.swift */,
 			);
 			path = "Per mille";
 			sourceTree = "<group>";
