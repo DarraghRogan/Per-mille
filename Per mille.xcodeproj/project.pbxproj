@@ -10,6 +10,7 @@
 		021DC36C24969E3400BD6002 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021DC36B24969E3400BD6002 /* NetworkExtension.framework */; };
 		0224C85924963AD400EEC521 /* DataLoaderTwitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */; };
 		02254F4924A7E66800E6CE49 /* LauncherApplication.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02DDA4A524A7751E00F163A9 /* LauncherApplication.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		025B3EB524A8A2DE000D0E2B /* Graphics in Resources */ = {isa = PBXBuildFile; fileRef = 025B3EB424A8A2DE000D0E2B /* Graphics */; };
 		0288C5A22496544E0074E25F /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5A12496544E0074E25F /* APIKeys.swift */; };
 		0288C5A4249655F20074E25F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0288C5A3249655F20074E25F /* .gitignore */; };
 		02B7EEF82491899800738B62 /* DataLoaderYouTube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */; };
@@ -102,6 +103,7 @@
 		021DC36924969E3400BD6002 /* Per milleRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Per milleRelease.entitlements"; sourceTree = "<group>"; };
 		021DC36B24969E3400BD6002 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderTwitter.swift; sourceTree = "<group>"; };
+		025B3EB424A8A2DE000D0E2B /* Graphics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Graphics; sourceTree = SOURCE_ROOT; };
 		0288C5A12496544E0074E25F /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		0288C5A3249655F20074E25F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderYouTube.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		02E9E8D1248CE7160086352A /* Per mille */ = {
 			isa = PBXGroup;
 			children = (
+				025B3EB424A8A2DE000D0E2B /* Graphics */,
 				0288C5A3249655F20074E25F /* .gitignore */,
 				0288C5A12496544E0074E25F /* APIKeys.swift */,
 				02E9E8D2248CE7160086352A /* AppDelegate.swift */,
@@ -303,6 +306,7 @@
 				02DDA4BB24A7BD7800F163A9 /* LauncherApplication.app in Resources */,
 				0288C5A4249655F20074E25F /* .gitignore in Resources */,
 				02E9E8DA248CE71D0086352A /* Main.storyboard in Resources */,
+				025B3EB524A8A2DE000D0E2B /* Graphics in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
