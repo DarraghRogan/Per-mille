@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
-        let mainAppIdentifier = "com.Darragh-Rogan.Per-mille"
+        let mainAppIdentifier = "Darragh-Rogan.Per-mille"
                 let runningApps = NSWorkspace.shared.runningApplications
                 let isRunning = !runningApps.filter { $0.bundleIdentifier == mainAppIdentifier }.isEmpty
 

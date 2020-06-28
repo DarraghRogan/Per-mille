@@ -217,7 +217,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
     
 // interact with launcher app from https://theswiftdev.com/how-to-launch-a-macos-app-at-login/
-    let launcherAppId = "com.Darragh-Rogan.LauncherApplication"
+    let launcherAppId = "Darragh-Rogan.LauncherApplication"
     let runningApps = NSWorkspace.shared.runningApplications
     let isRunning = !runningApps.filter { $0.bundleIdentifier == launcherAppId }.isEmpty
 
