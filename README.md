@@ -12,7 +12,7 @@ It does not have any tracking cookies, advetising codes, pop ups, notifications 
 All YouTube metric requests are sent directly, using HTTPS, to Google from your mac, and for Twitter & Instagram a third party service via rapidapi.com is used (again, directly connected to from your mac). Note that Google & RapidAPI can see the username of the account you are looking for metrics on and also your mac's IP address which can be unique to you depending on network configuration.
 
 ### Support
-Please email me on support@permille.app - this is a side project for me so understand ti may take me a couple of days to get back.
+Please email me on support@permille.app - this is a side project for me so understand it may take me a couple of days to get back.
 
 ### Privacy Policy
 Last updated June 27, 2020
