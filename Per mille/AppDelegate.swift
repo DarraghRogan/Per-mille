@@ -227,6 +227,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         DistributedNotificationCenter.default().post(name: .killLauncher, object: Bundle.main.bundleIdentifier!)
     }
         
+    // define the user defaults
+//    AppDelegate().defaults.set(false, forKey: "InstagramInUse")
+//    AppDelegate().defaults.set(false, forKey: "TwitterInUse")
+//    AppDelegate().defaults.set(true, forKey: "YouTubeInUse")
+    
 // Run the dataloaders at app startup
 
         menuRefresh()

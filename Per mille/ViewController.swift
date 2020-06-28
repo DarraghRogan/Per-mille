@@ -27,13 +27,13 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        instagramSlider.state.self = AppDelegate().defaults.object(forKey:"InstagramInUse") as! NSControl.StateValue
+        instagramSlider.state.self = AppDelegate().defaults.object(forKey:"InstagramInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
         instagramLabel.stringValue = AppDelegate().defaults.object(forKey:"InstagramUsername") as? String ?? String()
         
-        twitterSlider.state.self = AppDelegate().defaults.object(forKey:"TwitterInUse") as! NSControl.StateValue
+        twitterSlider.state.self = AppDelegate().defaults.object(forKey:"TwitterInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
         twitterLabel.stringValue = AppDelegate().defaults.object(forKey:"TwitterHandle") as? String ?? String()
         
-        youTubeSlider.state.self = AppDelegate().defaults.object(forKey:"YouTubeInUse") as! NSControl.StateValue
+        youTubeSlider.state.self = AppDelegate().defaults.object(forKey:"YouTubeInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
         youTubeLabel.stringValue = AppDelegate().defaults.object(forKey:"YouTubeChannelID") as? String ?? String()
         
     }
