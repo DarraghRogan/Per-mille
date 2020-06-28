@@ -1,9 +1,10 @@
+<img src="img/screenshot2.PNG" class="img-responsive" alt=""> </div>
 Per mille is a lightweight menu bar app for macOS that shows publicly available social media metrics for your Instagram, Twitter & YouTube channels.
 You can click the app if you want to see pertinent metrics for your channels, without getting distracted by any other details which are usually featured on social media metrics dashboards. The app updates its metrics every 30 minutes when you are online.
 
 ### Download
 The app is distributed on the Apple Store, and also the source code is shared on https://darraghrogan.github.io/Per-mille for interested parties to review.
-It does not have any tracking cookies, advetising codes, pop ups, notifications or any requirement for users to divulge their passwords. 
+It does not have any tracking cookies, advertising codes, pop ups, notifications or any requirement for users to divulge their passwords. I'm not interested in selling your browsing habits!
 
 ### Data Sources
 All YouTube metric requests are sent directly, using HTTPS, to Google from your mac, and for Twitter & Instagram a third party service via rapidapi.com is used (again, directly connected to from your mac). Note that Google & RapidAPI can see the username of the account you are looking for metrics on and also your mac's IP address which can be unique to you depending on network configuration.
