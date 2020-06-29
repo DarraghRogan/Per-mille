@@ -188,7 +188,6 @@
 		02E9E8D1248CE7160086352A /* Per mille */ = {
 			isa = PBXGroup;
 			children = (
-				025B3EB424A8A2DE000D0E2B /* Graphics */,
 				0288C5A3249655F20074E25F /* .gitignore */,
 				0288C5A12496544E0074E25F /* APIKeys.swift */,
 				02E9E8D2248CE7160086352A /* AppDelegate.swift */,
@@ -196,6 +195,7 @@
 				02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */,
 				0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */,
 				02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */,
+				025B3EB424A8A2DE000D0E2B /* Graphics */,
 				02E9E8DB248CE71D0086352A /* Info.plist */,
 				02E9E8D8248CE71D0086352A /* Main.storyboard */,
 				0201FB502496A0B7000AD0E8 /* Per mille.entitlements */,

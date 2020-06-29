@@ -53,10 +53,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
 
     
-    @objc func showSettings(_ sender: Any) {
+    @objc func showPreferences(_ sender: Any) {
             var myWindow: NSWindow? = nil
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"),bundle: nil)
-        let controller = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("SettingsStoryboard")) as! NSViewController
+        let controller = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PreferencesStoryboard")) as! NSViewController
             myWindow = NSWindow(contentViewController: controller)
             NSApp.activate(ignoringOtherApps: true)
             myWindow?.makeKeyAndOrderFront(self)
@@ -67,8 +67,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // The function to manually run the data loaders, by loading the data, changing the menu bar to say loading, then after a delay filling in the correct data
     
     func menuLoadOptionals() {
-        
-        
         
         if defaults.integer(forKey: "InstagramInUse") == 1 {
         menu.addItem(
@@ -130,7 +128,55 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    func menuLoadNonOptionals(){
+        statusItem.button?.title = "‰"
+        //String(DataLoader().newsData.totalResults)
+        statusItem.button?.target = self
+        statusItem.menu = menu
+            
+        menu.addItem(
+            NSMenuItem.separator()
+            )
+
+        menu.addItem(
+            NSMenuItem(
+                title: "Refresh (automatically every 30 mins)",
+                action: #selector(AppDelegate.menuRefresh),
+                keyEquivalent: "r"
+                )
+            )
+        
+        menu.addItem(
+            NSMenuItem(
+                title: "Preferences...",
+                action: #selector(AppDelegate.showPreferences),
+                keyEquivalent: ","
+                )
+            )
+        
+
+        
+        menu.addItem(
+            NSMenuItem(
+                title: "About ‰ Per mille...",
+                action: #selector(AppDelegate.openAboutPermille),
+                keyEquivalent: "a"
+                )
+            )
+        
+        menu.addItem(
+            NSMenuItem(
+                title: "Quit",
+                action: Selector("terminate:"),
+                keyEquivalent: "q")
+                    )
+    }
+    
     @objc func menuRefresh() {
+        menu.removeAllItems()
+        menuLoadOptionals()
+        menuLoadNonOptionals()
+        
         if defaults.integer(forKey: "InstagramInUse") == 1{
             DataLoaderInstagram().loadInstagramData()
             self.instagramFollowers.title = "Followers: Loading, please wait"
@@ -227,69 +273,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         DistributedNotificationCenter.default().post(name: .killLauncher, object: Bundle.main.bundleIdentifier!)
     }
         
-    // define the user defaults
-//    AppDelegate().defaults.set(false, forKey: "InstagramInUse")
-//    AppDelegate().defaults.set(false, forKey: "TwitterInUse")
-//    AppDelegate().defaults.set(true, forKey: "YouTubeInUse")
-    
-// Run the dataloaders at app startup
-
-        menuRefresh()
-    
-// Periodically update the menu every 30 minutes to see the current info
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1800.0, execute: {
-            self.menuRefresh()
-        })
     
     // load the optional menu items at app startup
         menuLoadOptionals()
     
 // draw in the non optional menu items at app startup
-        statusItem.button?.title = "‰"
-        //String(DataLoader().newsData.totalResults)
-        statusItem.button?.target = self
-        statusItem.menu = menu
-            
-        menu.addItem(
-            NSMenuItem.separator()
-            )
+        menuLoadNonOptionals()
+    
+    
+    // Run the dataloaders at app startup
 
-        menu.addItem(
-            NSMenuItem(
-                title: "Refresh (automatically every 30 mins)",
-                action: #selector(AppDelegate.menuRefresh),
-                keyEquivalent: "r"
-                )
-            )
+            menuRefresh()
         
-        menu.addItem(
-            NSMenuItem(
-                title: "Settings...",
-                action: #selector(AppDelegate.showSettings),
-                keyEquivalent: "s"
-                )
-            )
-        
-
-        
-        menu.addItem(
-            NSMenuItem(
-                title: "About ‰ Per mille...",
-                action: #selector(AppDelegate.openAboutPermille),
-                keyEquivalent: "a"
-                )
-            )
-        
-        menu.addItem(
-            NSMenuItem(
-                title: "Quit",
-                action: Selector("terminate:"),
-                keyEquivalent: "q")
-                    )
-
+    // Periodically update the menu every 30 minutes to see the current info
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1800.0, execute: {
+                self.menuRefresh()
+            })
     
         }
-
         
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application

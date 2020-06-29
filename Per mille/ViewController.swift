@@ -47,14 +47,20 @@ class ViewController: NSViewController {
 
     // Instagram Actions
     @IBAction func instagramSlider(_ sender: Any) {
+        
         AppDelegate().defaults.set(instagramSlider.state.self, forKey: "InstagramInUse")
-//        print(AppDelegate().defaults.object(forKey:"InstagramInUse") as? NSSwitch)
-        AppDelegate().menuLoadOptionals()
+        AppDelegate().menu.removeAllItems()
+        
     }
     
     @IBAction func instagramButtonClicked(_ sender: Any) {
         AppDelegate().defaults.set(instagramField.stringValue, forKey: "InstagramUsername")
         instagramLabel.stringValue = AppDelegate().defaults.object(forKey:"InstagramUsername") as? String ?? String()
+        if instagramLabel.stringValue == ""{
+            AppDelegate().defaults.set(0, forKey: "InstagramInUse")
+        }
+        else{
+        }
     }
     
     @IBAction func instagramFieldAction(_ sender: Any) {
@@ -69,13 +75,17 @@ class ViewController: NSViewController {
     // Twitter Actions
     @IBAction func twitterSlider(_ sender: Any) {
         AppDelegate().defaults.set(twitterSlider.state.self, forKey: "TwitterInUse")
- //       print(AppDelegate().defaults.object(forKey:"TwitterInUse") as? NSSwitch)
-        AppDelegate().menuLoadOptionals()
+        AppDelegate().menu.removeAllItems()
     }
     
     @IBAction func twitterButtonClicked(_ sender: Any) {
         AppDelegate().defaults.set(twitterField.stringValue, forKey: "TwitterHandle")
         twitterLabel.stringValue = AppDelegate().defaults.object(forKey:"TwitterHandle") as? String ?? String()
+        if twitterLabel.stringValue == ""{
+            AppDelegate().defaults.set(0, forKey: "TwitterInUse")
+        }
+        else{
+        }
     }
 
     @IBAction func twitterFieldAction(_ sender: Any) {
@@ -91,14 +101,18 @@ class ViewController: NSViewController {
     
     @IBAction func youTubeSlider(_ sender: Any) {
         AppDelegate().defaults.set(youTubeSlider.state.self, forKey: "YouTubeInUse")
-//        print(AppDelegate().defaults.object(forKey:"YouTubeInUse") as? NSSwitch)
-        AppDelegate().menuLoadOptionals()
+        AppDelegate().menu.removeAllItems()
 
     }
     
     @IBAction func youTubeButtonClicked(_ sender: Any) {
         AppDelegate().defaults.set(youTubeField.stringValue, forKey: "YouTubeChannelID")
         youTubeLabel.stringValue = AppDelegate().defaults.object(forKey:"YouTubeChannelID") as? String ?? String()
+        if youTubeLabel.stringValue == ""{
+            AppDelegate().defaults.set(0, forKey: "YouTubeInUse")
+        }
+        else{
+        }
     }
     
     @IBAction func youTubeFieldAction(_ sender: Any) {
@@ -108,6 +122,10 @@ class ViewController: NSViewController {
     
     @IBAction func youTubeHelp(_ sender: Any) {
         NSWorkspace.shared.open(URL(string: "https://support.google.com/youtube/answer/3250431?hl=en")!)
+    }
+    
+    @IBAction func applyButton(_ sender: Any) {
+        AppDelegate().menuRefresh()
     }
     
     
