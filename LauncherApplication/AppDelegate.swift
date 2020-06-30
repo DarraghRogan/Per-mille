@@ -18,9 +18,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func terminate() {
         NSApp.terminate(nil)
     }
-    
-    @IBOutlet var window: NSWindow!
-
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -38,7 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     components.removeLast()
                     components.removeLast()
                     components.append("MacOS")
-                    components.append("Per-mille") //main app name
+                    components.append("Per mille") //main app name
 
                     let newPath = NSString.path(withComponents: components)
 
