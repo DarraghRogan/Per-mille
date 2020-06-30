@@ -1,4 +1,4 @@
-<center><img src="Graphics/Screenshot-2020-06-28-cropped.png" class="img-responsive" alt=""></center>
+<center><img src="Graphics/Screenshot-cropped.png" class="img-responsive" alt=""></center>
 Per mille is a lightweight menu bar app for macOS that shows publicly available social media metrics for your Instagram, Twitter & YouTube channels.
 You can click the app if you want to see pertinent metrics for your channels, without getting distracted by any other details which are usually featured on social media metrics dashboards. The app updates its metrics every 30 minutes when you are online.
 
