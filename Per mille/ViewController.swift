@@ -10,6 +10,7 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var autorunAtStartup: NSSwitch!
     
     @IBOutlet weak var instagramField: NSTextField!
     @IBOutlet weak var instagramLabel: NSTextField!
@@ -27,6 +28,8 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        autorunAtStartup.state.self = AppDelegate().defaults.object(forKey:"AutorunAtStartup") as? NSControl.StateValue ?? NSControl.StateValue(0)
+        
         instagramSlider.state.self = AppDelegate().defaults.object(forKey:"InstagramInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
         instagramLabel.stringValue = AppDelegate().defaults.object(forKey:"InstagramUsername") as? String ?? String()
         
@@ -45,6 +48,16 @@ class ViewController: NSViewController {
         }
     }
 
+    @IBAction func autorunAtStartupSlider(_ sender: Any) {
+        if autorunAtStartup.state.self.rawValue == 0{
+             AppDelegate().defaults.set(false, forKey: "AutorunAtStartup")
+        }
+        else if autorunAtStartup.state.self.rawValue == 1{
+            AppDelegate().defaults.set(true, forKey: "AutorunAtStartup")
+        }
+    }
+    
+    
     // Instagram Actions
     @IBAction func instagramSlider(_ sender: Any) {
         
