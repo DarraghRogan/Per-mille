@@ -35,9 +35,9 @@ var twitterData = TwitterDataStructure()
 
  public class DataLoaderTwitter {
     
-    init(){
-       loadTwitterData()
-    }
+//    init(){
+//       loadTwitterData()
+//    }
     
     func loadTwitterData() {
 
@@ -58,7 +58,7 @@ var twitterData = TwitterDataStructure()
                 print(error)
             } else {
                 let httpResponse = response as? HTTPURLResponse
-//                print(httpResponse)
+//                print("TwitterAPIhit")
                 //Parse JSON
                 let decoder = JSONDecoder()
                 do {

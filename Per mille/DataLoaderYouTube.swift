@@ -93,9 +93,9 @@ var youTubeData = YouTubeDataStructure()
 
  public class DataLoaderYouTube {
     
-    init(){
-       loadYouTubeData()
-    }
+//    init(){
+//       loadYouTubeData()
+//    }
     
     func loadYouTubeData() {
 

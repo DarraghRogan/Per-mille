@@ -130,7 +130,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func menuLoadNonOptionals(){
         statusItem.button?.title = "‰"
-        //String(DataLoader().newsData.totalResults)
         statusItem.button?.target = self
         statusItem.menu = menu
             
@@ -286,9 +285,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             menuRefresh()
         
     // Periodically update the menu every 30 minutes to see the current info
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1800.0, execute: {
-                self.menuRefresh()
-            })
+    
+    let timer = Timer.scheduledTimer(withTimeInterval: 1800.0, repeats: true) { timer in
+        self.menuRefresh()
+    }
     
         }
         

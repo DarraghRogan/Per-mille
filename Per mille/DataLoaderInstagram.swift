@@ -20,9 +20,9 @@ var instagramData = InstagramDataStructure()
 
  public class DataLoaderInstagram {
     
-    init(){
-       loadInstagramData()
-    }
+//    init(){
+//       loadInstagramData()
+//    }
     
     func loadInstagramData() {
 
@@ -43,7 +43,7 @@ var instagramData = InstagramDataStructure()
                 print(error)
             } else {
                 let httpResponse = response as? HTTPURLResponse
- //               print(httpResponse)
+//                print("InstaAPIhit")
                 //Parse JSON
                 let decoder = JSONDecoder()
                 do {
