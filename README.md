@@ -4,7 +4,7 @@ You can click the app if you want to see pertinent metrics for your channels, wi
 
 ### Download
 <a href="https://apps.apple.com/app/id1518488645"><img src="Graphics/badge-download-on-the-mac-app-store.svg" class="img-responsive" alt=""></a>
-The app is distributed on the Apple Store, and also the source code is shared on Git Hub for interested parties to review.
+<div>The app is distributed on the Apple Store, and also the source code is shared on Git Hub for interested parties to review.
 It does not have any tracking cookies, advertising codes, pop ups, notifications or any requirement for users to divulge their passwords. I'm not interested in selling your browsing habits!
 
 ### Data Sources
