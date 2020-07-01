@@ -3,7 +3,8 @@ Per mille is a lightweight menu bar app for macOS that shows publicly available 
 You can click the app if you want to see pertinent metrics for your channels, without getting distracted by any other details which are usually featured on social media metrics dashboards. The app updates its metrics every 30 minutes when you are online.
 
 ### Download
-The app is distributed on the Apple Store, and also the source code is shared on https://darraghrogan.github.io/Per-mille for interested parties to review.
+<a href="https://apps.apple.com/app/id1518488645"><img src="badge-download-on-the-mac-app-store.svg" class="img-responsive" alt=""></a>
+The app is distributed on the Apple Store, and also the source code is shared on Git Hub for interested parties to review.
 It does not have any tracking cookies, advertising codes, pop ups, notifications or any requirement for users to divulge their passwords. I'm not interested in selling your browsing habits!
 
 ### Data Sources
