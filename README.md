@@ -1,7 +1,7 @@
 <center><img src="Graphics/Screenshot-cropped.png" class="img-responsive" alt=""></center>
 Being a content creator is tough. Just like any small business proprietor, you have many parameters which need to be monitored, along with maintaining a public persona, and also in the early days, secondary income streams. Everything is competing for your attention, whilst you need to be creative. What if you could be reassured, without getting distracted, that your online empire is growing at it's consistent pace at a glance? 
 
-Per mille is a lightweight menu bar app for macOS that shows publicly available social media metrics for your Instagram, Twitter & YouTube channels.
+‰ Per mille is a lightweight menu bar app for macOS that shows publicly available social media metrics for your Instagram, Twitter & YouTube channels.
 You can click the app if you want to see pertinent metrics for your channels, without getting distracted by any other details which are usually featured on social media metrics dashboards. The app updates its metrics every 30 minutes when you are online.
 
 ### Download
@@ -11,10 +11,13 @@ The app is distributed on the Apple Store (with automatic updates for when featu
 It does not have any tracking cookies, advertising codes, pop ups, notifications or any requirement for users to divulge their passwords. I'm not interested in selling your browsing habits!
 
 ### Data Sources
-All YouTube metric requests are sent directly, using HTTPS, to Google from your mac, and for Twitter & Instagram a third party service via rapidapi.com is used (again, directly connected to from your mac). Note that Google & RapidAPI can see the username of the account you are looking for metrics on and also your mac's IP address which can be unique to you depending on network configuration.
+All YouTube metric requests are sent directly, using HTTPS, to Google from your Mac, and for Twitter & Instagram a third party service via rapidapi.com is used (again, directly connected to from your Mac). Note that Google & RapidAPI can see the username of the account you are looking for metrics on and also your Mac's public IP address which can be unique to you depending on network configuration.
 
 ### Support
 Please email me on support@permille.app - this is a side project for me so understand it may take me a couple of days to get back.
+
+### About the name
+‰ Per mille is inspried by Cost Per Mille (CPM) from YouTube (https://support.google.com/youtube/answer/9314357?hl=en) and also any excuse to use an obscure UTF-8 symbol is appreciated!
 
 ### Privacy Policy
 Last updated June 27, 2020
@@ -75,7 +78,8 @@ In Short:  Yes, we will update this notice as necessary to stay compliant with
 
 12. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
 If you have questions or comments about this notice, you may email us at support@permille.app or by post to:
-Darragh Rogan __________Milltown, Dublin Dublin 14 Ireland
+Darragh Rogan __________Dublin, Ireland
 
-HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please submit a request form by clicking here. We will respond to your request within 30 days.
+HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
+Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please submit a request form by clicking here. We will respond to your request within 30 days.
 This privacy policy was created using Termly’s Privacy Policy Generator.
