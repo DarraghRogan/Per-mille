@@ -1,11 +1,12 @@
 <center><img src="Graphics/Screenshot-cropped.png" class="img-responsive" alt=""></center>
+Being a content creator is tough. Just like any small business proprietor, you have many parameters which need to be monitored, along with maintaining a public persona, and also in the early days, secondary income streams. Everything is competing for your attention, whilst you need to be creative. What if you could be reassured, without getting distracted, that your online empire is growing at it's consistent pace at a glance? 
 Per mille is a lightweight menu bar app for macOS that shows publicly available social media metrics for your Instagram, Twitter & YouTube channels.
 You can click the app if you want to see pertinent metrics for your channels, without getting distracted by any other details which are usually featured on social media metrics dashboards. The app updates its metrics every 30 minutes when you are online.
 
 ### Download
 <a href="https://apps.apple.com/app/id1518488645"><img src="Graphics/badge-download-on-the-mac-app-store.svg" class="img-responsive" alt=""></a>
 
-The app is distributed on the Apple Store, and also the source code is shared on Git Hub for interested parties to review.
+The app is distributed on the Apple Store (with automatic updates for when features are added), and also binaries & the source code is shared on Git Hub for interested parties to review.
 It does not have any tracking cookies, advertising codes, pop ups, notifications or any requirement for users to divulge their passwords. I'm not interested in selling your browsing habits!
 
 ### Data Sources
@@ -44,7 +45,8 @@ In Short:  We only share information with your consent, to comply with laws, t
 • Legal Obligations: We may disclose your information where we are legally required to do so in order to comply with applicable law, governmental requests, a judicial proceeding, court order, or legal process, such as in response to a court order or a subpoena (including in response to public authorities to meet national security or law enforcement requirements).
 • Vital Interests: We may disclose your information where we believe it is necessary to investigate, prevent, or take action regarding potential violations of our policies, suspected fraud, situations involving potential threats to the safety of any person and illegal activities, or as evidence in litigation in which we are involved.More specifically, we may need to process your data or share your personal information in the following situations:
 • Business Transfers. We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.
-• Business Partners. We may share your information with our business partners to offer you certain products, services or promotions.
+• Business Partners. We may share your information with our business partners to offer you certain products, services or promotions. Specifically, see the data provider's privacy policy here too:
+https://rapidapi.com/privacy-policy
 
 4. IS YOUR INFORMATION TRANSFERRED INTERNATIONALLY?
 In Short:  We may transfer, store, and process your information in countries other than your own.Our servers are located in. If you are accessing our App from outside, please be aware that your information may be transferred to, stored, and processed by us in our facilities and by those third parties with whom we may share your personal information (see "WILL YOUR INFORMATION BE SHARED WITH ANYONE?" above), in and other countries.If you are a resident in the European Economic Area, then these countries may not necessarily have data protection laws or other similar laws as comprehensive as those in your country. We will however take all necessary measures to protect your personal information in accordance with this privacy notice and applicable law.
