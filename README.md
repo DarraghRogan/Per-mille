@@ -1,5 +1,6 @@
 <center><img src="Graphics/Screenshot-cropped.png" class="img-responsive" alt=""></center>
 Being a content creator is tough. Just like any small business proprietor, you have many parameters which need to be monitored, along with maintaining a public persona, and also in the early days, secondary income streams. Everything is competing for your attention, whilst you need to be creative. What if you could be reassured, without getting distracted, that your online empire is growing at it's consistent pace at a glance? 
+
 Per mille is a lightweight menu bar app for macOS that shows publicly available social media metrics for your Instagram, Twitter & YouTube channels.
 You can click the app if you want to see pertinent metrics for your channels, without getting distracted by any other details which are usually featured on social media metrics dashboards. The app updates its metrics every 30 minutes when you are online.
 
