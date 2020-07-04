@@ -11,6 +11,7 @@
 		0224C85924963AD400EEC521 /* DataLoaderTwitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */; };
 		02254F4924A7E66800E6CE49 /* LauncherApplication.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02DDA4A524A7751E00F163A9 /* LauncherApplication.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		025B3EB524A8A2DE000D0E2B /* Graphics in Resources */ = {isa = PBXBuildFile; fileRef = 025B3EB424A8A2DE000D0E2B /* Graphics */; };
+		027D73A724AFBF8800031CE0 /* DataLoaderTikTok.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D73A624AFBF8800031CE0 /* DataLoaderTikTok.swift */; };
 		0288C5A22496544E0074E25F /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5A12496544E0074E25F /* APIKeys.swift */; };
 		0288C5A4249655F20074E25F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0288C5A3249655F20074E25F /* .gitignore */; };
 		02B7EEF82491899800738B62 /* DataLoaderYouTube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */; };
@@ -104,6 +105,7 @@
 		021DC36B24969E3400BD6002 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderTwitter.swift; sourceTree = "<group>"; };
 		025B3EB424A8A2DE000D0E2B /* Graphics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Graphics; sourceTree = SOURCE_ROOT; };
+		027D73A624AFBF8800031CE0 /* DataLoaderTikTok.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderTikTok.swift; sourceTree = "<group>"; };
 		0288C5A12496544E0074E25F /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		0288C5A3249655F20074E25F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderYouTube.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				02E9E8D6248CE71D0086352A /* Assets.xcassets */,
 				02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */,
 				0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */,
+				027D73A624AFBF8800031CE0 /* DataLoaderTikTok.swift */,
 				02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */,
 				025B3EB424A8A2DE000D0E2B /* Graphics */,
 				02E9E8DB248CE71D0086352A /* Info.plist */,
@@ -329,6 +332,7 @@
 				02E9E8D5248CE7160086352A /* ViewController.swift in Sources */,
 				0288C5A22496544E0074E25F /* APIKeys.swift in Sources */,
 				02E9E8D3248CE7160086352A /* AppDelegate.swift in Sources */,
+				027D73A724AFBF8800031CE0 /* DataLoaderTikTok.swift in Sources */,
 				02B7EEFA2491995400738B62 /* DataLoaderInstagram.swift in Sources */,
 				0224C85924963AD400EEC521 /* DataLoaderTwitter.swift in Sources */,
 			);

@@ -16,6 +16,10 @@ class ViewController: NSViewController {
     @IBOutlet weak var instagramLabel: NSTextField!
     @IBOutlet weak var instagramSlider: NSSwitch!
     
+    @IBOutlet weak var tikTokSlider: NSSwitch!
+    @IBOutlet weak var tikTokLabel: NSTextField!
+    @IBOutlet weak var tikTokField: NSTextField!
+    
     @IBOutlet weak var twitterSlider: NSSwitch!
     @IBOutlet weak var twitterLabel: NSTextField!
     @IBOutlet weak var twitterField: NSTextField!
@@ -32,6 +36,9 @@ class ViewController: NSViewController {
         
         instagramSlider.state.self = AppDelegate().defaults.object(forKey:"InstagramInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
         instagramLabel.stringValue = AppDelegate().defaults.object(forKey:"InstagramUsername") as? String ?? String()
+        
+        tikTokSlider.state.self = AppDelegate().defaults.object(forKey:"TikTokInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
+        tikTokLabel.stringValue = AppDelegate().defaults.object(forKey:"TikTokUsername") as? String ?? String()
         
         twitterSlider.state.self = AppDelegate().defaults.object(forKey:"TwitterInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
         twitterLabel.stringValue = AppDelegate().defaults.object(forKey:"TwitterHandle") as? String ?? String()
@@ -62,7 +69,7 @@ class ViewController: NSViewController {
     @IBAction func instagramSlider(_ sender: Any) {
         
         AppDelegate().defaults.set(instagramSlider.state.self, forKey: "InstagramInUse")
-        AppDelegate().menu.removeAllItems()
+//        AppDelegate().menu.removeAllItems()
         
     }
     
@@ -84,11 +91,35 @@ class ViewController: NSViewController {
         NSWorkspace.shared.open(URL(string: "https://www.quora.com/What-is-my-Instagram-username")!)
     }
     
+    // TikTok Actions
+    @IBAction func tikTokSlider(_ sender: Any) {
+        AppDelegate().defaults.set(tikTokSlider.state.self, forKey: "TikTokInUse")
+//          AppDelegate().menu.removeAllItems()
+    }
+    
+    @IBAction func tikTokButtonClicked(_ sender: Any) {
+        AppDelegate().defaults.set(tikTokField.stringValue, forKey: "TikTokUsername")
+        tikTokLabel.stringValue = AppDelegate().defaults.object(forKey:"TikTokUsername") as? String ?? String()
+        if tikTokLabel.stringValue == ""{
+            AppDelegate().defaults.set(0, forKey: "TikTokInUse")
+        }
+        else{
+        }
+    }
+    
+    @IBAction func tikTokFieldAction(_ sender: Any) {
+        tikTokButtonClicked(Any.self)
+    }
+    
+    @IBAction func tikTokHelp(_ sender: Any) {
+                NSWorkspace.shared.open(URL(string: "https://support.tiktok.com/en/my-account-settings/change-username-default")!)
+    }
+    
     
     // Twitter Actions
     @IBAction func twitterSlider(_ sender: Any) {
         AppDelegate().defaults.set(twitterSlider.state.self, forKey: "TwitterInUse")
-        AppDelegate().menu.removeAllItems()
+ //       AppDelegate().menu.removeAllItems()
     }
     
     @IBAction func twitterButtonClicked(_ sender: Any) {
@@ -114,7 +145,7 @@ class ViewController: NSViewController {
     
     @IBAction func youTubeSlider(_ sender: Any) {
         AppDelegate().defaults.set(youTubeSlider.state.self, forKey: "YouTubeInUse")
-        AppDelegate().menu.removeAllItems()
+//        AppDelegate().menu.removeAllItems()
 
     }
     
@@ -136,10 +167,7 @@ class ViewController: NSViewController {
     @IBAction func youTubeHelp(_ sender: Any) {
         NSWorkspace.shared.open(URL(string: "https://support.google.com/youtube/answer/3250431?hl=en")!)
     }
-    
-    @IBAction func applyButton(_ sender: Any) {
-        AppDelegate().menuRefresh()
-    }
+
     
     
 }

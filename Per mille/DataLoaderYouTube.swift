@@ -116,6 +116,13 @@ var youTubeData = YouTubeDataStructure()
                 print(error)
             } else {
                 let httpResponse = response as? HTTPURLResponse
+                print("Hit the YouTube API")
+//                if let data = data,
+//                    let urlContent = NSString(data: data, encoding: String.Encoding.ascii.rawValue) {
+//                    print(urlContent)
+//                } else {
+//                    print("error with printing string encoded data")
+//                }
                 //Parse JSON
                 let decoder = JSONDecoder()
                 do {

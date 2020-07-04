@@ -32,6 +32,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return NSMenuItem(title: "Average Likes: Please Refresh", action: nil, keyEquivalent: "")
      }()
 
+    lazy var tikTokUniqueID : NSMenuItem = {
+        return NSMenuItem(title: "Username: Please Refresh", action: nil, keyEquivalent: "")
+     }()
+    
+    lazy var tikTokFollowers : NSMenuItem = {
+        return NSMenuItem(title: "Followers: Please Refresh", action: nil, keyEquivalent: "")
+     }()
+    
+    lazy var tikTokHearts : NSMenuItem = {
+        return NSMenuItem(title: "♥❤: Please Refresh", action: nil, keyEquivalent: "")
+     }()
+    
     lazy var twitterScreenName : NSMenuItem = {
         return NSMenuItem(title: "Screen Name: Please Refresh", action: nil, keyEquivalent: "")
      }()
@@ -80,6 +92,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(instagramFollowers)
         
         menu.addItem(instagramAverageLikes)
+        
+        menu.addItem(
+            NSMenuItem.separator()
+            )
+        }
+        else{
+        }
+        
+        if defaults.integer(forKey: "TikTokInUse") == 1 {
+        menu.addItem(
+            NSMenuItem(
+                title: "TikTok...",
+                action: #selector(openTikTok),
+                keyEquivalent: "k"
+                )
+            )
+        
+        menu.addItem(tikTokUniqueID)
+            
+        menu.addItem(tikTokFollowers)
+        
+        menu.addItem(tikTokHearts)
         
         menu.addItem(
             NSMenuItem.separator()
@@ -183,7 +217,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         else{
         }
-    
+
+        if defaults.integer(forKey: "TikTokInUse") == 1{
+        DataLoaderTikTok().loadTikTokData()
+        self.tikTokUniqueID.title = "Username: Loading, please wait"
+        self.tikTokFollowers.title = "Followers: Loading, please wait"
+        self.tikTokHearts.title = "♥: Loading, please wait"
+        }
+        else{
+        }
+        
         if defaults.integer(forKey: "TwitterInUse") == 1{
         DataLoaderTwitter().loadTwitterData()
         self.twitterScreenName.title = "Screen Name: Loading, please wait"
@@ -216,6 +259,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             else{
             }
+            
+            if self.defaults.integer(forKey: "TikTokInUse") == 1{
+                if let tikTokUsername = tikTokData.data?.userInfo?.user?.uniqueID {
+                    self.tikTokUniqueID.title = "Username: \(tikTokUsername)"
+                    } else {
+                    self.tikTokUniqueID.title = "Error - do you have internet connectivity & is your Username correct?"
+                    }
+                if let tikTokFollowers = tikTokData.data?.userInfo?.stats?.followerCount {
+                    self.tikTokFollowers.title = "Followers: \(tikTokFollowers)"
+                    } else {
+                    self.tikTokFollowers.title = "Error - do you have internet connectivity & is your Username correct?"
+                    }
+                if let tikTokHearts = tikTokData.data?.userInfo?.stats?.heartCount {
+                    self.tikTokHearts.title = "♥: \(tikTokHearts)"
+                    } else {
+                    self.tikTokHearts.title = "Error - do you have internet connectivity & is your Username correct?"
+                    }
+            }
+            else{
+            }
                 
             if self.defaults.integer(forKey: "YouTubeInUse") == 1{
 //            self.youTubeTitle.title = "Title: \(youTubeData.items?[0].snippet.title)"
@@ -245,6 +308,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(URL(string: "https://www.instagram.com")!)
     }
 
+    @objc func openTikTok(){
+        NSWorkspace.shared.open(URL(string: "https://www.tiktok.com")!)
+    }
+    
     @objc func openTwitter(){
         NSWorkspace.shared.open(URL(string: "https://analytics.twitter.com")!)
     }
