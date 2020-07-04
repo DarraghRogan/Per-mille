@@ -12,6 +12,13 @@ import Foundation
 struct InstagramDataStructure: Codable{
     var follower: Int = 0
     var average_like: Int = 0
+    var username: String = ""
+    var last_post: [lastPost]?
+}
+
+struct lastPost: Codable{
+    var like: Int = 0
+    var video_view:Int = 0
 }
 
 // define an instance of the instragram data that can be filled by the data loader and read by the menu
@@ -43,7 +50,7 @@ var instagramData = InstagramDataStructure()
                 print(error)
             } else {
                 let httpResponse = response as? HTTPURLResponse
-                print("Hit the Instagram API")
+                print("Received from the Instagram API")
 //                if let data = data,
 //                    let urlContent = NSString(data: data, encoding: String.Encoding.ascii.rawValue) {
 //                    print(urlContent)
@@ -55,9 +62,6 @@ var instagramData = InstagramDataStructure()
                 do {
                     let dataFromInstagram = try decoder.decode(InstagramDataStructure.self, from: data!)
                     instagramData = dataFromInstagram
- //                   print(self.instagramData)
- //                   print(instagramData.follower)
-//                    AppDelegate.menuRefresh(AppDelegate)
                 }
                 catch {
                     print("Error in Instagram JSON parsing")

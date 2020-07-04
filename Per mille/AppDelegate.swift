@@ -25,11 +25,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
      let menu = NSMenu()
     
     // Define the variables which need to be updated as data is loaded
+    lazy var instagramUsername : NSMenuItem = {
+        return NSMenuItem(title: "Username: Please Refresh", action: nil, keyEquivalent: "")
+     }()
     lazy var instagramFollowers : NSMenuItem = {
         return NSMenuItem(title: "Followers: Please Refresh", action: nil, keyEquivalent: "")
      }()
     lazy var instagramAverageLikes : NSMenuItem = {
         return NSMenuItem(title: "Average Likes: Please Refresh", action: nil, keyEquivalent: "")
+     }()
+    lazy var instagramLastPostsVideoViews : NSMenuItem = {
+        return NSMenuItem(title: "Last Post's Video Views: Please Refresh", action: nil, keyEquivalent: "")
      }()
 
     lazy var tikTokUniqueID : NSMenuItem = {
@@ -52,10 +58,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return NSMenuItem(title: "Followers: Please Refresh", action: nil, keyEquivalent: "")
      }()
     
-/*    lazy var youTubeTitle : NSMenuItem = {
+    lazy var youTubeTitle : NSMenuItem = {
         return NSMenuItem(title: "Channel: Please Refresh", action: nil, keyEquivalent: "")
      }()
- */
+ 
     lazy var youTubeViews : NSMenuItem = {
         return NSMenuItem(title: "Lifetime Views: Please Refresh", action: nil, keyEquivalent: "")
      }()
@@ -88,10 +94,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 keyEquivalent: "i"
                 )
             )
-        
+            
+        menu.addItem(instagramUsername)
+            
         menu.addItem(instagramFollowers)
         
         menu.addItem(instagramAverageLikes)
+            
+        menu.addItem(instagramLastPostsVideoViews)
         
         menu.addItem(
             NSMenuItem.separator()
@@ -151,7 +161,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             )
         )
         
-//        menu.addItem(youTubeTitle)
+        menu.addItem(youTubeTitle)
         
         menu.addItem(youTubeSubscribers)
 
@@ -212,8 +222,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if defaults.integer(forKey: "InstagramInUse") == 1{
             DataLoaderInstagram().loadInstagramData()
+            self.instagramUsername.title = "Username: Loading, please wait"
             self.instagramFollowers.title = "Followers: Loading, please wait"
             self.instagramAverageLikes.title = "Average Likes: Loading, please wait"
+            self.instagramLastPostsVideoViews.title = "Last Post's Video Views: Loading, please wait"
         }
         else{
         }
@@ -237,7 +249,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if defaults.integer(forKey: "YouTubeInUse") == 1{
         DataLoaderYouTube().loadYouTubeData()
-//        self.youTubeTitle.title = "Channel: Loading, please wait"
+        self.youTubeTitle.title = "Channel: Loading, please wait"
         self.youTubeSubscribers.title = "Subscribers: Loading, please wait"
         self.youTubeViews.title = "Lifetime Views: Loading, please wait"
         }
@@ -247,8 +259,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 7.0, execute: {
             
             if self.defaults.integer(forKey: "InstagramInUse") == 1{
+            self.instagramUsername.title = "Username: \(String(instagramData.username))"
             self.instagramFollowers.title = "Followers: \(String(instagramData.follower))"
             self.instagramAverageLikes.title = "Average Likes: \(String(instagramData.average_like))"
+                if let instagramLastPostsVideoViews = instagramData.last_post?[0].video_view {
+                    self.instagramLastPostsVideoViews.title = "Last Post's Video Views: \(instagramLastPostsVideoViews)"
+                } else {
+                    self.instagramLastPostsVideoViews.title = "Error - do you have internet connectivity & is your username correct?"
+            }
             }
             else{
             }
@@ -281,7 +299,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
                 
             if self.defaults.integer(forKey: "YouTubeInUse") == 1{
-//            self.youTubeTitle.title = "Title: \(youTubeData.items?[0].snippet.title)"
+
+            if let youTubeTitle = youTubeData.items?[0].snippet.title {
+                self.youTubeTitle.title = "Title: \(youTubeTitle)"
+            } else {
+                self.youTubeTitle.title = "Error - do you have internet connectivity & is your Channel ID correct?"
+            }
+                
             if let youTubeSubscriberCount = youTubeData.items?[0].statistics.subscriberCount {
                 self.youTubeSubscribers.title = "Subscribers: \(youTubeSubscriberCount)"
             } else {

@@ -1,6 +1,6 @@
 //
 //  DataLoader.swift
-//  CreatorMenu
+//  Per mille
 //
 //  Created by Darragh Rogan on 08/06/2020.
 //  Copyright © 2020 Darragh Rogan. All rights reserved.
@@ -38,7 +38,7 @@ struct RelatedPlaylists: Codable {
 struct Snippet: Codable {
     var title: String = ""
 //    var snippetDescription,
-//    var customURL: String?
+//    var customURL: String = ""
 //    var publishedAt: Date?
 //    var thumbnails: Thumbnails?
 //    var localized: Localized?
@@ -116,7 +116,7 @@ var youTubeData = YouTubeDataStructure()
                 print(error)
             } else {
                 let httpResponse = response as? HTTPURLResponse
-                print("Hit the YouTube API")
+//                print("Received from the YouTube API")
 //                if let data = data,
 //                    let urlContent = NSString(data: data, encoding: String.Encoding.ascii.rawValue) {
 //                    print(urlContent)

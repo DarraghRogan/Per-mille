@@ -1,6 +1,6 @@
 //
 //  DataLoader.swift
-//  CreatorMenu
+//  Per mille
 //
 //  Created by Darragh Rogan on 08/06/2020.
 //  Copyright © 2020 Darragh Rogan. All rights reserved.
@@ -58,7 +58,7 @@ var twitterData = TwitterDataStructure()
                 print(error)
             } else {
                 let httpResponse = response as? HTTPURLResponse
-                print("Hit the Twitter API")
+//                print("Received from the Twitter API")
 //                if let data = data,
 //                    let urlContent = NSString(data: data, encoding: String.Encoding.ascii.rawValue) {
 //                    print(urlContent)

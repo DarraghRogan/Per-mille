@@ -1,6 +1,6 @@
 //
 //  DataLoader.swift
-//  CreatorMenu
+//  Per mille
 //
 //  Created by Darragh Rogan on 08/06/2020.
 //  Copyright © 2020 Darragh Rogan. All rights reserved.
@@ -91,7 +91,7 @@ var tikTokData = TikTokDataStructure()
                 print(error)
             } else {
                 let httpResponse = response as? HTTPURLResponse
-                print("Hit the TikTok API")
+//                print("Received from the TikTok API")
 //                if let data = data,
 //                    let urlContent = NSString(data: data, encoding: String.Encoding.ascii.rawValue) {
 //                    print(urlContent)
