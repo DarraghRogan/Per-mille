@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ServiceManagement
 
 class ViewController: NSViewController {
 
@@ -56,11 +57,15 @@ class ViewController: NSViewController {
     }
 
     @IBAction func autorunAtStartupSlider(_ sender: Any) {
+        let launcherAppId = "Darragh-Rogan.LauncherApplication"
+
         if autorunAtStartup.state.self.rawValue == 0{
              AppDelegate().defaults.set(false, forKey: "AutorunAtStartup")
+            SMLoginItemSetEnabled(launcherAppId as CFString, false)
         }
         else if autorunAtStartup.state.self.rawValue == 1{
             AppDelegate().defaults.set(true, forKey: "AutorunAtStartup")
+                        SMLoginItemSetEnabled(launcherAppId as CFString, true)
         }
     }
     
