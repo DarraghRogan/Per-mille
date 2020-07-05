@@ -260,10 +260,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             if self.defaults.integer(forKey: "InstagramInUse") == 1{
             self.instagramUsername.title = "Username: \(String(instagramData.username))"
-            self.instagramFollowers.title = "Followers: \(String(instagramData.follower))"
-            self.instagramAverageLikes.title = "Average Likes: \(String(instagramData.average_like))"
+            self.instagramFollowers.title = "Followers: \(String(format: "%U", locale: Locale.current, instagramData.follower))"
+            self.instagramAverageLikes.title = "Average Likes: \(String(format: "%U", locale: Locale.current, instagramData.average_like))"
                 if let instagramLastPostsVideoViews = instagramData.last_post?[0].video_view {
-                    self.instagramLastPostsVideoViews.title = "Last Post's Video Views: \(instagramLastPostsVideoViews)"
+                    self.instagramLastPostsVideoViews.title = "Last Post's Video Views: \(String(format: "%U", locale: Locale.current, instagramLastPostsVideoViews))"
                 } else {
                     self.instagramLastPostsVideoViews.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
             }
@@ -277,8 +277,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
     
         if self.defaults.integer(forKey: "TwitterInUse") == 1{
-        self.twitterScreenName.title = "Screen Name: \(String(twitterData.screen_name))"
-        self.twitterFollowers.title = "Followers: \(String(twitterData.followers))"
+        self.twitterScreenName.title = "Screen Name: \(twitterData.screen_name)"
+        self.twitterFollowers.title = "Followers: \(twitterData.followers)"
         }
         else{
         }
@@ -316,12 +316,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                  self.tikTokUniqueID.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
                  }
              if let tikTokFollowers = tikTokData.data?.userInfo?.stats?.followerCount {
-                 self.tikTokFollowers.title = "Followers: \(tikTokFollowers)"
+                 self.tikTokFollowers.title = "Followers: \(String(format: "%U", locale: Locale.current, tikTokFollowers))"
                  } else {
                  self.tikTokFollowers.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
                  }
              if let tikTokHearts = tikTokData.data?.userInfo?.stats?.heartCount {
-                 self.tikTokHearts.title = "♥: \(tikTokHearts)"
+                 self.tikTokHearts.title = "♥: \(String(format: "%U", locale: Locale.current, tikTokHearts))"
                  } else {
                  self.tikTokHearts.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
                  }
