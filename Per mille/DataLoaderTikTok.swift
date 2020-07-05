@@ -81,7 +81,7 @@ var tikTokData = TikTokDataStructure()
 
         let request = NSMutableURLRequest(url: NSURL(string: "https://tiktok2.p.rapidapi.com/user/object/full?username=\(AppDelegate().defaults.object(forKey:"TikTokUsername") as? String ?? String())")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
-                                                timeoutInterval: 10.0)
+                                                timeoutInterval: 21.0)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
 

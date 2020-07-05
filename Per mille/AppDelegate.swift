@@ -271,58 +271,66 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             else{
             }
             
-            if self.defaults.integer(forKey: "TwitterInUse") == 1{
-            self.twitterScreenName.title = "Screen Name: \(String(twitterData.screen_name))"
-            self.twitterFollowers.title = "Followers: \(String(twitterData.followers))"
-            }
-            else{
-            }
-            
-            if self.defaults.integer(forKey: "TikTokInUse") == 1{
-                if let tikTokUsername = tikTokData.data?.userInfo?.user?.uniqueID {
-                    self.tikTokUniqueID.title = "Username: \(tikTokUsername)"
-                    } else {
-                    self.tikTokUniqueID.title = "Error - do you have internet connectivity & is your Username correct?"
-                    }
-                if let tikTokFollowers = tikTokData.data?.userInfo?.stats?.followerCount {
-                    self.tikTokFollowers.title = "Followers: \(tikTokFollowers)"
-                    } else {
-                    self.tikTokFollowers.title = "Error - do you have internet connectivity & is your Username correct?"
-                    }
-                if let tikTokHearts = tikTokData.data?.userInfo?.stats?.heartCount {
-                    self.tikTokHearts.title = "♥: \(tikTokHearts)"
-                    } else {
-                    self.tikTokHearts.title = "Error - do you have internet connectivity & is your Username correct?"
-                    }
-            }
-            else{
-            }
-                
-            if self.defaults.integer(forKey: "YouTubeInUse") == 1{
-
-            if let youTubeTitle = youTubeData.items?[0].snippet.title {
-                self.youTubeTitle.title = "Title: \(youTubeTitle)"
-            } else {
-                self.youTubeTitle.title = "Error - do you have internet connectivity & is your Channel ID correct?"
-            }
-                
-            if let youTubeSubscriberCount = youTubeData.items?[0].statistics.subscriberCount {
-                self.youTubeSubscribers.title = "Subscribers: \(youTubeSubscriberCount)"
-            } else {
-                self.youTubeSubscribers.title = "Error - do you have internet connectivity & is your Channel ID correct?"
-            }
-            
-            if let youTubeViewCount = youTubeData.items?[0].statistics.viewCount {
-                self.youTubeViews.title = "Lifetime Views: \(youTubeViewCount)"
-            } else {
-                self.youTubeViews.title = "Error - do you have internet connectivity & is your Channel ID correct?"
-            }
-            }
-            else{
-            }
-            
         })
+        
+        
+  DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+    
+        if self.defaults.integer(forKey: "TwitterInUse") == 1{
+        self.twitterScreenName.title = "Screen Name: \(String(twitterData.screen_name))"
+        self.twitterFollowers.title = "Followers: \(String(twitterData.followers))"
+        }
+        else{
+        }
+            
+        if self.defaults.integer(forKey: "YouTubeInUse") == 1{
 
+        if let youTubeTitle = youTubeData.items?[0].snippet.title {
+            self.youTubeTitle.title = "Title: \(youTubeTitle)"
+        } else {
+            self.youTubeTitle.title = "Error - do you have internet connectivity & is your Channel ID correct?"
+        }
+            
+        if let youTubeSubscriberCount = youTubeData.items?[0].statistics.subscriberCount {
+            self.youTubeSubscribers.title = "Subscribers: \(youTubeSubscriberCount)"
+        } else {
+            self.youTubeSubscribers.title = "Error - do you have internet connectivity & is your Channel ID correct?"
+        }
+        
+        if let youTubeViewCount = youTubeData.items?[0].statistics.viewCount {
+            self.youTubeViews.title = "Lifetime Views: \(youTubeViewCount)"
+        } else {
+            self.youTubeViews.title = "Error - do you have internet connectivity & is your Channel ID correct?"
+        }
+        }
+        else{
+        }
+
+    })
+ 
+          DispatchQueue.main.asyncAfter(deadline: .now() + 21.0, execute: {
+        if self.defaults.integer(forKey: "TikTokInUse") == 1{
+             if let tikTokUsername = tikTokData.data?.userInfo?.user?.uniqueID {
+                 self.tikTokUniqueID.title = "Username: \(tikTokUsername)"
+                 } else {
+                 self.tikTokUniqueID.title = "Error - do you have internet connectivity & is your Username correct?"
+                 }
+             if let tikTokFollowers = tikTokData.data?.userInfo?.stats?.followerCount {
+                 self.tikTokFollowers.title = "Followers: \(tikTokFollowers)"
+                 } else {
+                 self.tikTokFollowers.title = "Error - do you have internet connectivity & is your Username correct?"
+                 }
+             if let tikTokHearts = tikTokData.data?.userInfo?.stats?.heartCount {
+                 self.tikTokHearts.title = "♥: \(tikTokHearts)"
+                 } else {
+                 self.tikTokHearts.title = "Error - do you have internet connectivity & is your Username correct?"
+                 }
+         }
+         else{
+         }
+        
+        })
+    
     }
 
     
