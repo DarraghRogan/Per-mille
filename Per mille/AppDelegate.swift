@@ -232,9 +232,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         if defaults.integer(forKey: "TikTokInUse") == 1{
         DataLoaderTikTok().loadTikTokData()
-        self.tikTokUniqueID.title = "Username: Loading, please wait"
-        self.tikTokFollowers.title = "Followers: Loading, please wait"
-        self.tikTokHearts.title = "♥: Loading, please wait"
+        self.tikTokUniqueID.title = "Username: Loading, please wait (60s)"
+        self.tikTokFollowers.title = "Followers: Loading, please wait (60s)"
+        self.tikTokHearts.title = "♥: Loading, please wait (60s)"
         }
         else{
         }
@@ -265,7 +265,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 if let instagramLastPostsVideoViews = instagramData.last_post?[0].video_view {
                     self.instagramLastPostsVideoViews.title = "Last Post's Video Views: \(instagramLastPostsVideoViews)"
                 } else {
-                    self.instagramLastPostsVideoViews.title = "Error - do you have internet connectivity & is your username correct?"
+                    self.instagramLastPostsVideoViews.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
             }
             }
             else{
@@ -288,19 +288,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let youTubeTitle = youTubeData.items?[0].snippet.title {
             self.youTubeTitle.title = "Title: \(youTubeTitle)"
         } else {
-            self.youTubeTitle.title = "Error - do you have internet connectivity & is your Channel ID correct?"
+            self.youTubeTitle.title = "Error; if internet connectivity & Channel ID okay, problem is with RapidAPI. Try later"
         }
             
         if let youTubeSubscriberCount = youTubeData.items?[0].statistics.subscriberCount {
             self.youTubeSubscribers.title = "Subscribers: \(youTubeSubscriberCount)"
         } else {
-            self.youTubeSubscribers.title = "Error - do you have internet connectivity & is your Channel ID correct?"
+            self.youTubeSubscribers.title = "Error; if internet connectivity & Channel ID okay, problem is with RapidAPI. Try later"
         }
         
         if let youTubeViewCount = youTubeData.items?[0].statistics.viewCount {
             self.youTubeViews.title = "Lifetime Views: \(youTubeViewCount)"
         } else {
-            self.youTubeViews.title = "Error - do you have internet connectivity & is your Channel ID correct?"
+            self.youTubeViews.title = "Error; if internet connectivity & Channel ID okay, problem is with RapidAPI. Try later"
         }
         }
         else{
@@ -308,22 +308,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     })
  
-          DispatchQueue.main.asyncAfter(deadline: .now() + 21.0, execute: {
+          DispatchQueue.main.asyncAfter(deadline: .now() + 62.0, execute: {
         if self.defaults.integer(forKey: "TikTokInUse") == 1{
              if let tikTokUsername = tikTokData.data?.userInfo?.user?.uniqueID {
                  self.tikTokUniqueID.title = "Username: \(tikTokUsername)"
                  } else {
-                 self.tikTokUniqueID.title = "Error - do you have internet connectivity & is your Username correct?"
+                 self.tikTokUniqueID.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
                  }
              if let tikTokFollowers = tikTokData.data?.userInfo?.stats?.followerCount {
                  self.tikTokFollowers.title = "Followers: \(tikTokFollowers)"
                  } else {
-                 self.tikTokFollowers.title = "Error - do you have internet connectivity & is your Username correct?"
+                 self.tikTokFollowers.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
                  }
              if let tikTokHearts = tikTokData.data?.userInfo?.stats?.heartCount {
                  self.tikTokHearts.title = "♥: \(tikTokHearts)"
                  } else {
-                 self.tikTokHearts.title = "Error - do you have internet connectivity & is your Username correct?"
+                 self.tikTokHearts.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
                  }
          }
          else{

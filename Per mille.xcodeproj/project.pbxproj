@@ -10,18 +10,6 @@
 		021DC36C24969E3400BD6002 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021DC36B24969E3400BD6002 /* NetworkExtension.framework */; };
 		0224C85924963AD400EEC521 /* DataLoaderTwitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */; };
 		02254F4924A7E66800E6CE49 /* LauncherApplication.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02DDA4A524A7751E00F163A9 /* LauncherApplication.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		023D3C7824B1AF300074CF5F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023D3C7724B1AF300074CF5F /* NotificationCenter.framework */; };
-		023D3C7B24B1AF300074CF5F /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023D3C7A24B1AF300074CF5F /* TodayViewController.swift */; };
-		023D3C7D24B1AF300074CF5F /* ListRowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023D3C7C24B1AF300074CF5F /* ListRowViewController.swift */; };
-		023D3C8024B1AF300074CF5F /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023D3C7E24B1AF300074CF5F /* TodayViewController.xib */; };
-		023D3C8324B1AF300074CF5F /* ListRowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023D3C8124B1AF300074CF5F /* ListRowViewController.xib */; };
-		023D3C8724B1AF300074CF5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 023D3C8524B1AF300074CF5F /* InfoPlist.strings */; };
-		023D3C9124B1B04C0074CF5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9E8D2248CE7160086352A /* AppDelegate.swift */; };
-		023D3C9224B1B0520074CF5F /* DataLoaderYouTube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */; };
-		023D3C9324B1B0760074CF5F /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5A12496544E0074E25F /* APIKeys.swift */; };
-		023D3C9424B1B0760074CF5F /* DataLoaderInstagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */; };
-		023D3C9524B1B0760074CF5F /* DataLoaderTwitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */; };
-		023D3C9624B1B0760074CF5F /* DataLoaderTikTok.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D73A624AFBF8800031CE0 /* DataLoaderTikTok.swift */; };
 		025B3EB524A8A2DE000D0E2B /* Graphics in Resources */ = {isa = PBXBuildFile; fileRef = 025B3EB424A8A2DE000D0E2B /* Graphics */; };
 		027D73A724AFBF8800031CE0 /* DataLoaderTikTok.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D73A624AFBF8800031CE0 /* DataLoaderTikTok.swift */; };
 		0288C5A22496544E0074E25F /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5A12496544E0074E25F /* APIKeys.swift */; };
@@ -116,15 +104,7 @@
 		021DC36924969E3400BD6002 /* Per milleRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Per milleRelease.entitlements"; sourceTree = "<group>"; };
 		021DC36B24969E3400BD6002 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderTwitter.swift; sourceTree = "<group>"; };
-		023D3C7624B1AF300074CF5F /* Per mille Today Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Per mille Today Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		023D3C7724B1AF300074CF5F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		023D3C7A24B1AF300074CF5F /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		023D3C7C24B1AF300074CF5F /* ListRowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowViewController.swift; sourceTree = "<group>"; };
-		023D3C7F24B1AF300074CF5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TodayViewController.xib; sourceTree = "<group>"; };
-		023D3C8224B1AF300074CF5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ListRowViewController.xib; sourceTree = "<group>"; };
-		023D3C8424B1AF300074CF5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		023D3C8624B1AF300074CF5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		023D3C8824B1AF300074CF5F /* Per_mille_Today_Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Per_mille_Today_Widget.entitlements; sourceTree = "<group>"; };
 		025B3EB424A8A2DE000D0E2B /* Graphics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Graphics; sourceTree = SOURCE_ROOT; };
 		027D73A624AFBF8800031CE0 /* DataLoaderTikTok.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderTikTok.swift; sourceTree = "<group>"; };
 		0288C5A12496544E0074E25F /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
@@ -148,14 +128,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		023D3C7324B1AF300074CF5F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				023D3C7824B1AF300074CF5F /* NotificationCenter.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		02DDA4A224A7751E00F163A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -185,20 +157,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		023D3C7924B1AF300074CF5F /* Per mille Today Widget */ = {
-			isa = PBXGroup;
-			children = (
-				023D3C7A24B1AF300074CF5F /* TodayViewController.swift */,
-				023D3C7C24B1AF300074CF5F /* ListRowViewController.swift */,
-				023D3C7E24B1AF300074CF5F /* TodayViewController.xib */,
-				023D3C8124B1AF300074CF5F /* ListRowViewController.xib */,
-				023D3C8424B1AF300074CF5F /* Info.plist */,
-				023D3C8524B1AF300074CF5F /* InfoPlist.strings */,
-				023D3C8824B1AF300074CF5F /* Per_mille_Today_Widget.entitlements */,
-			);
-			path = "Per mille Today Widget";
-			sourceTree = "<group>";
-		};
 		02DDA4A624A7751E00F163A9 /* LauncherApplication */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +175,6 @@
 			children = (
 				02E9E8D1248CE7160086352A /* Per mille */,
 				02DDA4A624A7751E00F163A9 /* LauncherApplication */,
-				023D3C7924B1AF300074CF5F /* Per mille Today Widget */,
 				02E9E8D0248CE7160086352A /* Products */,
 				021DC36A24969E3400BD6002 /* Frameworks */,
 			);
@@ -228,7 +185,6 @@
 			children = (
 				02E9E8CF248CE7160086352A /* Per mille.app */,
 				02DDA4A524A7751E00F163A9 /* LauncherApplication.app */,
-				023D3C7624B1AF300074CF5F /* Per mille Today Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -257,23 +213,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		023D3C7524B1AF300074CF5F /* Per mille Today Widget */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 023D3C8F24B1AF300074CF5F /* Build configuration list for PBXNativeTarget "Per mille Today Widget" */;
-			buildPhases = (
-				023D3C7224B1AF300074CF5F /* Sources */,
-				023D3C7324B1AF300074CF5F /* Frameworks */,
-				023D3C7424B1AF300074CF5F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Per mille Today Widget";
-			productName = "Per mille Today Widget";
-			productReference = 023D3C7624B1AF300074CF5F /* Per mille Today Widget.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		02DDA4A424A7751E00F163A9 /* LauncherApplication */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02DDA4B224A7752500F163A9 /* Build configuration list for PBXNativeTarget "LauncherApplication" */;
@@ -327,9 +266,6 @@
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Darragh Rogan";
 				TargetAttributes = {
-					023D3C7524B1AF300074CF5F = {
-						CreatedOnToolsVersion = 11.5;
-					};
 					02DDA4A424A7751E00F163A9 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -353,22 +289,11 @@
 			targets = (
 				02E9E8CE248CE7160086352A /* Per mille */,
 				02DDA4A424A7751E00F163A9 /* LauncherApplication */,
-				023D3C7524B1AF300074CF5F /* Per mille Today Widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		023D3C7424B1AF300074CF5F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				023D3C8024B1AF300074CF5F /* TodayViewController.xib in Resources */,
-				023D3C8724B1AF300074CF5F /* InfoPlist.strings in Resources */,
-				023D3C8324B1AF300074CF5F /* ListRowViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		02DDA4A324A7751E00F163A9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -393,21 +318,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		023D3C7224B1AF300074CF5F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				023D3C9624B1B0760074CF5F /* DataLoaderTikTok.swift in Sources */,
-				023D3C9524B1B0760074CF5F /* DataLoaderTwitter.swift in Sources */,
-				023D3C9224B1B0520074CF5F /* DataLoaderYouTube.swift in Sources */,
-				023D3C9324B1B0760074CF5F /* APIKeys.swift in Sources */,
-				023D3C9124B1B04C0074CF5F /* AppDelegate.swift in Sources */,
-				023D3C9424B1B0760074CF5F /* DataLoaderInstagram.swift in Sources */,
-				023D3C7B24B1AF300074CF5F /* TodayViewController.swift in Sources */,
-				023D3C7D24B1AF300074CF5F /* ListRowViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		02DDA4A124A7751E00F163A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -476,30 +386,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		023D3C7E24B1AF300074CF5F /* TodayViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				023D3C7F24B1AF300074CF5F /* Base */,
-			);
-			name = TodayViewController.xib;
-			sourceTree = "<group>";
-		};
-		023D3C8124B1AF300074CF5F /* ListRowViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				023D3C8224B1AF300074CF5F /* Base */,
-			);
-			name = ListRowViewController.xib;
-			sourceTree = "<group>";
-		};
-		023D3C8524B1AF300074CF5F /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				023D3C8624B1AF300074CF5F /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		02DDA4AD24A7752500F163A9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -519,52 +405,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		023D3C8D24B1AF300074CF5F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
-				CODE_SIGN_ENTITLEMENTS = "Per mille Today Widget/Per_mille_Today_Widget.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VDLCQ62KZH;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "Per mille Today Widget/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Darragh-Rogan.Per-mille.Per-mille-Today-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		023D3C8E24B1AF300074CF5F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
-				CODE_SIGN_ENTITLEMENTS = "Per mille Today Widget/Per_mille_Today_Widget.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VDLCQ62KZH;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "Per mille Today Widget/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Darragh-Rogan.Per-mille.Per-mille-Today-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		02DDA4B324A7752500F163A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -739,7 +579,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = VDLCQ62KZH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Per mille/Info.plist";
@@ -764,7 +604,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = VDLCQ62KZH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Per mille/Info.plist";
@@ -783,15 +623,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		023D3C8F24B1AF300074CF5F /* Build configuration list for PBXNativeTarget "Per mille Today Widget" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				023D3C8D24B1AF300074CF5F /* Debug */,
-				023D3C8E24B1AF300074CF5F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		02DDA4B224A7752500F163A9 /* Build configuration list for PBXNativeTarget "LauncherApplication" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

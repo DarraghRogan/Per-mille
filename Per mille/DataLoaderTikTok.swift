@@ -81,7 +81,7 @@ var tikTokData = TikTokDataStructure()
 
         let request = NSMutableURLRequest(url: NSURL(string: "https://tiktok2.p.rapidapi.com/user/object/full?username=\(AppDelegate().defaults.object(forKey:"TikTokUsername") as? String ?? String())")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
-                                                timeoutInterval: 21.0)
+                                                timeoutInterval: 62.0)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
 
@@ -91,13 +91,13 @@ var tikTokData = TikTokDataStructure()
                 print(error)
             } else {
                 let httpResponse = response as? HTTPURLResponse
-//                print("Received from the TikTok API")
-//                if let data = data,
-//                    let urlContent = NSString(data: data, encoding: String.Encoding.ascii.rawValue) {
-//                    print(urlContent)
-//                } else {
-//                    print("error with printing string encoded data")
-//                }
+                print("Received from the TikTok API")
+                if let data = data,
+                    let urlContent = NSString(data: data, encoding: String.Encoding.ascii.rawValue) {
+                    print(urlContent)
+                } else {
+                    print("error with printing string encoded data")
+                }
                 
                 //Parse JSON
                 let decoder = JSONDecoder()

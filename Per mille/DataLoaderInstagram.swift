@@ -50,7 +50,7 @@ var instagramData = InstagramDataStructure()
                 print(error)
             } else {
                 let httpResponse = response as? HTTPURLResponse
-                print("Received from the Instagram API")
+//                print("Received from the Instagram API")
 //                if let data = data,
 //                    let urlContent = NSString(data: data, encoding: String.Encoding.ascii.rawValue) {
 //                    print(urlContent)

@@ -1,4 +1,0 @@
-/* Display name and description for this extension. */
-"CFBundleDisplayName" = "Per mille Today Widget";
-"com.apple.notificationcenter.widget.description" = "Sample description";
-
