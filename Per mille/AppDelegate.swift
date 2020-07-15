@@ -197,6 +197,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 )
             )
         
+        menu.addItem(
+            NSMenuItem(
+                title: "Review ‰ Per mille...",
+                action: #selector(AppDelegate.reviewPermille),
+                keyEquivalent: "e"
+                )
+            )
+        
 
         
         menu.addItem(
@@ -355,6 +363,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func openAboutPermille(){
         NSWorkspace.shared.open(URL(string: "https://permille.app")!)
  }
+    
+       @objc func reviewPermille(){
+                NSWorkspace.shared.open(URL(string: "itms-apps://itunes.apple.com/developer/id1518488644")!)
+    }
 
 
    public func applicationDidFinishLaunching(_ aNotification: Notification) {

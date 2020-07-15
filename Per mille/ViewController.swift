@@ -29,10 +29,19 @@ class ViewController: NSViewController {
     @IBOutlet weak var youTubeLabel: NSTextField!
     @IBOutlet weak var youTubeField: NSTextField!
     
+    @IBOutlet weak var perMilleVersion: NSTextField!
+    
+    
+    let nsObject: AnyObject? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as AnyObject?
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        perMilleVersion.stringValue = (nsObject.self ?? 1.00 as AnyObject) as! String
+        
         autorunAtStartup.state.self = AppDelegate().defaults.object(forKey:"AutorunAtStartup") as? NSControl.StateValue ?? NSControl.StateValue(0)
         
         instagramSlider.state.self = AppDelegate().defaults.object(forKey:"InstagramInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)

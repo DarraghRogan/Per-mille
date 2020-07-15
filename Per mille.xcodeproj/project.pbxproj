@@ -14,6 +14,12 @@
 		027D73A724AFBF8800031CE0 /* DataLoaderTikTok.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D73A624AFBF8800031CE0 /* DataLoaderTikTok.swift */; };
 		0288C5A22496544E0074E25F /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5A12496544E0074E25F /* APIKeys.swift */; };
 		0288C5A4249655F20074E25F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0288C5A3249655F20074E25F /* .gitignore */; };
+		02B3527E24B59C0B0040A23E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3527D24B59C0B0040A23E /* AppDelegate.swift */; };
+		02B3528024B59C0B0040A23E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3527F24B59C0B0040A23E /* SceneDelegate.swift */; };
+		02B3528224B59C0B0040A23E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3528124B59C0B0040A23E /* ViewController.swift */; };
+		02B3528524B59C0B0040A23E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02B3528324B59C0B0040A23E /* Main.storyboard */; };
+		02B3528724B59C160040A23E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02B3528624B59C160040A23E /* Assets.xcassets */; };
+		02B3528A24B59C160040A23E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02B3528824B59C160040A23E /* LaunchScreen.storyboard */; };
 		02B7EEF82491899800738B62 /* DataLoaderYouTube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */; };
 		02B7EEFA2491995400738B62 /* DataLoaderInstagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */; };
 		02DDA4A824A7751E00F163A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDA4A724A7751E00F163A9 /* AppDelegate.swift */; };
@@ -109,6 +115,15 @@
 		027D73A624AFBF8800031CE0 /* DataLoaderTikTok.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderTikTok.swift; sourceTree = "<group>"; };
 		0288C5A12496544E0074E25F /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		0288C5A3249655F20074E25F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		02B3527B24B59C0B0040A23E /* Per mille iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Per mille iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		02B3527D24B59C0B0040A23E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		02B3527F24B59C0B0040A23E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		02B3528124B59C0B0040A23E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02B3528424B59C0B0040A23E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		02B3528624B59C160040A23E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		02B3528924B59C160040A23E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		02B3528B24B59C160040A23E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02B3528F24B59C910040A23E /* Per mille iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Per mille iOS.entitlements"; sourceTree = "<group>"; };
 		02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderYouTube.swift; sourceTree = "<group>"; };
 		02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderInstagram.swift; sourceTree = "<group>"; };
 		02DDA49D24A774E700F163A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,6 +143,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		02B3527824B59C0B0040A23E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02DDA4A224A7751E00F163A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,6 +179,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		02B3527C24B59C0B0040A23E /* Per mille iOS */ = {
+			isa = PBXGroup;
+			children = (
+				02B3528F24B59C910040A23E /* Per mille iOS.entitlements */,
+				02B3527D24B59C0B0040A23E /* AppDelegate.swift */,
+				02B3527F24B59C0B0040A23E /* SceneDelegate.swift */,
+				02B3528124B59C0B0040A23E /* ViewController.swift */,
+				02B3528324B59C0B0040A23E /* Main.storyboard */,
+				02B3528624B59C160040A23E /* Assets.xcassets */,
+				02B3528824B59C160040A23E /* LaunchScreen.storyboard */,
+				02B3528B24B59C160040A23E /* Info.plist */,
+			);
+			path = "Per mille iOS";
+			sourceTree = "<group>";
+		};
 		02DDA4A624A7751E00F163A9 /* LauncherApplication */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +212,7 @@
 			children = (
 				02E9E8D1248CE7160086352A /* Per mille */,
 				02DDA4A624A7751E00F163A9 /* LauncherApplication */,
+				02B3527C24B59C0B0040A23E /* Per mille iOS */,
 				02E9E8D0248CE7160086352A /* Products */,
 				021DC36A24969E3400BD6002 /* Frameworks */,
 			);
@@ -185,6 +223,7 @@
 			children = (
 				02E9E8CF248CE7160086352A /* Per mille.app */,
 				02DDA4A524A7751E00F163A9 /* LauncherApplication.app */,
+				02B3527B24B59C0B0040A23E /* Per mille iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,6 +252,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		02B3527A24B59C0B0040A23E /* Per mille iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02B3528C24B59C160040A23E /* Build configuration list for PBXNativeTarget "Per mille iOS" */;
+			buildPhases = (
+				02B3527724B59C0B0040A23E /* Sources */,
+				02B3527824B59C0B0040A23E /* Frameworks */,
+				02B3527924B59C0B0040A23E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Per mille iOS";
+			productName = "Per mille iOS";
+			productReference = 02B3527B24B59C0B0040A23E /* Per mille iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		02DDA4A424A7751E00F163A9 /* LauncherApplication */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02DDA4B224A7752500F163A9 /* Build configuration list for PBXNativeTarget "LauncherApplication" */;
@@ -266,6 +322,9 @@
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Darragh Rogan";
 				TargetAttributes = {
+					02B3527A24B59C0B0040A23E = {
+						CreatedOnToolsVersion = 11.5;
+					};
 					02DDA4A424A7751E00F163A9 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -289,11 +348,22 @@
 			targets = (
 				02E9E8CE248CE7160086352A /* Per mille */,
 				02DDA4A424A7751E00F163A9 /* LauncherApplication */,
+				02B3527A24B59C0B0040A23E /* Per mille iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		02B3527924B59C0B0040A23E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02B3528A24B59C160040A23E /* LaunchScreen.storyboard in Resources */,
+				02B3528724B59C160040A23E /* Assets.xcassets in Resources */,
+				02B3528524B59C0B0040A23E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02DDA4A324A7751E00F163A9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +388,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		02B3527724B59C0B0040A23E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02B3528224B59C0B0040A23E /* ViewController.swift in Sources */,
+				02B3527E24B59C0B0040A23E /* AppDelegate.swift in Sources */,
+				02B3528024B59C0B0040A23E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02DDA4A124A7751E00F163A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,6 +466,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		02B3528324B59C0B0040A23E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02B3528424B59C0B0040A23E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		02B3528824B59C160040A23E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02B3528924B59C160040A23E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		02DDA4AD24A7752500F163A9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -405,6 +501,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		02B3528D24B59C160040A23E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Per mille iOS/Per mille iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VDLCQ62KZH;
+				INFOPLIST_FILE = "Per mille iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Darragh-Rogan.Per-mille-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		02B3528E24B59C160040A23E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Per mille iOS/Per mille iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VDLCQ62KZH;
+				INFOPLIST_FILE = "Per mille iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Darragh-Rogan.Per-mille-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		02DDA4B324A7752500F163A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -579,7 +720,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VDLCQ62KZH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Per mille/Info.plist";
@@ -587,7 +728,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.06;
+				MARKETING_VERSION = 1.07;
 				PRODUCT_BUNDLE_IDENTIFIER = "Darragh-Rogan.Per-mille";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -604,7 +745,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VDLCQ62KZH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Per mille/Info.plist";
@@ -612,7 +753,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.06;
+				MARKETING_VERSION = 1.07;
 				PRODUCT_BUNDLE_IDENTIFIER = "Darragh-Rogan.Per-mille";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -623,6 +764,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		02B3528C24B59C160040A23E /* Build configuration list for PBXNativeTarget "Per mille iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02B3528D24B59C160040A23E /* Debug */,
+				02B3528E24B59C160040A23E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		02DDA4B224A7752500F163A9 /* Build configuration list for PBXNativeTarget "LauncherApplication" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

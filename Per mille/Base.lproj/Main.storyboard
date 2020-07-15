@@ -686,11 +686,11 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController title="Per mille Preferences" storyboardIdentifier="PreferencesStoryboard" id="XfG-lQ-9wD" customClass="ViewController" customModule="Per_mille" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="822" height="295"/>
+                        <rect key="frame" x="0.0" y="0.0" width="822" height="322"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jY9-VY-tuw">
-                                <rect key="frame" x="93" y="259" width="70" height="16"/>
+                                <rect key="frame" x="93" y="286" width="70" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Active" id="W9g-gX-hLv">
                                     <font key="font" metaFont="systemBold"/>
@@ -699,7 +699,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GhF-OR-Qmf">
-                                <rect key="frame" x="147" y="259" width="174" height="16"/>
+                                <rect key="frame" x="147" y="286" width="174" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Current Account Identifier" id="FbU-jZ-aHT">
                                     <font key="font" metaFont="systemBold"/>
@@ -708,7 +708,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4XP-J3-Kwy">
-                                <rect key="frame" x="367" y="221" width="198" height="21"/>
+                                <rect key="frame" x="367" y="248" width="198" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" placeholderString="Enter @ Instagram Username" drawsBackground="YES" id="sjl-jN-KE5">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -720,7 +720,7 @@
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yPw-pj-4L1">
-                                <rect key="frame" x="147" y="223" width="208" height="16"/>
+                                <rect key="frame" x="147" y="250" width="208" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="Account Identifier" id="bLi-f0-oyg">
                                     <font key="font" metaFont="system"/>
@@ -729,7 +729,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="slb-9z-lF7">
-                                <rect key="frame" x="18" y="224" width="71" height="16"/>
+                                <rect key="frame" x="18" y="251" width="71" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Instagram:" id="sFn-nj-1Us">
                                     <font key="font" metaFont="system"/>
@@ -738,7 +738,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a8n-I0-Qsa">
-                                <rect key="frame" x="567" y="214" width="214" height="32"/>
+                                <rect key="frame" x="567" y="241" width="214" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Update Instagram Username" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K2X-cT-64r">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -749,22 +749,22 @@
                                 </connections>
                             </button>
                             <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="iRS-bE-6XO">
-                                <rect key="frame" x="93" y="219" width="42" height="24"/>
+                                <rect key="frame" x="93" y="246" width="42" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="instagramSlider:" target="XfG-lQ-9wD" id="r2A-I1-Kch"/>
                                 </connections>
                             </switch>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="REf-Ve-Xhk">
-                                <rect key="frame" x="58" y="212" width="701" height="5"/>
+                                <rect key="frame" x="58" y="239" width="701" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="5c8-YL-s3A">
-                                <rect key="frame" x="20" y="248" width="778" height="5"/>
+                                <rect key="frame" x="20" y="275" width="778" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bnq-kN-hEm">
-                                <rect key="frame" x="19" y="259" width="70" height="16"/>
+                                <rect key="frame" x="19" y="286" width="70" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Service" id="ffn-p8-ASg">
                                     <font key="font" metaFont="systemBold"/>
@@ -773,7 +773,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GPu-zj-A32">
-                                <rect key="frame" x="19" y="49" width="123" height="16"/>
+                                <rect key="frame" x="19" y="76" width="123" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="App Configuration" id="Nmg-Wt-Kfo">
                                     <font key="font" metaFont="systemBold"/>
@@ -782,7 +782,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ako-Sc-wbg">
-                                <rect key="frame" x="353" y="224" width="13" height="16"/>
+                                <rect key="frame" x="353" y="251" width="13" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="&lt;" id="Ogi-Zy-gd9">
                                     <font key="font" metaFont="system"/>
@@ -791,7 +791,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Cd-ry-2y0">
-                                <rect key="frame" x="367" y="149" width="198" height="21"/>
+                                <rect key="frame" x="367" y="176" width="198" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" placeholderString="Enter @ Twitter Handle" drawsBackground="YES" id="OVm-3B-gT8">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -803,7 +803,7 @@
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LZ6-9A-LZg">
-                                <rect key="frame" x="147" y="151" width="214" height="16"/>
+                                <rect key="frame" x="147" y="178" width="214" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="Account Identifier" id="RhJ-qr-nob">
                                     <font key="font" metaFont="system"/>
@@ -812,7 +812,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J8f-Yo-cFz">
-                                <rect key="frame" x="18" y="152" width="71" height="16"/>
+                                <rect key="frame" x="18" y="179" width="71" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Twitter:" id="eYF-Bw-HaL">
                                     <font key="font" metaFont="system"/>
@@ -821,7 +821,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mDR-xS-BeF">
-                                <rect key="frame" x="567" y="142" width="214" height="32"/>
+                                <rect key="frame" x="567" y="169" width="214" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Update Twitter Handle" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rvA-G9-LXS">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -832,18 +832,18 @@
                                 </connections>
                             </button>
                             <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="D8D-Pg-oyZ">
-                                <rect key="frame" x="93" y="147" width="42" height="24"/>
+                                <rect key="frame" x="93" y="174" width="42" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="twitterSlider:" target="XfG-lQ-9wD" id="VlS-mZ-WZF"/>
                                 </connections>
                             </switch>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="njT-Mp-pA6">
-                                <rect key="frame" x="58" y="140" width="701" height="5"/>
+                                <rect key="frame" x="58" y="167" width="701" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fKr-Sr-udM">
-                                <rect key="frame" x="353" y="152" width="13" height="16"/>
+                                <rect key="frame" x="353" y="179" width="13" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="&lt;" id="MJD-98-7W0">
                                     <font key="font" metaFont="system"/>
@@ -852,7 +852,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cmn-At-8WL">
-                                <rect key="frame" x="367" y="114" width="198" height="21"/>
+                                <rect key="frame" x="367" y="141" width="198" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" placeholderString="Enter YouTube Channel ID" drawsBackground="YES" id="xq1-k6-AMJ">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -864,7 +864,7 @@
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SW8-at-BKu">
-                                <rect key="frame" x="147" y="116" width="214" height="16"/>
+                                <rect key="frame" x="147" y="143" width="214" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="Account Identifier" id="4DY-sU-6PA">
                                     <font key="font" metaFont="system"/>
@@ -873,7 +873,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EB9-kB-JTf">
-                                <rect key="frame" x="18" y="117" width="71" height="16"/>
+                                <rect key="frame" x="18" y="144" width="71" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="YouTube:" id="dTE-uY-NwA">
                                     <font key="font" metaFont="system"/>
@@ -882,7 +882,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rkC-mJ-pfk">
-                                <rect key="frame" x="567" y="107" width="214" height="32"/>
+                                <rect key="frame" x="567" y="134" width="214" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Update YouTube Channel ID" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bxd-li-H7h">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -893,18 +893,18 @@
                                 </connections>
                             </button>
                             <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="ev7-yQ-jVy">
-                                <rect key="frame" x="93" y="112" width="42" height="24"/>
+                                <rect key="frame" x="93" y="139" width="42" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="youTubeSlider:" target="XfG-lQ-9wD" id="CYn-Fu-cmv"/>
                                 </connections>
                             </switch>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="fNG-i6-ID9">
-                                <rect key="frame" x="58" y="71" width="701" height="5"/>
+                                <rect key="frame" x="58" y="98" width="701" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfz-XA-HPi">
-                                <rect key="frame" x="353" y="117" width="13" height="16"/>
+                                <rect key="frame" x="353" y="144" width="13" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="&lt;" id="Fbo-g1-Lra">
                                     <font key="font" metaFont="system"/>
@@ -913,7 +913,7 @@
                                 </textFieldCell>
                             </textField>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tM0-gp-2lz">
-                                <rect key="frame" x="779" y="217" width="25" height="25"/>
+                                <rect key="frame" x="779" y="244" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6bc-xj-qQf">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -924,7 +924,7 @@
                                 </connections>
                             </button>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zvb-Qn-Rzp">
-                                <rect key="frame" x="779" y="145" width="25" height="25"/>
+                                <rect key="frame" x="779" y="172" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CnG-AK-EXg">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -935,7 +935,7 @@
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Is0-LT-G7e">
-                                <rect key="frame" x="367" y="185" width="198" height="21"/>
+                                <rect key="frame" x="367" y="212" width="198" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" placeholderString="Enter @ TikTok Username" drawsBackground="YES" id="vWw-Kd-q7b">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -947,7 +947,7 @@
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OuU-5p-1Ln">
-                                <rect key="frame" x="147" y="187" width="214" height="16"/>
+                                <rect key="frame" x="147" y="214" width="214" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="Account Identifier" id="RG1-XV-gBC">
                                     <font key="font" metaFont="system"/>
@@ -956,7 +956,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wAR-b7-RPV">
-                                <rect key="frame" x="18" y="188" width="71" height="16"/>
+                                <rect key="frame" x="18" y="215" width="71" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="TikTok:" id="srZ-Hu-Hhh">
                                     <font key="font" metaFont="system"/>
@@ -965,7 +965,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rBy-oO-sp5">
-                                <rect key="frame" x="567" y="178" width="214" height="32"/>
+                                <rect key="frame" x="567" y="205" width="214" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Update TikTok Username" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eNu-Xb-Z2Q">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -976,18 +976,18 @@
                                 </connections>
                             </button>
                             <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="0xs-na-e35">
-                                <rect key="frame" x="93" y="183" width="42" height="24"/>
+                                <rect key="frame" x="93" y="210" width="42" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="tikTokSlider:" target="XfG-lQ-9wD" id="tye-oo-WXZ"/>
                                 </connections>
                             </switch>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="98k-gN-Awt">
-                                <rect key="frame" x="58" y="176" width="701" height="5"/>
+                                <rect key="frame" x="58" y="203" width="701" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7yR-ea-wzG">
-                                <rect key="frame" x="353" y="188" width="13" height="16"/>
+                                <rect key="frame" x="353" y="215" width="13" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="&lt;" id="11G-pm-EFE">
                                     <font key="font" metaFont="system"/>
@@ -996,7 +996,7 @@
                                 </textFieldCell>
                             </textField>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CVa-L7-fYy">
-                                <rect key="frame" x="779" y="181" width="25" height="25"/>
+                                <rect key="frame" x="779" y="208" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QrN-IO-yHM">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1007,7 +1007,7 @@
                                 </connections>
                             </button>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qeh-sn-9W3">
-                                <rect key="frame" x="779" y="110" width="25" height="25"/>
+                                <rect key="frame" x="779" y="137" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fmx-9S-a13">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1018,7 +1018,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhF-hI-B9s">
-                                <rect key="frame" x="146" y="25" width="220" height="16"/>
+                                <rect key="frame" x="146" y="52" width="220" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="Autorun ‰ Per mille at Mac startup" id="uzo-OR-316">
                                     <font key="font" metaFont="system"/>
@@ -1027,16 +1027,34 @@
                                 </textFieldCell>
                             </textField>
                             <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="3WC-l5-dFl">
-                                <rect key="frame" x="93" y="18" width="42" height="24"/>
+                                <rect key="frame" x="93" y="45" width="42" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="autorunAtStartupSlider:" target="XfG-lQ-9wD" id="S4j-3F-qIY"/>
                                 </connections>
                             </switch>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vIw-fB-5bU">
-                                <rect key="frame" x="144" y="82" width="530" height="16"/>
+                                <rect key="frame" x="144" y="109" width="530" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Please choose Refresh from ‰ menu when preferences configuration is complete" id="O27-hQ-q4I">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YFd-4v-thX">
+                                <rect key="frame" x="324" y="20" width="131" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="‰ Per mille version:" id="E1v-ap-P50">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wmO-JX-0tf">
+                                <rect key="frame" x="454" y="20" width="131" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="1.00" id="7ne-WW-PZq">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1049,6 +1067,7 @@
                         <outlet property="instagramField" destination="4XP-J3-Kwy" id="JsB-kp-d0q"/>
                         <outlet property="instagramLabel" destination="yPw-pj-4L1" id="2af-cI-oVR"/>
                         <outlet property="instagramSlider" destination="iRS-bE-6XO" id="BFB-LN-uHA"/>
+                        <outlet property="perMilleVersion" destination="wmO-JX-0tf" id="be7-me-aah"/>
                         <outlet property="tikTokField" destination="Is0-LT-G7e" id="khT-df-7IZ"/>
                         <outlet property="tikTokLabel" destination="OuU-5p-1Ln" id="6f1-Au-d5Q"/>
                         <outlet property="tikTokSlider" destination="0xs-na-e35" id="OXD-55-tsY"/>
@@ -1061,7 +1080,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="242" y="667.5"/>
+            <point key="canvasLocation" x="242" y="681"/>
         </scene>
     </scenes>
 </document>
