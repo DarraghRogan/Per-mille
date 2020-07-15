@@ -1,7 +1,7 @@
 <center><img src="Graphics/Screenshot-cropped.png" class="img-responsive" alt=""></center>
 Being a content creator is tough. Just like any small business proprietor, you have many parameters which need to be monitored, along with maintaining a public persona, and also in the early days, secondary income streams. Everything is competing for your attention, whilst you need to be creative. What if you could be reassured, without getting distracted, that your online empire is growing at it's consistent pace at a glance? 
 
-‰ Per mille is an open source lightweight menu bar app for macOS that shows publicly available social media metrics for your Instagram, Twitter & YouTube channels.
+‰ Per mille is an open source lightweight menu bar app for macOS that shows publicly available social media metrics for your Instagram, TikTok, Twitter & YouTube channels.
 You can click the app if you want to see pertinent metrics for your channels, without getting distracted by any other details which are usually featured on social media metrics dashboards. The app updates its metrics every 30 minutes when you are online.
 
 ### Download
@@ -9,6 +9,10 @@ You can click the app if you want to see pertinent metrics for your channels, wi
 
 The app is distributed on the Apple Store (with automatic updates for when features are added), and also binaries & the source code is shared on Git Hub for interested parties to review.
 It does not have any tracking cookies, advertising codes, pop ups, notifications or any requirement for users to divulge their passwords. I'm not interested in selling your browsing habits!
+
+### Source Code
+Source code is all shared here, as is, no warratnies, express or implied. APIKeys.swift is excluded, so if you are using the code, please create this file and list your own YouTube & RapidAPI keys in it (you will see how they are referred to in the DataLoader files, in the URL section).
+Project should open in Xcode.
 
 ### Data Sources
 All YouTube metric requests are sent directly, using HTTPS, to Google from your Mac, and for Twitter & Instagram a third party service via rapidapi.com is used (again, directly connected to from your Mac). Note that Google & RapidAPI can see the username of the account you are looking for metrics on and also your Mac's public IP address which can be unique to you depending on network configuration.
