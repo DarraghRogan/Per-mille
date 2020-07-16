@@ -34,8 +34,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     lazy var instagramAverageLikes : NSMenuItem = {
         return NSMenuItem(title: "Average Likes: Please Refresh", action: nil, keyEquivalent: "")
      }()
-    lazy var instagramLastPostsVideoViews : NSMenuItem = {
-        return NSMenuItem(title: "Last Post's Video Views: Please Refresh", action: nil, keyEquivalent: "")
+    lazy var instagramLastPost : NSMenuItem = {
+        return NSMenuItem(title: "Last Post: Please Refresh", action: nil, keyEquivalent: "")
      }()
 
     lazy var tikTokUniqueID : NSMenuItem = {
@@ -103,7 +103,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         menu.addItem(instagramAverageLikes)
             
-        menu.addItem(instagramLastPostsVideoViews)
+        menu.addItem(instagramLastPost)
         
         menu.addItem(
             NSMenuItem.separator()
@@ -237,7 +237,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.instagramUsername.title = "Username: Loading, please wait"
             self.instagramFollowers.title = "Followers: Loading, please wait"
             self.instagramAverageLikes.title = "Average Likes: Loading, please wait"
-            self.instagramLastPostsVideoViews.title = "Last Post's Video Views: Loading, please wait"
+            self.instagramLastPost.title = "Last Post: Loading, please wait"
         }
         else{
         }
@@ -279,10 +279,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.instagramUsername.title = "Username: \(String(instagramData.username))"
             self.instagramFollowers.title = "Followers: \(String(format: "%U", locale: Locale.current, instagramData.follower))"
             self.instagramAverageLikes.title = "Average Likes: \(String(format: "%U", locale: Locale.current, instagramData.average_like))"
+                
+                let instagramLastPostLikes = instagramData.last_post?[0].like
+                let instagramLastPostComment = instagramData.last_post?[0].comment
                 if let instagramLastPostsVideoViews = instagramData.last_post?[0].video_view {
-                    self.instagramLastPostsVideoViews.title = "Last Post's Video Views: \(String(format: "%U", locale: Locale.current, instagramLastPostsVideoViews))"
+                    self.instagramLastPost.title = "Last Post: 📹👁 \(String(format: "%U", locale: Locale.current, instagramLastPostsVideoViews)), 👍 \(String(format: "%U", locale: Locale.current, instagramLastPostLikes!)), ⌨️ \(String(format: "%U", locale: Locale.current, instagramLastPostComment!))"
                 } else {
-                    self.instagramLastPostsVideoViews.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
+                    self.instagramLastPost.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
             }
             }
             else{

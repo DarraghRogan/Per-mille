@@ -18,7 +18,8 @@ struct InstagramDataStructure: Codable{
 
 struct lastPost: Codable{
     var like: Int = 0
-    var video_view:Int = 0
+    var video_view: Int = 0
+    var comment: Int = 0
 }
 
 // define an instance of the instragram data that can be filled by the data loader and read by the menu
@@ -62,6 +63,9 @@ var instagramData = InstagramDataStructure()
                 do {
                     let dataFromInstagram = try decoder.decode(InstagramDataStructure.self, from: data!)
                     instagramData = dataFromInstagram
+//                    print(instagramData.last_post?[0].comment)
+//                    print(instagramData.last_post?[0].like)
+//                    print(instagramData.last_post?[0].video_view)
                 }
                 catch {
                     print("Error in Instagram JSON parsing")
