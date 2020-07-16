@@ -68,7 +68,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     lazy var youTubeSubscribers : NSMenuItem = {
         return NSMenuItem(title: "Subscribers: Please Refresh", action: nil, keyEquivalent: "")
      }()
-    
+    lazy var youTubeLastVideo : NSMenuItem = {
+        return NSMenuItem(title: "Last Video: Please Refresh", action: nil, keyEquivalent: "")
+     }()
 
     
     @objc func showPreferences(_ sender: Any) {
@@ -135,7 +137,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if defaults.integer(forKey: "TwitterInUse") == 1{
         menu.addItem(
         NSMenuItem(
-            title: "Twitter...",
+            title: "Twitter Analytics...",
             action: #selector(openTwitter),
             keyEquivalent: "t"
             )
@@ -166,6 +168,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(youTubeSubscribers)
 
         menu.addItem(youTubeViews)
+            
+        menu.addItem(youTubeLastVideo)
         
         }
         else{
@@ -256,10 +260,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         if defaults.integer(forKey: "YouTubeInUse") == 1{
-        DataLoaderYouTube().loadYouTubeData()
+        DataLoaderYouTube().loadYouTubeDataChannel()
+        DataLoaderYouTube().loadYouTubeDataActivities()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+        DataLoaderYouTube().loadYouTubeDataVideos()
+            })
         self.youTubeTitle.title = "Channel: Loading, please wait"
         self.youTubeSubscribers.title = "Subscribers: Loading, please wait"
         self.youTubeViews.title = "Lifetime Views: Loading, please wait"
+        self.youTubeLastVideo.title = "Last Video: Loading, please wait"
         }
         else{
         }
@@ -282,7 +291,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         })
         
         
-  DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+  DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
     
         if self.defaults.integer(forKey: "TwitterInUse") == 1{
         self.twitterScreenName.title = "Screen Name: \(twitterData.screen_name)"
@@ -296,23 +305,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let youTubeTitle = youTubeData.items?[0].snippet.title {
             self.youTubeTitle.title = "Title: \(youTubeTitle)"
         } else {
-            self.youTubeTitle.title = "Error; if internet connectivity & Channel ID okay, problem is with RapidAPI. Try later"
+            self.youTubeTitle.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
         }
             
         if let youTubeSubscriberCount = youTubeData.items?[0].statistics.subscriberCount {
             self.youTubeSubscribers.title = "Subscribers: \(youTubeSubscriberCount)"
         } else {
-            self.youTubeSubscribers.title = "Error; if internet connectivity & Channel ID okay, problem is with RapidAPI. Try later"
+            self.youTubeSubscribers.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
         }
         
         if let youTubeViewCount = youTubeData.items?[0].statistics.viewCount {
             self.youTubeViews.title = "Lifetime Views: \(youTubeViewCount)"
         } else {
-            self.youTubeViews.title = "Error; if internet connectivity & Channel ID okay, problem is with RapidAPI. Try later"
+            self.youTubeViews.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
         }
+            let youTubeLastVideoLikes = youTubeDataVideos.items?[0].statistics.likeCount as! String
+            let youTubeLastVideoComments = youTubeDataVideos.items?[0].statistics.commentCount as! String
+            if let youTubeLastVideoViews = youTubeDataVideos.items?[0].statistics.viewCount {
+                self.youTubeLastVideo.title = "Last Video: 👁 \(youTubeLastVideoViews), 👍 \(youTubeLastVideoLikes), ⌨️ \(youTubeLastVideoComments)"
+            } else {
+                self.youTubeLastVideo.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
+            }
+            
         }
         else{
         }
+    
+
 
     })
  
