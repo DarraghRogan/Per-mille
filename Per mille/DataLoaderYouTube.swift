@@ -162,12 +162,12 @@ struct ActivitiesPageInfo: Codable {
 
 
 struct YouTubeDataStructureVideos: Codable {
-//    var kind, etag: String
+    var kind: String? = ""
+//    var etag: String?
     var items: [VideosItem]?
-//    var pageInfo: PageInfo
+    var pageInfo: VideosPageInfo?
 }
 
-// MARK: - Item
 struct VideosItem: Codable {
 //    var kind, etag, id: String
 //    var snippet: Snippet
@@ -231,16 +231,17 @@ struct VideosItem: Codable {
 //}
 
 struct VideosStatistics: Codable {
-    var viewCount: String = ""
-    var likeCount: String = ""
-    var dislikeCount: String = ""
-    var favoriteCount: String = ""
-    var commentCount: String = ""
+    var viewCount: String
+    var likeCount: String
+    var dislikeCount: String
+    var favoriteCount: String
+    var commentCount: String
 }
 
-//struct PageInfo: Codable {
-//    var totalResults, resultsPerPage: Int
-//}
+struct VideosPageInfo: Codable {
+//    var totalResults: Int? = 0
+    var resultsPerPage: Int? = 0
+}
 
 
 
@@ -254,6 +255,7 @@ var youTubeData = YouTubeDataStructureChannels()
 var youTubeDataActivities = YouTubeDataStructureActivities()
 
 var youTubeDataVideos = YouTubeDataStructureVideos()
+
 
  public class DataLoaderYouTube {
     
@@ -295,7 +297,7 @@ var youTubeDataVideos = YouTubeDataStructureVideos()
 //                    print(youTubeData)
                 }
                 catch {
-                    print("Error in YouTube JSON parsing")
+                    print("Error in YouTube Channel JSON parsing")
 //                    print(youTubeData)
                 }
             }
@@ -338,10 +340,9 @@ var youTubeDataVideos = YouTubeDataStructureVideos()
                     do {
                         let dataFromYouTubeActivities = try decoder.decode(YouTubeDataStructureActivities.self, from: data!)
                         youTubeDataActivities = dataFromYouTubeActivities
-//                        print(youTubeDataActivities.items?[0].contentDetails.upload.videoID as! String)
                     }
                     catch {
-                        print("Error in YouTube JSON parsing")
+                        print("Error in YouTube Activities JSON parsing")
     //                    print(youTubeData)
                     }
                 }
@@ -358,7 +359,7 @@ var youTubeDataVideos = YouTubeDataStructureVideos()
                     "Accept": "application/json"
                 ]
 
-                let request = NSMutableURLRequest(url: NSURL(string: "https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=\(youTubeDataActivities.items?[0].contentDetails.upload.videoID as! String)&key=\(APIKeyYouTube)")! as URL,
+                let request = NSMutableURLRequest(url: NSURL(string: "https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=\(youTubeDataActivities.items?[0].contentDetails.upload.videoID ?? "")&key=\(APIKeyYouTube)")! as URL,
                                                         cachePolicy: .useProtocolCachePolicy,
                                                         timeoutInterval: 10.0)
                 request.httpMethod = "GET"
@@ -385,7 +386,7 @@ var youTubeDataVideos = YouTubeDataStructureVideos()
 //                            print(youTubeDataVideos.items?[0].statistics.viewCount as! String)
                         }
                         catch {
-                            print("Error in YouTube JSON parsing")
+                            print("Error in YouTube Videos JSON parsing")
         //                    print(youTubeData)
                         }
                     }

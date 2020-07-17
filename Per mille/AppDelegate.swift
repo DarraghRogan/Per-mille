@@ -47,7 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
      }()
     
     lazy var tikTokHearts : NSMenuItem = {
-        return NSMenuItem(title: "♥❤: Please Refresh", action: nil, keyEquivalent: "")
+        return NSMenuItem(title: "Lifetime ♥: Please Refresh", action: nil, keyEquivalent: "")
      }()
     
     lazy var twitterScreenName : NSMenuItem = {
@@ -63,7 +63,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
      }()
  
     lazy var youTubeViews : NSMenuItem = {
-        return NSMenuItem(title: "Lifetime Views: Please Refresh", action: nil, keyEquivalent: "")
+        return NSMenuItem(title: "Lifetime ▶: Please Refresh", action: nil, keyEquivalent: "")
      }()
     lazy var youTubeSubscribers : NSMenuItem = {
         return NSMenuItem(title: "Subscribers: Please Refresh", action: nil, keyEquivalent: "")
@@ -244,9 +244,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         if defaults.integer(forKey: "TikTokInUse") == 1{
         DataLoaderTikTok().loadTikTokData()
-        self.tikTokUniqueID.title = "Username: Loading, please wait (60s)"
-        self.tikTokFollowers.title = "Followers: Loading, please wait (60s)"
-        self.tikTokHearts.title = "♥: Loading, please wait (60s)"
+        self.tikTokUniqueID.title = "Username: Loading, please wait (20s)"
+        self.tikTokFollowers.title = "Followers: Loading, please wait (20s)"
+        self.tikTokHearts.title = "Lifetime ♥: Loading, please wait (20s)"
         }
         else{
         }
@@ -261,13 +261,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if defaults.integer(forKey: "YouTubeInUse") == 1{
         DataLoaderYouTube().loadYouTubeDataChannel()
-        DataLoaderYouTube().loadYouTubeDataActivities()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
-        DataLoaderYouTube().loadYouTubeDataVideos()
-            })
+            
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+            DataLoaderYouTube().loadYouTubeDataActivities()
+        })
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
+            DataLoaderYouTube().loadYouTubeDataVideos()
+        })
+            
         self.youTubeTitle.title = "Channel: Loading, please wait"
         self.youTubeSubscribers.title = "Subscribers: Loading, please wait"
-        self.youTubeViews.title = "Lifetime Views: Loading, please wait"
+        self.youTubeViews.title = "Lifetime ▶: Loading, please wait"
         self.youTubeLastVideo.title = "Last Video: Loading, please wait"
         }
         else{
@@ -283,7 +288,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 let instagramLastPostLikes = instagramData.last_post?[0].like
                 let instagramLastPostComment = instagramData.last_post?[0].comment
                 if let instagramLastPostsVideoViews = instagramData.last_post?[0].video_view {
-                    self.instagramLastPost.title = "Last Post: 📹👁 \(String(format: "%U", locale: Locale.current, instagramLastPostsVideoViews)), 👍 \(String(format: "%U", locale: Locale.current, instagramLastPostLikes!)), ⌨️ \(String(format: "%U", locale: Locale.current, instagramLastPostComment!))"
+                    self.instagramLastPost.title = "Last Post: ▶ \(String(format: "%U", locale: Locale.current, instagramLastPostsVideoViews)), ♥ \(String(format: "%U", locale: Locale.current, instagramLastPostLikes!)), 🗨 \(String(format: "%U", locale: Locale.current, instagramLastPostComment!))"
                 } else {
                     self.instagramLastPost.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
             }
@@ -318,27 +323,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         if let youTubeViewCount = youTubeData.items?[0].statistics.viewCount {
-            self.youTubeViews.title = "Lifetime Views: \(youTubeViewCount)"
+            self.youTubeViews.title = "Lifetime ▶: \(youTubeViewCount)"
         } else {
             self.youTubeViews.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
         }
-            let youTubeLastVideoLikes = youTubeDataVideos.items?[0].statistics.likeCount as! String
-            let youTubeLastVideoComments = youTubeDataVideos.items?[0].statistics.commentCount as! String
-            if let youTubeLastVideoViews = youTubeDataVideos.items?[0].statistics.viewCount {
-                self.youTubeLastVideo.title = "Last Video: 👁 \(youTubeLastVideoViews), 👍 \(youTubeLastVideoLikes), ⌨️ \(youTubeLastVideoComments)"
-            } else {
-                self.youTubeLastVideo.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
-            }
+
+            
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4.1, execute: {
+
+                    if youTubeDataVideos.pageInfo?.resultsPerPage == 1 {
+                        let youTubeLastVideoViews = youTubeDataVideos.items?[0].statistics.viewCount as! String
+                         let youTubeLastVideoLikes = youTubeDataVideos.items?[0].statistics.likeCount as! String
+                         let youTubeLastVideoComments = youTubeDataVideos.items?[0].statistics.commentCount as! String
+                        self.youTubeLastVideo.title = "Last Video: ▶ \(youTubeLastVideoViews), ♥ \(youTubeLastVideoLikes), 🗨 \(youTubeLastVideoComments)"
+                     } else {
+                         self.youTubeLastVideo.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
+                     }
+
+                })
+ 
             
         }
         else{
         }
-    
-
 
     })
- 
-          DispatchQueue.main.asyncAfter(deadline: .now() + 62.0, execute: {
+// ☺
+          DispatchQueue.main.asyncAfter(deadline: .now() + 20.0, execute: {
         if self.defaults.integer(forKey: "TikTokInUse") == 1{
              if let tikTokUsername = tikTokData.data?.userInfo?.user?.uniqueID {
                  self.tikTokUniqueID.title = "Username: \(tikTokUsername)"
@@ -351,7 +362,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                  self.tikTokFollowers.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
                  }
              if let tikTokHearts = tikTokData.data?.userInfo?.stats?.heartCount {
-                 self.tikTokHearts.title = "♥: \(String(format: "%U", locale: Locale.current, tikTokHearts))"
+                 self.tikTokHearts.title = "Lifetime ♥: \(String(format: "%U", locale: Locale.current, tikTokHearts))"
                  } else {
                  self.tikTokHearts.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
                  }

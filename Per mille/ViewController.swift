@@ -125,6 +125,7 @@ class ViewController: NSViewController {
         tikTokButtonClicked(Any.self)
     }
     
+    
     @IBAction func tikTokHelp(_ sender: Any) {
                 NSWorkspace.shared.open(URL(string: "https://support.tiktok.com/en/my-account-settings/change-username-default")!)
     }
