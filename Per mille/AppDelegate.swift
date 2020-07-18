@@ -62,6 +62,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return NSMenuItem(title: "Listed: Please Refresh", action: nil, keyEquivalent: "")
      }()
     
+    lazy var twitterPinnedTweet : NSMenuItem = {
+        return NSMenuItem(title: "Pinned Tweet: Please Refresh", action: nil, keyEquivalent: "")
+     }()
+    
     lazy var youTubeTitle : NSMenuItem = {
         return NSMenuItem(title: "Channel: Please Refresh", action: nil, keyEquivalent: "")
      }()
@@ -152,6 +156,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(twitterFollowers)
             
         menu.addItem(twitterListed)
+            
+        menu.addItem(twitterPinnedTweet)
         
         menu.addItem(
             NSMenuItem.separator()
@@ -262,6 +268,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.twitterScreenName.title = "Screen Name: Loading, please wait"
         self.twitterFollowers.title = "Followers ጰ: Loading, please wait"
         self.twitterListed.title = "Listed: Loading, please wait"
+        self.twitterPinnedTweet.title = "Pinned Tweet: Loading, please wait"
         }
         else{
         }
@@ -306,9 +313,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         })
         
         
-  DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+  DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
     
         if self.defaults.integer(forKey: "TwitterInUse") == 1{
+            
             if twitterData.data?[0].username != nil {
                 self.twitterScreenName.title = "Screen Name: \(twitterData.data?[0].username as! String)"
                 self.twitterFollowers.title = "Followers ጰ: \(String(format: "%U", locale: Locale.current, (twitterData.data?[0].publicMetrics.followersCount as! Int)))"
@@ -318,6 +326,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 self.twitterScreenName.title = "Error; if internet connectivity & username okay, problem is with Twitter API. Try later"
                 self.twitterFollowers.title = "Error; if internet connectivity & username okay, problem is with Twitter API. Try later"
             }
+            
+            if twitterData.includes?.tweets[0].publicMetrics.likeCount != nil {
+                self.twitterPinnedTweet.title = "Pinned Tweet: ♺ \(String(format: "%U", locale: Locale.current, (twitterData.includes?.tweets[0].publicMetrics.retweetCount as! Int))), ❝❞ \(String(format: "%U", locale: Locale.current, (twitterData.includes?.tweets[0].publicMetrics.quoteCount as! Int))), ♥ \(String(format: "%U", locale: Locale.current, (twitterData.includes?.tweets[0].publicMetrics.likeCount as! Int))), 🗨 \(String(format: "%U", locale: Locale.current, (twitterData.includes?.tweets[0].publicMetrics.replyCount as! Int)))"
+            }
+            else {
+                self.twitterPinnedTweet.title = "Pinned Tweet: None"
+            }
+            
+            
+            
         }
         else{
         }

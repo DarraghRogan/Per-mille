@@ -34,52 +34,27 @@ import Foundation
 // User's Twitter v2 API
 struct TwitterDataStructure: Codable {
     var data: [Datum]?
+    var includes: Includes?
 }
 
-
+// MARK: - Datum
 struct Datum: Codable {
+    var publicMetrics: DatumPublicMetrics
     var id: String
-    var entities: Entities
-    var username, name: String
-    var publicMetrics: PublicMetrics
+    var pinnedTweetID: String?
+    var name: String
+    var username: String
 
     enum CodingKeys: String, CodingKey {
-        case id, entities, username, name
         case publicMetrics = "public_metrics"
+        case id
+        case pinnedTweetID = "pinned_tweet_id"
+        case name, username
     }
 }
 
-
-struct Entities: Codable {
-    var url, entitiesDescription: Description
-
-    enum CodingKeys: String, CodingKey {
-        case url
-        case entitiesDescription = "description"
-    }
-}
-
-// MARK: - Description
-struct Description: Codable {
-    var urls: [URLElement]?
-}
-
-// MARK: - URLElement
-struct URLElement: Codable {
-    var start, end: Int
-    var url: String
-    var expandedURL: String
-    var displayURL: String
-
-    enum CodingKeys: String, CodingKey {
-        case start, end, url
-        case expandedURL = "expanded_url"
-        case displayURL = "display_url"
-    }
-}
-
-// MARK: - PublicMetrics
-struct PublicMetrics: Codable {
+// MARK: - DatumPublicMetrics
+struct DatumPublicMetrics: Codable {
     var followersCount, followingCount, tweetCount, listedCount: Int
 
     enum CodingKeys: String, CodingKey {
@@ -89,6 +64,38 @@ struct PublicMetrics: Codable {
         case listedCount = "listed_count"
     }
 }
+
+// MARK: - Includes
+struct Includes: Codable {
+    var tweets: [Tweet]
+}
+
+// MARK: - Tweet
+struct Tweet: Codable {
+    var id: String
+    var publicMetrics: TweetPublicMetrics
+    var text, createdAt: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case publicMetrics = "public_metrics"
+        case text
+        case createdAt = "created_at"
+    }
+}
+
+// MARK: - TweetPublicMetrics
+struct TweetPublicMetrics: Codable {
+    var retweetCount, replyCount, likeCount, quoteCount: Int
+
+    enum CodingKeys: String, CodingKey {
+        case retweetCount = "retweet_count"
+        case replyCount = "reply_count"
+        case likeCount = "like_count"
+        case quoteCount = "quote_count"
+    }
+}
+
 
 
 
@@ -116,7 +123,7 @@ var twitterData = TwitterDataStructure()
             "Authorization": "Bearer \(APIKeyTwitter)",
         ]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "https://api.twitter.com/labs/2/users/by?usernames=\(AppDelegate().defaults.object(forKey:"TwitterHandle") as? String ?? String())&user.fields=entities,public_metrics&tweet.fields=created_at,public_metrics")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://api.twitter.com/labs/2/users/by?usernames=\(AppDelegate().defaults.object(forKey:"TwitterHandle") as? String ?? String())&user.fields=public_metrics&expansions=pinned_tweet_id&tweet.fields=created_at,public_metrics")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
                                                 timeoutInterval: 10.0)
         
