@@ -29,10 +29,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return NSMenuItem(title: "Username: Please Refresh", action: nil, keyEquivalent: "")
      }()
     lazy var instagramFollowers : NSMenuItem = {
-        return NSMenuItem(title: "Followers: Please Refresh", action: nil, keyEquivalent: "")
+        return NSMenuItem(title: "Followers ጰ: Please Refresh", action: nil, keyEquivalent: "")
      }()
     lazy var instagramAverageLikes : NSMenuItem = {
-        return NSMenuItem(title: "Average Likes: Please Refresh", action: nil, keyEquivalent: "")
+        return NSMenuItem(title: "Average ♥: Please Refresh", action: nil, keyEquivalent: "")
      }()
     lazy var instagramLastPost : NSMenuItem = {
         return NSMenuItem(title: "Last Post: Please Refresh", action: nil, keyEquivalent: "")
@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
      }()
     
     lazy var tikTokFollowers : NSMenuItem = {
-        return NSMenuItem(title: "Followers: Please Refresh", action: nil, keyEquivalent: "")
+        return NSMenuItem(title: "Followers ጰ: Please Refresh", action: nil, keyEquivalent: "")
      }()
     
     lazy var tikTokHearts : NSMenuItem = {
@@ -55,7 +55,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
      }()
     
     lazy var twitterFollowers : NSMenuItem = {
-        return NSMenuItem(title: "Followers: Please Refresh", action: nil, keyEquivalent: "")
+        return NSMenuItem(title: "Followers ጰ: Please Refresh", action: nil, keyEquivalent: "")
+     }()
+    
+    lazy var twitterListed : NSMenuItem = {
+        return NSMenuItem(title: "Listed: Please Refresh", action: nil, keyEquivalent: "")
      }()
     
     lazy var youTubeTitle : NSMenuItem = {
@@ -66,7 +70,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return NSMenuItem(title: "Lifetime ▶: Please Refresh", action: nil, keyEquivalent: "")
      }()
     lazy var youTubeSubscribers : NSMenuItem = {
-        return NSMenuItem(title: "Subscribers: Please Refresh", action: nil, keyEquivalent: "")
+        return NSMenuItem(title: "Subscribers ጰ: Please Refresh", action: nil, keyEquivalent: "")
      }()
     lazy var youTubeLastVideo : NSMenuItem = {
         return NSMenuItem(title: "Last Video: Please Refresh", action: nil, keyEquivalent: "")
@@ -146,6 +150,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(twitterScreenName)
         
         menu.addItem(twitterFollowers)
+            
+        menu.addItem(twitterListed)
         
         menu.addItem(
             NSMenuItem.separator()
@@ -235,8 +241,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if defaults.integer(forKey: "InstagramInUse") == 1{
             DataLoaderInstagram().loadInstagramData()
             self.instagramUsername.title = "Username: Loading, please wait"
-            self.instagramFollowers.title = "Followers: Loading, please wait"
-            self.instagramAverageLikes.title = "Average Likes: Loading, please wait"
+            self.instagramFollowers.title = "Followers ጰ: Loading, please wait"
+            self.instagramAverageLikes.title = "Average ♥: Loading, please wait"
             self.instagramLastPost.title = "Last Post: Loading, please wait"
         }
         else{
@@ -245,7 +251,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if defaults.integer(forKey: "TikTokInUse") == 1{
         DataLoaderTikTok().loadTikTokData()
         self.tikTokUniqueID.title = "Username: Loading, please wait (20s)"
-        self.tikTokFollowers.title = "Followers: Loading, please wait (20s)"
+        self.tikTokFollowers.title = "Followers ጰ: Loading, please wait (20s)"
         self.tikTokHearts.title = "Lifetime ♥: Loading, please wait (20s)"
         }
         else{
@@ -254,7 +260,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if defaults.integer(forKey: "TwitterInUse") == 1{
         DataLoaderTwitter().loadTwitterData()
         self.twitterScreenName.title = "Screen Name: Loading, please wait"
-        self.twitterFollowers.title = "Followers: Loading, please wait"
+        self.twitterFollowers.title = "Followers ጰ: Loading, please wait"
+        self.twitterListed.title = "Listed: Loading, please wait"
         }
         else{
         }
@@ -271,7 +278,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         })
             
         self.youTubeTitle.title = "Channel: Loading, please wait"
-        self.youTubeSubscribers.title = "Subscribers: Loading, please wait"
+        self.youTubeSubscribers.title = "Subscribers ጰ: Loading, please wait"
         self.youTubeViews.title = "Lifetime ▶: Loading, please wait"
         self.youTubeLastVideo.title = "Last Video: Loading, please wait"
         }
@@ -282,8 +289,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             if self.defaults.integer(forKey: "InstagramInUse") == 1{
             self.instagramUsername.title = "Username: \(String(instagramData.username))"
-            self.instagramFollowers.title = "Followers: \(String(format: "%U", locale: Locale.current, instagramData.follower))"
-            self.instagramAverageLikes.title = "Average Likes: \(String(format: "%U", locale: Locale.current, instagramData.average_like))"
+            self.instagramFollowers.title = "Followers ጰ: \(String(format: "%U", locale: Locale.current, instagramData.follower))"
+            self.instagramAverageLikes.title = "Average ♥: \(String(format: "%U", locale: Locale.current, instagramData.average_like))"
                 
                 let instagramLastPostLikes = instagramData.last_post?[0].like
                 let instagramLastPostComment = instagramData.last_post?[0].comment
@@ -299,11 +306,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         })
         
         
-  DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+  DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
     
         if self.defaults.integer(forKey: "TwitterInUse") == 1{
-        self.twitterScreenName.title = "Screen Name: \(twitterData.screen_name)"
-        self.twitterFollowers.title = "Followers: \(twitterData.followers)"
+            if twitterData.data?[0].username != nil {
+                self.twitterScreenName.title = "Screen Name: \(twitterData.data?[0].username as! String)"
+                self.twitterFollowers.title = "Followers ጰ: \(String(format: "%U", locale: Locale.current, (twitterData.data?[0].publicMetrics.followersCount as! Int)))"
+                self.twitterListed.title = "Listed: On \(String(format: "%U", locale: Locale.current, (twitterData.data?[0].publicMetrics.listedCount as! Int))) list(s)"
+            }
+            else {
+                self.twitterScreenName.title = "Error; if internet connectivity & username okay, problem is with Twitter API. Try later"
+                self.twitterFollowers.title = "Error; if internet connectivity & username okay, problem is with Twitter API. Try later"
+            }
         }
         else{
         }
@@ -317,7 +331,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
             
         if let youTubeSubscriberCount = youTubeData.items?[0].statistics.subscriberCount {
-            self.youTubeSubscribers.title = "Subscribers: \(youTubeSubscriberCount)"
+            self.youTubeSubscribers.title = "Subscribers ጰ: \(youTubeSubscriberCount)"
         } else {
             self.youTubeSubscribers.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
         }
@@ -357,7 +371,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                  self.tikTokUniqueID.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
                  }
              if let tikTokFollowers = tikTokData.data?.userInfo?.stats?.followerCount {
-                 self.tikTokFollowers.title = "Followers: \(String(format: "%U", locale: Locale.current, tikTokFollowers))"
+                 self.tikTokFollowers.title = "Followers ጰ: \(String(format: "%U", locale: Locale.current, tikTokFollowers))"
                  } else {
                  self.tikTokFollowers.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
                  }
