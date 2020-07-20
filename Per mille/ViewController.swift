@@ -10,6 +10,17 @@ import Cocoa
 import ServiceManagement
 
 class ViewController: NSViewController {
+    
+    let validityType: String.ValidityType = .youTubeChannelID
+    
+    @objc fileprivate func handleTextChange() {
+        guard let text = youTubeField?.stringValue else { return }
+        if text.isValid(validityType) {
+            youTubeGuidanceField.isHidden = true
+        } else {
+            youTubeGuidanceField.isHidden = false
+        }
+    }
 
     @IBOutlet weak var autorunAtStartup: NSSwitch!
     
@@ -28,6 +39,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var youTubeSlider: NSSwitch!
     @IBOutlet weak var youTubeLabel: NSTextField!
     @IBOutlet weak var youTubeField: NSTextField!
+    @IBOutlet weak var youTubeGuidanceField: NSTextField!
+    
     
     @IBOutlet weak var perMilleVersion: NSTextField!
     
@@ -39,7 +52,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+                
         perMilleVersion.stringValue = (nsObject.self ?? 1.00 as AnyObject) as! String
         
         autorunAtStartup.state.self = AppDelegate().defaults.object(forKey:"AutorunAtStartup") as? NSControl.StateValue ?? NSControl.StateValue(0)
@@ -167,6 +180,7 @@ class ViewController: NSViewController {
     @IBAction func youTubeButtonClicked(_ sender: Any) {
         AppDelegate().defaults.set(youTubeField.stringValue, forKey: "YouTubeChannelID")
         youTubeLabel.stringValue = AppDelegate().defaults.object(forKey:"YouTubeChannelID") as? String ?? String()
+        handleTextChange()
         if youTubeLabel.stringValue == ""{
             AppDelegate().defaults.set(0, forKey: "YouTubeInUse")
         }
@@ -180,9 +194,8 @@ class ViewController: NSViewController {
     
     
     @IBAction func youTubeHelp(_ sender: Any) {
-        NSWorkspace.shared.open(URL(string: "https://support.google.com/youtube/answer/3250431?hl=en")!)
+        NSWorkspace.shared.open(URL(string: "https://commentpicker.com/youtube-channel-id.php#youtube-channel-id")!)
     }
-
     
     
 }

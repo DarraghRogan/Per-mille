@@ -86,7 +86,7 @@ struct Tweet: Codable {
 
 // MARK: - TweetPublicMetrics
 struct TweetPublicMetrics: Codable {
-    var retweetCount, replyCount, likeCount, quoteCount: Int
+    var retweetCount, replyCount, likeCount, quoteCount: Int?
 
     enum CodingKeys: String, CodingKey {
         case retweetCount = "retweet_count"

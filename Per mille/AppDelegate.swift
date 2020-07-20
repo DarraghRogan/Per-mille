@@ -277,7 +277,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         DataLoaderYouTube().loadYouTubeDataChannel()
             
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
-            DataLoaderYouTube().loadYouTubeDataActivities()
+            DataLoaderYouTube().loadYouTubeDataSearch()
         })
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
@@ -328,7 +328,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             
             if twitterData.includes?.tweets[0].publicMetrics.likeCount != nil {
-                self.twitterPinnedTweet.title = "Pinned Tweet: ♺ \(String(format: "%U", locale: Locale.current, (twitterData.includes?.tweets[0].publicMetrics.retweetCount as! Int))), ❝❞ \(String(format: "%U", locale: Locale.current, (twitterData.includes?.tweets[0].publicMetrics.quoteCount as! Int))), ♥ \(String(format: "%U", locale: Locale.current, (twitterData.includes?.tweets[0].publicMetrics.likeCount as! Int))), 🗨 \(String(format: "%U", locale: Locale.current, (twitterData.includes?.tweets[0].publicMetrics.replyCount as! Int)))"
+                self.twitterPinnedTweet.title = "Pinned Tweet: ♺ \(String(format: "%U", locale: Locale.current, (twitterData.includes?.tweets[0].publicMetrics.retweetCount as! Int))), ❝❞ \(String(format: "%U", locale: Locale.current, (twitterData.includes?.tweets[0].publicMetrics.quoteCount as! Int))), ♥ \(String(format: "%U", locale: Locale.current, (twitterData.includes?.tweets[0].publicMetrics.likeCount as! Int))), 🗨 \(String(format: "%U", locale: Locale.current, (twitterData.includes?.tweets[0].publicMetrics.replyCount as? Int ?? 0)))"
             }
             else {
                 self.twitterPinnedTweet.title = "Pinned Tweet: None"
@@ -366,7 +366,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     if youTubeDataVideos.pageInfo?.resultsPerPage == 1 {
                         let youTubeLastVideoViews = youTubeDataVideos.items?[0].statistics.viewCount as! String
                          let youTubeLastVideoLikes = youTubeDataVideos.items?[0].statistics.likeCount as! String
-                         let youTubeLastVideoComments = youTubeDataVideos.items?[0].statistics.commentCount as! String
+                        let youTubeLastVideoComments = youTubeDataVideos.items?[0].statistics.commentCount as? String ?? "0"
                         self.youTubeLastVideo.title = "Last Video: ▶ \(youTubeLastVideoViews), ♥ \(youTubeLastVideoLikes), 🗨 \(youTubeLastVideoComments)"
                      } else {
                          self.youTubeLastVideo.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"

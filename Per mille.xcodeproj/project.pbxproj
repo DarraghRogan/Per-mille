@@ -20,6 +20,8 @@
 		02B3528524B59C0B0040A23E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02B3528324B59C0B0040A23E /* Main.storyboard */; };
 		02B3528724B59C160040A23E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02B3528624B59C160040A23E /* Assets.xcassets */; };
 		02B3528A24B59C160040A23E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02B3528824B59C160040A23E /* LaunchScreen.storyboard */; };
+		02B44A5924C4FDC6001083C9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B44A5724C4F6B7001083C9 /* Extensions.swift */; };
+		02B44A5A24C4FDCD001083C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9E8D4248CE7160086352A /* ViewController.swift */; };
 		02B7EEF82491899800738B62 /* DataLoaderYouTube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */; };
 		02B7EEFA2491995400738B62 /* DataLoaderInstagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */; };
 		02DDA4A824A7751E00F163A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDA4A724A7751E00F163A9 /* AppDelegate.swift */; };
@@ -28,7 +30,6 @@
 		02DDA4BA24A7BD6400F163A9 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDA4B924A7BD6400F163A9 /* ServiceManagement.framework */; };
 		02DDA4BB24A7BD7800F163A9 /* LauncherApplication.app in Resources */ = {isa = PBXBuildFile; fileRef = 02DDA4A524A7751E00F163A9 /* LauncherApplication.app */; };
 		02E9E8D3248CE7160086352A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9E8D2248CE7160086352A /* AppDelegate.swift */; };
-		02E9E8D5248CE7160086352A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9E8D4248CE7160086352A /* ViewController.swift */; };
 		02E9E8D7248CE71D0086352A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02E9E8D6248CE71D0086352A /* Assets.xcassets */; };
 		02E9E8DA248CE71D0086352A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E9E8D8248CE71D0086352A /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -124,6 +125,7 @@
 		02B3528924B59C160040A23E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02B3528B24B59C160040A23E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02B3528F24B59C910040A23E /* Per mille iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Per mille iOS.entitlements"; sourceTree = "<group>"; };
+		02B44A5724C4F6B7001083C9 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderYouTube.swift; sourceTree = "<group>"; };
 		02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoaderInstagram.swift; sourceTree = "<group>"; };
 		02DDA49D24A774E700F163A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -236,9 +238,10 @@
 				02E9E8D2248CE7160086352A /* AppDelegate.swift */,
 				02E9E8D6248CE71D0086352A /* Assets.xcassets */,
 				02B7EEF92491995400738B62 /* DataLoaderInstagram.swift */,
-				0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */,
 				027D73A624AFBF8800031CE0 /* DataLoaderTikTok.swift */,
+				0224C85824963AD400EEC521 /* DataLoaderTwitter.swift */,
 				02B7EEF72491899800738B62 /* DataLoaderYouTube.swift */,
+				02B44A5724C4F6B7001083C9 /* Extensions.swift */,
 				025B3EB424A8A2DE000D0E2B /* Graphics */,
 				02E9E8DB248CE71D0086352A /* Info.plist */,
 				02E9E8D8248CE71D0086352A /* Main.storyboard */,
@@ -411,11 +414,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				02B7EEF82491899800738B62 /* DataLoaderYouTube.swift in Sources */,
-				02E9E8D5248CE7160086352A /* ViewController.swift in Sources */,
 				0288C5A22496544E0074E25F /* APIKeys.swift in Sources */,
+				02B44A5924C4FDC6001083C9 /* Extensions.swift in Sources */,
 				02E9E8D3248CE7160086352A /* AppDelegate.swift in Sources */,
 				027D73A724AFBF8800031CE0 /* DataLoaderTikTok.swift in Sources */,
 				02B7EEFA2491995400738B62 /* DataLoaderInstagram.swift in Sources */,
+				02B44A5A24C4FDCD001083C9 /* ViewController.swift in Sources */,
 				0224C85924963AD400EEC521 /* DataLoaderTwitter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

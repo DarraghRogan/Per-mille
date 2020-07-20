@@ -88,76 +88,69 @@ struct PageInfo: Codable {
     var resultsPerPage: Int = 0
 }
 
+// MARK: -
 
-
-struct YouTubeDataStructureActivities: Codable {
-    var kind: String = ""
-    var etag: String = ""
-    var items: [ActivitiesItem]?
-//    var nextPageToken: String = ""
-//    var pageInfo: ActivitiesPageInfo?
+struct YouTubeDataStructureSearch: Codable {
+//    var kind, etag, nextPageToken, regionCode: String
+//    var pageInfo: PageInfo?
+    var items: [SearchItem]?
+   
 }
 
-struct ActivitiesItem: Codable {
-    var kind: String = ""
-    var etag: String = ""
-    var id: String = ""
-//    var snippet: ActivitiesSnippet
-    var contentDetails: ActivitiesContentDetails
+struct SearchItem: Codable {
+//    var kind, etag: String
+    var id: ID
+//    var snippet: Snippet
 }
 
-struct ActivitiesContentDetails: Codable {
-    var upload: ActivitiesUpload
-}
-
-struct ActivitiesUpload: Codable {
-    var videoID: String = ""
+struct ID: Codable {
+    var kind, videoID: String
 
     enum CodingKeys: String, CodingKey {
+        case kind
         case videoID = "videoId"
     }
 }
 
-struct ActivitiesSnippet: Codable {
-    var publishedAt: Date
-    var channelID, title, snippetDescription: String
-    var thumbnails: ActivitiesThumbnails
-    var channelTitle: String = ""
-    var type: String = ""
-    var groupID: String = ""
-
-    enum CodingKeys: String, CodingKey {
-        case publishedAt
-        case channelID = "channelId"
-        case title
-        case snippetDescription = "description"
-        case thumbnails, channelTitle, type
-        case groupID = "groupId"
-    }
-}
-
-struct ActivitiesThumbnails: Codable {
-    var thumbnailsDefault, medium, high, standard: ActivitiesDefault
-    var maxres: ActivitiesDefault
-
-    enum CodingKeys: String, CodingKey {
-        case thumbnailsDefault = "default"
-        case medium, high, standard, maxres
-    }
-}
-
-struct ActivitiesDefault: Codable {
-    var url: String
-    var width, height: Int
-}
-
-struct ActivitiesPageInfo: Codable {
-    var totalResults, resultsPerPage: Int
-}
+//struct Snippet: Codable {
+//    var publishedAt: Date
+//    var channelID, title, snippetDescription: String
+//    var thumbnails: Thumbnails
+//    var channelTitle, liveBroadcastContent: String
+//    var publishTime: Date
+//
+//    enum CodingKeys: String, CodingKey {
+//        case publishedAt
+//        case channelID = "channelId"
+//        case title
+//        case snippetDescription = "description"
+//        case thumbnails, channelTitle, liveBroadcastContent, publishTime
+//    }
+//}
 
 
+//struct Thumbnails: Codable {
+//    var thumbnailsDefault, medium, high: Default
+//
+//    enum CodingKeys: String, CodingKey {
+//        case thumbnailsDefault = "default"
+//        case medium, high
+//    }
+//}
 
 
+//struct Default: Codable {
+//    var url: String
+//    var width, height: Int
+//}
+
+
+//struct PageInfo: Codable {
+//    var totalResults, resultsPerPage: Int
+//}
+
+
+// MARK: -
 
 
 
@@ -235,7 +228,7 @@ struct VideosStatistics: Codable {
     var likeCount: String
     var dislikeCount: String
     var favoriteCount: String
-    var commentCount: String
+    var commentCount: String? =  "0"
 }
 
 struct VideosPageInfo: Codable {
@@ -252,7 +245,7 @@ struct VideosPageInfo: Codable {
 // define an instance of the youtube data that can be filled by the data loader and read by the menu
 var youTubeData = YouTubeDataStructureChannels()
 
-var youTubeDataActivities = YouTubeDataStructureActivities()
+var youTubeDataSearch = YouTubeDataStructureSearch()
 
 var youTubeDataVideos = YouTubeDataStructureVideos()
 
@@ -306,17 +299,17 @@ var youTubeDataVideos = YouTubeDataStructureVideos()
         dataTask.resume()
     }
     
+//MARK: -
     
     
-    
-    func loadYouTubeDataActivities() {
+    func loadYouTubeDataSearch() {
 
             let headers = [
     //            "Authorization": "Bearer [YOUR_ACCESS_TOKEN]",
                 "Accept": "application/json"
             ]
 
-            let request = NSMutableURLRequest(url: NSURL(string: "https://www.googleapis.com/youtube/v3/activities?part=snippet%2CcontentDetails&channelId=\(AppDelegate().defaults.object(forKey:"YouTubeChannelID") as? String ?? String())&key=\(APIKeyYouTube)&maxResults=1")! as URL,
+            let request = NSMutableURLRequest(url: NSURL(string: "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=\(AppDelegate().defaults.object(forKey:"YouTubeChannelID") as? String ?? String())&order=date&key=\(APIKeyYouTube)&maxResults=1")! as URL,
                                                     cachePolicy: .useProtocolCachePolicy,
                                                     timeoutInterval: 10.0)
             request.httpMethod = "GET"
@@ -328,7 +321,7 @@ var youTubeDataVideos = YouTubeDataStructureVideos()
                     print(error)
                 } else {
                     let httpResponse = response as? HTTPURLResponse
-//               print("Received from the YouTube Activities API")
+//               print("Received from the YouTube Search API")
 //                if let data = data,
 //                 let urlContent = NSString(data: data, encoding: String.Encoding.ascii.rawValue) {
 //                  print(urlContent)
@@ -338,11 +331,11 @@ var youTubeDataVideos = YouTubeDataStructureVideos()
                     //Parse JSON
                     let decoder = JSONDecoder()
                     do {
-                        let dataFromYouTubeActivities = try decoder.decode(YouTubeDataStructureActivities.self, from: data!)
-                        youTubeDataActivities = dataFromYouTubeActivities
+                        let dataFromYouTubeSearch = try decoder.decode(YouTubeDataStructureSearch.self, from: data!)
+                        youTubeDataSearch = dataFromYouTubeSearch
                     }
                     catch {
-                        print("Error in YouTube Activities JSON parsing")
+                        print("Error in YouTube Search JSON parsing")
     //                    print(youTubeData)
                     }
                 }
@@ -359,7 +352,7 @@ var youTubeDataVideos = YouTubeDataStructureVideos()
                     "Accept": "application/json"
                 ]
 
-                let request = NSMutableURLRequest(url: NSURL(string: "https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=\(youTubeDataActivities.items?[0].contentDetails.upload.videoID ?? "")&key=\(APIKeyYouTube)")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=\(youTubeDataSearch.items?[0].id.videoID ?? "")&key=\(APIKeyYouTube)")! as URL,
                                                         cachePolicy: .useProtocolCachePolicy,
                                                         timeoutInterval: 10.0)
                 request.httpMethod = "GET"
