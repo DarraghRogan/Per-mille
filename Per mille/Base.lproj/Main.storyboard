@@ -1008,7 +1008,7 @@
                                 <rect key="frame" x="365" y="139" width="898" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" alignment="left" id="U86-CB-8cS">
-                                    <font key="font" metaFont="system" size="12"/>
+                                    <font key="font" metaFont="label" size="12"/>
                                     <string key="title">Please check YouTube Channel ID, it should be similar to this: 
 UClt25f9gZu4_M3sxpAAJ4QQ
 Click the help button for to access an (unaffiliated) service which
@@ -1016,9 +1016,6 @@ converts Channel URL to Channel ID.</string>
                                     <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                                <connections>
-                                    <action selector="YouTubeGuidanceFieldClicked:" target="XfG-lQ-9wD" id="van-Mk-5eh"/>
-                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GPu-zj-A32">
                                 <rect key="frame" x="19" y="82" width="123" height="16"/>
@@ -1042,7 +1039,7 @@ converts Channel URL to Channel ID.</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="Autorun ‰ Per mille at Mac startup" id="uzo-OR-316">
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>

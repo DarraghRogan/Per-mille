@@ -246,10 +246,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if defaults.integer(forKey: "InstagramInUse") == 1{
             DataLoaderInstagram().loadInstagramData()
-            self.instagramUsername.title = "Username: Loading, please wait"
-            self.instagramFollowers.title = "Followers ጰ: Loading, please wait"
-            self.instagramAverageLikes.title = "Average ♥: Loading, please wait"
-            self.instagramLastPost.title = "Last Post: Loading, please wait"
+            self.instagramUsername.title = "Username: Loading, please wait (10s)"
+            self.instagramFollowers.title = "Followers ጰ: Loading, please wait (10s)"
+            self.instagramAverageLikes.title = "Average ♥: Loading, please wait (10s)"
+            self.instagramLastPost.title = "Last Post: Loading, please wait (10s)"
         }
         else{
         }
@@ -265,34 +265,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if defaults.integer(forKey: "TwitterInUse") == 1{
         DataLoaderTwitter().loadTwitterData()
-        self.twitterScreenName.title = "Screen Name: Loading, please wait"
-        self.twitterFollowers.title = "Followers ጰ: Loading, please wait"
-        self.twitterListed.title = "Listed: Loading, please wait"
-        self.twitterPinnedTweet.title = "Pinned Tweet: Loading, please wait"
+        self.twitterScreenName.title = "Screen Name: Loading, please wait (10s)"
+        self.twitterFollowers.title = "Followers ጰ: Loading, please wait (10s)"
+        self.twitterListed.title = "Listed: Loading, please wait (10s)"
+        self.twitterPinnedTweet.title = "Pinned Tweet: Loading, please wait (10s)"
         }
         else{
         }
         
         if defaults.integer(forKey: "YouTubeInUse") == 1{
         DataLoaderYouTube().loadYouTubeDataChannel()
-            
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
-            DataLoaderYouTube().loadYouTubeDataSearch()
-        })
+        DataLoaderYouTube().loadYouTubeDataSearch()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0, execute: {
             DataLoaderYouTube().loadYouTubeDataVideos()
         })
             
-        self.youTubeTitle.title = "Channel: Loading, please wait"
-        self.youTubeSubscribers.title = "Subscribers ጰ: Loading, please wait"
-        self.youTubeViews.title = "Lifetime ▶: Loading, please wait"
-        self.YouTubeLatestVideo.title = "Latest Video: Loading, please wait"
+        self.youTubeTitle.title = "Channel: Loading, please wait (10s)"
+        self.youTubeSubscribers.title = "Subscribers ጰ: Loading, please wait (10s)"
+        self.youTubeViews.title = "Lifetime ▶: Loading, please wait (10s)"
+        self.YouTubeLatestVideo.title = "Latest Video: Loading, please wait (20s)"
         }
         else{
         }
     
-        DispatchQueue.main.asyncAfter(deadline: .now() + 7.0, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.1, execute: {
             
             if self.defaults.integer(forKey: "InstagramInUse") == 1{
             self.instagramUsername.title = "Username: \(String(instagramData.username))"
@@ -313,7 +310,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         })
         
         
-  DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+  DispatchQueue.main.asyncAfter(deadline: .now() + 10.1, execute: {
     
         if self.defaults.integer(forKey: "TwitterInUse") == 1{
             
@@ -361,7 +358,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
             
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4.1, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 10.1, execute: {
 
                     if youTubeDataVideos.pageInfo?.resultsPerPage == 1 {
                         let YouTubeLatestVideoViews: Int = Int(youTubeDataVideos.items?[0].statistics.viewCount as! String) ?? 0
