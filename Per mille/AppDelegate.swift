@@ -76,8 +76,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     lazy var youTubeSubscribers : NSMenuItem = {
         return NSMenuItem(title: "Subscribers ጰ: Please Refresh", action: nil, keyEquivalent: "")
      }()
-    lazy var youTubeLastVideo : NSMenuItem = {
-        return NSMenuItem(title: "Last Video: Please Refresh", action: nil, keyEquivalent: "")
+    lazy var YouTubeLatestVideo : NSMenuItem = {
+        return NSMenuItem(title: "Latest Video: Please Refresh", action: nil, keyEquivalent: "")
      }()
 
     
@@ -181,7 +181,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         menu.addItem(youTubeViews)
             
-        menu.addItem(youTubeLastVideo)
+        menu.addItem(YouTubeLatestVideo)
         
         }
         else{
@@ -287,7 +287,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.youTubeTitle.title = "Channel: Loading, please wait"
         self.youTubeSubscribers.title = "Subscribers ጰ: Loading, please wait"
         self.youTubeViews.title = "Lifetime ▶: Loading, please wait"
-        self.youTubeLastVideo.title = "Last Video: Loading, please wait"
+        self.YouTubeLatestVideo.title = "Latest Video: Loading, please wait"
         }
         else{
         }
@@ -348,14 +348,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.youTubeTitle.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
         }
             
-        if let youTubeSubscriberCount = youTubeData.items?[0].statistics.subscriberCount {
-            self.youTubeSubscribers.title = "Subscribers ጰ: \(youTubeSubscriberCount)"
+            if let youTubeSubscriberCount: Int = Int(youTubeData.items?[0].statistics.subscriberCount as! String) ?? 0 {
+            self.youTubeSubscribers.title = "Subscribers ጰ: \(String(format: "%U", locale: Locale.current, youTubeSubscriberCount))"
         } else {
             self.youTubeSubscribers.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
         }
         
-        if let youTubeViewCount = youTubeData.items?[0].statistics.viewCount {
-            self.youTubeViews.title = "Lifetime ▶: \(youTubeViewCount)"
+            if let youTubeViewCount: Int = Int(youTubeData.items?[0].statistics.viewCount as! String) ?? 0 {
+            self.youTubeViews.title = "Lifetime ▶: \(String(format: "%U", locale: Locale.current, youTubeViewCount))"
         } else {
             self.youTubeViews.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
         }
@@ -364,12 +364,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4.1, execute: {
 
                     if youTubeDataVideos.pageInfo?.resultsPerPage == 1 {
-                        let youTubeLastVideoViews = youTubeDataVideos.items?[0].statistics.viewCount as! String
-                         let youTubeLastVideoLikes = youTubeDataVideos.items?[0].statistics.likeCount as! String
-                        let youTubeLastVideoComments = youTubeDataVideos.items?[0].statistics.commentCount as? String ?? "0"
-                        self.youTubeLastVideo.title = "Last Video: ▶ \(youTubeLastVideoViews), ♥ \(youTubeLastVideoLikes), 🗨 \(youTubeLastVideoComments)"
+                        let YouTubeLatestVideoViews: Int = Int(youTubeDataVideos.items?[0].statistics.viewCount as! String) ?? 0
+                        let YouTubeLatestVideoLikes : Int = Int(youTubeDataVideos.items?[0].statistics.likeCount as! String) ?? 0
+                        let YouTubeLatestVideoComments: Int = Int(youTubeDataVideos.items?[0].statistics.commentCount as? String ?? "0") ?? 0
+                        self.YouTubeLatestVideo.title = "Latest Video: ▶ \(String(format: "%U", locale: Locale.current, YouTubeLatestVideoViews)), ♥ \(String(format: "%U", locale: Locale.current, YouTubeLatestVideoLikes)), 🗨 \(String(format: "%U", locale: Locale.current, YouTubeLatestVideoComments))"
                      } else {
-                         self.youTubeLastVideo.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
+                         self.YouTubeLatestVideo.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
                      }
 
                 })
