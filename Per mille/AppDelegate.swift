@@ -264,7 +264,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         if defaults.integer(forKey: "TwitterInUse") == 1{
-        DataLoaderTwitter().loadTwitterData()
+//        DataLoaderTwitter().loadTwitterData()
         self.twitterScreenName.title = "Screen Name: Loading, please wait (10s)"
         self.twitterFollowers.title = "Followers ጰ: Loading, please wait (10s)"
         self.twitterListed.title = "Listed: Loading, please wait (10s)"
@@ -278,7 +278,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         DataLoaderYouTube().loadYouTubeDataSearch()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 10.0, execute: {
-            DataLoaderYouTube().loadYouTubeDataVideos()
+            if youTubeDataVideos.pageInfo?.resultsPerPage == 1 {
+                DataLoaderYouTube().loadYouTubeDataVideos()
+            }
+            else{
+                self.YouTubeLatestVideo.title = "Error with passing Channel's latest video to Video API"
+
+            }
         })
             
         self.youTubeTitle.title = "Channel: Loading, please wait (10s)"
@@ -301,7 +307,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 if let instagramLastPostsVideoViews = instagramData.last_post?[0].video_view {
                     self.instagramLastPost.title = "Last Post: ▶ \(String(format: "%U", locale: Locale.current, instagramLastPostsVideoViews)), ♥ \(String(format: "%U", locale: Locale.current, instagramLastPostLikes!)), 🗨 \(String(format: "%U", locale: Locale.current, instagramLastPostComment!))"
                 } else {
-                    self.instagramLastPost.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
+                    self.instagramUsername.title = "Error"
+                    self.instagramFollowers.title = "Please check: "
+                    self.instagramAverageLikes.title = " - If a valid Instagram username entered"
+                    self.instagramLastPost.title = " - Internet connectivity & routing to RapidAPI.com"
             }
             }
             else{
@@ -320,8 +329,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 self.twitterListed.title = "Listed: On \(String(format: "%U", locale: Locale.current, (twitterData.data?[0].publicMetrics.listedCount as! Int))) list(s)"
             }
             else {
-                self.twitterScreenName.title = "Error; if internet connectivity & username okay, problem is with Twitter API. Try later"
-                self.twitterFollowers.title = "Error; if internet connectivity & username okay, problem is with Twitter API. Try later"
+                self.twitterScreenName.title = "Error"
+                self.twitterFollowers.title = "Please check: "
+                self.twitterListed.title = " - If a valid Twitter handle entered"
+                self.twitterPinnedTweet.title = " - Internet connectivity & routing to twitter.com"
             }
             
             if twitterData.includes?.tweets[0].publicMetrics.likeCount != nil {
@@ -342,31 +353,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let youTubeTitle = youTubeData.items?[0].snippet.title {
             self.youTubeTitle.title = "Title: \(youTubeTitle)"
         } else {
-            self.youTubeTitle.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
+            self.youTubeTitle.title = "Error, please check if a valid YouTube Channel ID entered & Internet connectivity"
         }
             
-            if let youTubeSubscriberCount: Int = Int(youTubeData.items?[0].statistics.subscriberCount as! String) ?? 0 {
+            if let youTubeSubscriberCount: Int = Int(youTubeData.items?[0].statistics.subscriberCount! ?? "0")  {
             self.youTubeSubscribers.title = "Subscribers ጰ: \(String(format: "%U", locale: Locale.current, youTubeSubscriberCount))"
         } else {
-            self.youTubeSubscribers.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
+//            self.youTubeSubscribers.title = " - "
         }
         
-            if let youTubeViewCount: Int = Int(youTubeData.items?[0].statistics.viewCount as! String) ?? 0 {
+            if let youTubeViewCount: Int = Int(youTubeData.items?[0].statistics.viewCount ?? "0") {
             self.youTubeViews.title = "Lifetime ▶: \(String(format: "%U", locale: Locale.current, youTubeViewCount))"
         } else {
-            self.youTubeViews.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
+//            self.youTubeViews.title = " - Internet connectivity & routing to YouTube.com"
         }
 
             
                 DispatchQueue.main.asyncAfter(deadline: .now() + 10.1, execute: {
 
                     if youTubeDataVideos.pageInfo?.resultsPerPage == 1 {
-                        let YouTubeLatestVideoViews: Int = Int(youTubeDataVideos.items?[0].statistics.viewCount as! String) ?? 0
-                        let YouTubeLatestVideoLikes : Int = Int(youTubeDataVideos.items?[0].statistics.likeCount as! String) ?? 0
-                        let YouTubeLatestVideoComments: Int = Int(youTubeDataVideos.items?[0].statistics.commentCount as? String ?? "0") ?? 0
+                        let YouTubeLatestVideoViews: Int = Int(youTubeDataVideos.items?[0].statistics.viewCount ?? "0")!
+                        let YouTubeLatestVideoLikes : Int = Int(youTubeDataVideos.items?[0].statistics.likeCount ?? "0")!
+                        let YouTubeLatestVideoComments: Int = Int(youTubeDataVideos.items?[0].statistics.commentCount ?? "0")!
                         self.YouTubeLatestVideo.title = "Latest Video: ▶ \(String(format: "%U", locale: Locale.current, YouTubeLatestVideoViews)), ♥ \(String(format: "%U", locale: Locale.current, YouTubeLatestVideoLikes)), 🗨 \(String(format: "%U", locale: Locale.current, YouTubeLatestVideoComments))"
                      } else {
-                         self.YouTubeLatestVideo.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
+//                         self.YouTubeLatestVideo.title = "Error; if internet connectivity & Channel ID okay, problem is with YouTube API. Try later"
                      }
 
                 })
@@ -383,17 +394,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
              if let tikTokUsername = tikTokData.data?.userInfo?.user?.uniqueID {
                  self.tikTokUniqueID.title = "Username: \(tikTokUsername)"
                  } else {
-                 self.tikTokUniqueID.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
+                 self.tikTokUniqueID.title = "Error, please check:"
                  }
              if let tikTokFollowers = tikTokData.data?.userInfo?.stats?.followerCount {
                  self.tikTokFollowers.title = "Followers ጰ: \(String(format: "%U", locale: Locale.current, tikTokFollowers))"
                  } else {
-                 self.tikTokFollowers.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
+                 self.tikTokFollowers.title = " - If a valid TikTok username entered"
                  }
              if let tikTokHearts = tikTokData.data?.userInfo?.stats?.heartCount {
                  self.tikTokHearts.title = "Lifetime ♥: \(String(format: "%U", locale: Locale.current, tikTokHearts))"
                  } else {
-                 self.tikTokHearts.title = "Error; if internet connectivity & Username okay, problem is with RapidAPI. Try later"
+                 self.tikTokHearts.title = " - Internet connectivity & routing to RapidAPI.com"
                  }
          }
          else{

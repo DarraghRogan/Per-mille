@@ -10,18 +10,72 @@ import Cocoa
 import ServiceManagement
 
 class ViewController: NSViewController {
+
+    // Invoke RegEx Extension for each account type
+    let validityTypeYouTube: String.ValidityType = .youTubeChannelID
     
-    let validityType: String.ValidityType = .youTubeChannelID
-    
-    @objc fileprivate func handleTextChange() {
+    @objc fileprivate func handleTextChangeYouTube() {
         guard let text = youTubeField?.stringValue else { return }
-        if text.isValid(validityType) {
+        if text.isValid(validityTypeYouTube) {
             youTubeGuidanceField.isHidden = true
+            youTubeLabel.stringValue = AppDelegate().defaults.object(forKey:"YouTubeChannelID") as? String ?? String()
+            AppDelegate().defaults.set(youTubeField.stringValue, forKey: "YouTubeChannelID")
+            youTubeField.layer?.borderWidth = 0.0
+            AppDelegate().defaults.set(1, forKey: "YouTubeInUse")
         } else {
             youTubeGuidanceField.isHidden = false
+            youTubeField.layer?.borderColor = CGColor.init(red: 255, green: 0, blue: 0, alpha: 100)
+            youTubeField.layer?.borderWidth = 2.0
+        }
+    }
+    
+    let validityTypeInstagram: String.ValidityType = .instagramUsername
+    
+    @objc fileprivate func handleTextChangeInstagram() {
+        guard let text = instagramField?.stringValue else { return }
+        if text.isValid(validityTypeInstagram) {
+            instagramField.layer?.borderWidth = 0.0
+            AppDelegate().defaults.set(instagramField.stringValue, forKey: "InstagramUsername")
+            instagramLabel.stringValue = AppDelegate().defaults.object(forKey:"InstagramUsername") as? String ?? String()
+            AppDelegate().defaults.set(1, forKey: "InstagramInUse")
+        } else {
+            instagramField.layer?.borderColor = CGColor.init(red: 255, green: 0, blue: 0, alpha: 100)
+            instagramField.layer?.borderWidth = 2.0
+        }
+    }
+    
+    let validityTypeTikTok: String.ValidityType = .tikTokUsername
+    
+    @objc fileprivate func handleTextChangeTikTok() {
+        guard let text = tikTokField?.stringValue else { return }
+        if text.isValid(validityTypeTikTok) {
+            tikTokField.layer?.borderWidth = 0.0
+            AppDelegate().defaults.set(tikTokField.stringValue, forKey: "TikTokUsername")
+            tikTokLabel.stringValue = AppDelegate().defaults.object(forKey:"TikTokUsername") as? String ?? String()
+            AppDelegate().defaults.set(1, forKey: "TikTokInUse")
+        } else {
+            tikTokField.layer?.borderColor = CGColor.init(red: 255, green: 0, blue: 0, alpha: 100)
+            tikTokField.layer?.borderWidth = 2.0
+        }
+    }
+    
+    let validityTypeTwitter: String.ValidityType = .twitterHandle
+    
+    @objc fileprivate func handleTextChangeTwitter() {
+        guard let text = twitterField?.stringValue else { return }
+        if text.isValid(validityTypeTwitter) {
+            twitterField.layer?.borderWidth = 0.0
+            AppDelegate().defaults.set(twitterField.stringValue, forKey: "TwitterHandle")
+            twitterLabel.stringValue = AppDelegate().defaults.object(forKey:"TwitterHandle") as? String ?? String()
+            AppDelegate().defaults.set(1, forKey: "TwitterInUse")
+        } else {
+            twitterField.layer?.borderColor = CGColor.init(red: 255, green: 0, blue: 0, alpha: 100)
+            twitterField.layer?.borderWidth = 2.0
         }
     }
 
+    
+    // Define connections with View Controller
     @IBOutlet weak var autorunAtStartup: NSSwitch!
     
     @IBOutlet weak var instagramField: NSTextField!
@@ -94,15 +148,16 @@ class ViewController: NSViewController {
     
     // Instagram Actions
     @IBAction func instagramSlider(_ sender: Any) {
-        
+        if AppDelegate().defaults.object(forKey:"InstagramUsername") != nil {
         AppDelegate().defaults.set(instagramSlider.state.self, forKey: "InstagramInUse")
-//        AppDelegate().menu.removeAllItems()
+            }
+            else{
+            }
         
     }
     
     @IBAction func instagramButtonClicked(_ sender: Any) {
-        AppDelegate().defaults.set(instagramField.stringValue, forKey: "InstagramUsername")
-        instagramLabel.stringValue = AppDelegate().defaults.object(forKey:"InstagramUsername") as? String ?? String()
+        handleTextChangeInstagram()
         if instagramLabel.stringValue == ""{
             AppDelegate().defaults.set(0, forKey: "InstagramInUse")
         }
@@ -120,13 +175,16 @@ class ViewController: NSViewController {
     
     // TikTok Actions
     @IBAction func tikTokSlider(_ sender: Any) {
+        if AppDelegate().defaults.object(forKey:"TikTokUsername") != nil {
         AppDelegate().defaults.set(tikTokSlider.state.self, forKey: "TikTokInUse")
-//          AppDelegate().menu.removeAllItems()
+        }
+        else{
+        }
     }
     
     @IBAction func tikTokButtonClicked(_ sender: Any) {
-        AppDelegate().defaults.set(tikTokField.stringValue, forKey: "TikTokUsername")
-        tikTokLabel.stringValue = AppDelegate().defaults.object(forKey:"TikTokUsername") as? String ?? String()
+
+        handleTextChangeTikTok()
         if tikTokLabel.stringValue == ""{
             AppDelegate().defaults.set(0, forKey: "TikTokInUse")
         }
@@ -146,13 +204,15 @@ class ViewController: NSViewController {
     
     // Twitter Actions
     @IBAction func twitterSlider(_ sender: Any) {
+            if AppDelegate().defaults.object(forKey:"TwitterHandle") != nil {
         AppDelegate().defaults.set(twitterSlider.state.self, forKey: "TwitterInUse")
- //       AppDelegate().menu.removeAllItems()
+                }
+                else{
+                }
     }
     
     @IBAction func twitterButtonClicked(_ sender: Any) {
-        AppDelegate().defaults.set(twitterField.stringValue, forKey: "TwitterHandle")
-        twitterLabel.stringValue = AppDelegate().defaults.object(forKey:"TwitterHandle") as? String ?? String()
+        handleTextChangeTwitter()
         if twitterLabel.stringValue == ""{
             AppDelegate().defaults.set(0, forKey: "TwitterInUse")
         }
@@ -172,15 +232,16 @@ class ViewController: NSViewController {
     // YouTube Actions
     
     @IBAction func youTubeSlider(_ sender: Any) {
-        AppDelegate().defaults.set(youTubeSlider.state.self, forKey: "YouTubeInUse")
-//        AppDelegate().menu.removeAllItems()
-
+        if AppDelegate().defaults.object(forKey:"YouTubeChannelID") != nil {
+                    AppDelegate().defaults.set(youTubeSlider.state.self, forKey: "YouTubeInUse")
+        }
+        else{
+        }
     }
     
     @IBAction func youTubeButtonClicked(_ sender: Any) {
-        AppDelegate().defaults.set(youTubeField.stringValue, forKey: "YouTubeChannelID")
-        youTubeLabel.stringValue = AppDelegate().defaults.object(forKey:"YouTubeChannelID") as? String ?? String()
-        handleTextChange()
+
+        handleTextChangeYouTube()
         if youTubeLabel.stringValue == ""{
             AppDelegate().defaults.set(0, forKey: "YouTubeInUse")
         }

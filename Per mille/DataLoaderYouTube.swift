@@ -76,10 +76,10 @@ struct Default: Codable {
 }
 
 struct Statistics: Codable {
-    var viewCount: String
-    var commentCount: String
-    var subscriberCount: String
-    var hiddenSubscriberCount: Bool
+    var viewCount: String? = "0"
+    var commentCount: String? = "0"
+    var subscriberCount: String? = "0"
+    var hiddenSubscriberCount: Bool?
 //    var videoCount: Int = 0
 }
 
