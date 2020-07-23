@@ -278,7 +278,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         DataLoaderYouTube().loadYouTubeDataSearch()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 10.0, execute: {
-            if youTubeDataVideos.pageInfo?.resultsPerPage == 1 {
+            if youTubeDataSearch.pageInfo?.resultsPerPage == 1 {
                 DataLoaderYouTube().loadYouTubeDataVideos()
             }
             else{
