@@ -264,7 +264,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         if defaults.integer(forKey: "TwitterInUse") == 1{
-//        DataLoaderTwitter().loadTwitterData()
+        DataLoaderTwitter().loadTwitterData()
         self.twitterScreenName.title = "Screen Name: Loading, please wait (10s)"
         self.twitterFollowers.title = "Followers ጰ: Loading, please wait (10s)"
         self.twitterListed.title = "Listed: Loading, please wait (10s)"

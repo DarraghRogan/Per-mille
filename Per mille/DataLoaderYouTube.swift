@@ -92,7 +92,7 @@ struct PageInfo: Codable {
 
 struct YouTubeDataStructureSearch: Codable {
 //    var kind, etag, nextPageToken, regionCode: String
-//    var pageInfo: PageInfo?
+    var pageInfo: SearchPageInfo?
     var items: [SearchItem]?
    
 }
@@ -145,9 +145,10 @@ struct ID: Codable {
 //}
 
 
-//struct PageInfo: Codable {
-//    var totalResults, resultsPerPage: Int
-//}
+struct SearchPageInfo: Codable {
+    var totalResults: Int? = 0
+    var resultsPerPage: Int? = 0
+}
 
 
 // MARK: -

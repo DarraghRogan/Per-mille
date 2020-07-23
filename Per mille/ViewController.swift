@@ -22,6 +22,7 @@ class ViewController: NSViewController {
             AppDelegate().defaults.set(youTubeField.stringValue, forKey: "YouTubeChannelID")
             youTubeField.layer?.borderWidth = 0.0
             AppDelegate().defaults.set(1, forKey: "YouTubeInUse")
+            youTubeSlider.state.self = AppDelegate().defaults.object(forKey:"YouTubeInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
         } else {
             youTubeGuidanceField.isHidden = false
             youTubeField.layer?.borderColor = CGColor.init(red: 255, green: 0, blue: 0, alpha: 100)
@@ -38,6 +39,7 @@ class ViewController: NSViewController {
             AppDelegate().defaults.set(instagramField.stringValue, forKey: "InstagramUsername")
             instagramLabel.stringValue = AppDelegate().defaults.object(forKey:"InstagramUsername") as? String ?? String()
             AppDelegate().defaults.set(1, forKey: "InstagramInUse")
+            instagramSlider.state.self = AppDelegate().defaults.object(forKey:"InstagramInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
         } else {
             instagramField.layer?.borderColor = CGColor.init(red: 255, green: 0, blue: 0, alpha: 100)
             instagramField.layer?.borderWidth = 2.0
@@ -53,6 +55,7 @@ class ViewController: NSViewController {
             AppDelegate().defaults.set(tikTokField.stringValue, forKey: "TikTokUsername")
             tikTokLabel.stringValue = AppDelegate().defaults.object(forKey:"TikTokUsername") as? String ?? String()
             AppDelegate().defaults.set(1, forKey: "TikTokInUse")
+            tikTokSlider.state.self = AppDelegate().defaults.object(forKey:"TikTokInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
         } else {
             tikTokField.layer?.borderColor = CGColor.init(red: 255, green: 0, blue: 0, alpha: 100)
             tikTokField.layer?.borderWidth = 2.0
@@ -68,6 +71,7 @@ class ViewController: NSViewController {
             AppDelegate().defaults.set(twitterField.stringValue, forKey: "TwitterHandle")
             twitterLabel.stringValue = AppDelegate().defaults.object(forKey:"TwitterHandle") as? String ?? String()
             AppDelegate().defaults.set(1, forKey: "TwitterInUse")
+            twitterSlider.state.self = AppDelegate().defaults.object(forKey:"TwitterInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
         } else {
             twitterField.layer?.borderColor = CGColor.init(red: 255, green: 0, blue: 0, alpha: 100)
             twitterField.layer?.borderWidth = 2.0
