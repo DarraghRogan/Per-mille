@@ -104,7 +104,8 @@ struct SearchItem: Codable {
 }
 
 struct ID: Codable {
-    var kind, videoID: String
+    var kind: String?
+    var videoID: String? = ""
 
     enum CodingKeys: String, CodingKey {
         case kind
@@ -347,6 +348,8 @@ var youTubeDataVideos = YouTubeDataStructureVideos()
     
     
     func loadYouTubeDataVideos() {
+        
+        if youTubeData.items?[0].id != nil{
 
                 let headers = [
         //            "Authorization": "Bearer [YOUR_ACCESS_TOKEN]",
@@ -387,6 +390,12 @@ var youTubeDataVideos = YouTubeDataStructureVideos()
                 })
 
                 dataTask.resume()
+            
+            }
+            else
+            {
+            }
+            
             }
     
     

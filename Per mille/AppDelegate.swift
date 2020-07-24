@@ -331,7 +331,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             else {
                 self.twitterScreenName.title = "Error"
                 self.twitterFollowers.title = "Please check: "
-                self.twitterListed.title = " - If a valid Twitter handle entered"
+                self.twitterListed.title = " - If a valid Twitter handle entered & Internet connectivity"
                 self.twitterPinnedTweet.title = " - Internet connectivity & routing to twitter.com"
             }
             
@@ -353,7 +353,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let youTubeTitle = youTubeData.items?[0].snippet.title {
             self.youTubeTitle.title = "Title: \(youTubeTitle)"
         } else {
-            self.youTubeTitle.title = "Error, please check if a valid YouTube Channel ID entered & Internet connectivity"
+            self.youTubeTitle.title = "Error, Check if a valid YouTube Channel ID entered & Internet connectivity"
+//            self.youTubeSubscribers.title = "Please Check"
+//            self.youTubeViews.title = " - if a valid YouTube Channel ID entered"
+            self.YouTubeLatestVideo.title = "Error, Check if a valid YouTube Channel ID entered & Internet connectivity"
         }
             
             if let youTubeSubscriberCount: Int = Int(youTubeData.items?[0].statistics.subscriberCount! ?? "0")  {
