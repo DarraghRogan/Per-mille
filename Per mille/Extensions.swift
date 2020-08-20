@@ -20,6 +20,7 @@ extension String {
         case youTubeChannelID
         case instagramUsername
         case tikTokUsername
+        case tumblrBlogIdentifier
         case twitterHandle
 //        case age
 //        case email
@@ -31,6 +32,7 @@ extension String {
         case youTubeChannelID = "[-_A-Za-z0-9]{23,23}[AQgw]"
         case instagramUsername = "[a-zA-Z0-9_]{1,30}"
         case tikTokUsername = "[a-zA-Z0-9_]{1,24}"
+        case tumblrBlogIdentifier = "[a-z0-9]+(.)[a-z0-9]+(.)[a-z0-9]{2,4}"
         case twitterHandle = "[a-zA-Z0-9_]{1,15}"
 //        case age = "[0-9]{2,2}"
 //        case email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
@@ -52,6 +54,8 @@ extension String {
                 regex = Regex.instagramUsername.rawValue
         case .tikTokUsername:
                 regex = Regex.tikTokUsername.rawValue
+        case .tumblrBlogIdentifier:
+                regex = Regex.tumblrBlogIdentifier.rawValue
         case .twitterHandle:
                 regex = Regex.twitterHandle.rawValue
 //        case .age:

@@ -54,6 +54,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return NSMenuItem(title: "Lifetime ♥: Please Refresh", action: nil, keyEquivalent: "")
      }()
     
+    lazy var tumblrBlogTitle : NSMenuItem = {
+        return NSMenuItem(title: "Blog Title: Please Refresh", action: nil, keyEquivalent: "")
+     }()
+    
+    lazy var tumblrPosts : NSMenuItem = {
+        return NSMenuItem(title: "Lifetime ✎: Please Refresh", action: nil, keyEquivalent: "")
+     }()
+
+    lazy var tumblrLastPost : NSMenuItem = {
+        return NSMenuItem(title: "Last Post: Please Refresh", action: nil, keyEquivalent: "")
+     }()
+    
     lazy var twitterScreenName : NSMenuItem = {
         return NSMenuItem(title: "Screen Name: Please Refresh", action: nil, keyEquivalent: "")
      }()
@@ -145,6 +157,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         else{
         }
+
+        if defaults.integer(forKey: "TumblrInUse") == 1{
+        menu.addItem(
+        NSMenuItem(
+            title: "Tumblr...",
+            action: #selector(openTumblr),
+            keyEquivalent: "u"
+            )
+        )
+
+        menu.addItem(tumblrBlogTitle)
+        
+        menu.addItem(tumblrPosts)
+            
+        menu.addItem(tumblrLastPost)
+    
+        menu.addItem(
+            NSMenuItem.separator()
+            )
+        }
+        else{
+        }
+        
         
         if defaults.integer(forKey: "TwitterInUse") == 1{
         menu.addItem(
@@ -249,11 +284,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menuLoadNonOptionals()
         
         if defaults.integer(forKey: "InstagramInUse") == 1{
-            DataLoaderInstagram().loadInstagramData()
-            self.instagramUsername.title = "Username: Loading, please wait (10s)"
-            self.instagramFollowers.title = "Followers ጰ: Loading, please wait (10s)"
-            self.instagramAverageLikes.title = "Average ♥: Loading, please wait (10s)"
-            self.instagramLastPost.title = "Last Post: Loading, please wait (10s)"
+        DataLoaderInstagram().loadInstagramData()
+        self.instagramUsername.title = "Username: Loading, please wait (10s)"
+        self.instagramFollowers.title = "Followers ጰ: Loading, please wait (10s)"
+        self.instagramAverageLikes.title = "Average ♥: Loading, please wait (10s)"
+        self.instagramLastPost.title = "Last Post: Loading, please wait (10s)"
         }
         else{
         }
@@ -263,6 +298,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.tikTokUniqueID.title = "Username: Loading, please wait (20s)"
         self.tikTokFollowers.title = "Followers ጰ: Loading, please wait (20s)"
         self.tikTokHearts.title = "Lifetime ♥: Loading, please wait (20s)"
+        }
+        else{
+        }
+
+        if defaults.integer(forKey: "TumblrInUse") == 1{
+        DataLoaderTumblr().loadTumblrData()
+        self.tumblrBlogTitle.title = "Blog Title: Loading, please wait (10s)"
+        self.tumblrPosts.title = "Lifetime ✎: Loading, please wait (10s)"
+        self.tumblrLastPost.title = "Last Post: Loading, please wait (10s)"
         }
         else{
         }
@@ -321,6 +365,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             
         })
+    
+        
+    DispatchQueue.main.asyncAfter(deadline: .now() + 10.1, execute: {
+      
+          if self.defaults.integer(forKey: "TumblrInUse") == 1{
+              
+            if tumblrData.response?.blog.title != nil {
+              self.tumblrBlogTitle.title = "Blog Title: \(tumblrData.response?.blog.title as! String)"
+                self.tumblrPosts.title = "Lifetime ✎: \(String(format: "%U", locale: Locale.current, (tumblrData.response?.totalPosts as! Int)))"
+                self.tumblrLastPost.title = "Last Post: 🗨 \(String(format: "%U", locale: Locale.current, (tumblrData.response?.posts[0].noteCount as! Int)))"
+              }
+              else {
+                  self.tumblrBlogTitle.title = "Error"
+                  self.tumblrPosts.title = "Please check: "
+                  self.tumblrLastPost.title = " - If a valid Tumblr Blog URL entered & Internet connectivity"
+              }
+              
+          }
+          else{
+          }
+        
+        })
+        
         
         
   DispatchQueue.main.asyncAfter(deadline: .now() + 10.1, execute: {
@@ -431,6 +498,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc func openTikTok(){
         NSWorkspace.shared.open(URL(string: "https://www.tiktok.com")!)
+    }
+
+    @objc func openTumblr(){
+        NSWorkspace.shared.open(URL(string: "https://www.tumblr.com/dashboard")!)
     }
     
     @objc func openTwitter(){

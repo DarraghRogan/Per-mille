@@ -61,6 +61,22 @@ class ViewController: NSViewController {
             tikTokField.layer?.borderWidth = 2.0
         }
     }
+
+    let validityTypeTumblr: String.ValidityType = .tumblrBlogIdentifier
+    
+    @objc fileprivate func handleTextChangeTumblr() {
+        guard let text = tumblrField?.stringValue else { return }
+        if text.isValid(validityTypeTumblr) {
+            tumblrField.layer?.borderWidth = 0.0
+            AppDelegate().defaults.set(tumblrField.stringValue, forKey: "TumblrBlogIdentifier")
+            tumblrLabel.stringValue = AppDelegate().defaults.object(forKey:"TumblrBlogIdentifier") as? String ?? String()
+            AppDelegate().defaults.set(1, forKey: "TumblrInUse")
+            tumblrSlider.state.self = AppDelegate().defaults.object(forKey:"TumblrInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
+        } else {
+            tumblrField.layer?.borderColor = CGColor.init(red: 255, green: 0, blue: 0, alpha: 100)
+            tumblrField.layer?.borderWidth = 2.0
+        }
+    }
     
     let validityTypeTwitter: String.ValidityType = .twitterHandle
     
@@ -89,6 +105,10 @@ class ViewController: NSViewController {
     @IBOutlet weak var tikTokSlider: NSSwitch!
     @IBOutlet weak var tikTokLabel: NSTextField!
     @IBOutlet weak var tikTokField: NSTextField!
+
+    @IBOutlet weak var tumblrSlider: NSSwitch!
+    @IBOutlet weak var tumblrLabel: NSTextField!
+    @IBOutlet weak var tumblrField: NSTextField!
     
     @IBOutlet weak var twitterSlider: NSSwitch!
     @IBOutlet weak var twitterLabel: NSTextField!
@@ -120,6 +140,9 @@ class ViewController: NSViewController {
         
         tikTokSlider.state.self = AppDelegate().defaults.object(forKey:"TikTokInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
         tikTokLabel.stringValue = AppDelegate().defaults.object(forKey:"TikTokUsername") as? String ?? String()
+        
+        tumblrSlider.state.self = AppDelegate().defaults.object(forKey:"TumblrInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
+        tumblrLabel.stringValue = AppDelegate().defaults.object(forKey:"TumblrBlogIdentifier") as? String ?? String()
         
         twitterSlider.state.self = AppDelegate().defaults.object(forKey:"TwitterInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
         twitterLabel.stringValue = AppDelegate().defaults.object(forKey:"TwitterHandle") as? String ?? String()
@@ -203,6 +226,33 @@ class ViewController: NSViewController {
     
     @IBAction func tikTokHelp(_ sender: Any) {
                 NSWorkspace.shared.open(URL(string: "https://support.tiktok.com/en/my-account-settings/change-username-default")!)
+    }
+
+    // Tumblr Actions
+    
+    @IBAction func tumblrSlider(_ sender: Any) {
+            if AppDelegate().defaults.object(forKey:"TumblrBlogIdentifier") != nil {
+        AppDelegate().defaults.set(tumblrSlider.state.self, forKey: "TumblrInUse")
+                }
+                else{
+                }
+    }
+    
+    @IBAction func tumblrButtonClicked(_ sender: Any) {
+        handleTextChangeTumblr()
+        if tumblrLabel.stringValue == ""{
+            AppDelegate().defaults.set(0, forKey: "TumblrInUse")
+        }
+        else{
+        }
+    }
+    
+    @IBAction func tumblrFieldAction(_ sender: Any) {
+                tumblrButtonClicked(Any.self)
+    }
+    
+    @IBAction func tumblrHelp(_ sender: Any) {
+                NSWorkspace.shared.open(URL(string: "https://tumblr.zendesk.com/hc/en-us/articles/226340048-Primary-vs-secondary-blogs")!)
     }
     
     
