@@ -123,7 +123,7 @@ var twitterData = TwitterDataStructure()
             "Authorization": "Bearer \(APIKeyTwitter)",
         ]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "https://api.twitter.com/labs/2/users/by?usernames=\(AppDelegate().defaults.object(forKey:"TwitterHandle") as? String ?? String())&user.fields=public_metrics&expansions=pinned_tweet_id&tweet.fields=created_at,public_metrics")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://api.twitter.com/2/users/by?usernames=\(AppDelegate().defaults.object(forKey:"TwitterHandle") as? String ?? String())&user.fields=public_metrics&expansions=pinned_tweet_id&tweet.fields=created_at,public_metrics")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
                                                 timeoutInterval: 10.0)
         

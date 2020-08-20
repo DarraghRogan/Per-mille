@@ -25,6 +25,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
      let menu = NSMenu()
     
     // Define the variables which need to be updated as data is loaded
+//    var statusIcon : NSStatusBar = {
+//        statusItem.button?.title = "‰"
+//    }()
+    
     lazy var instagramUsername : NSMenuItem = {
         return NSMenuItem(title: "Username: Please Refresh", action: nil, keyEquivalent: "")
      }()
@@ -199,7 +203,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         menu.addItem(
             NSMenuItem(
-                title: "Refresh (automatically every 30 mins)",
+                title: "Refresh (automatically every hour)",
                 action: #selector(AppDelegate.menuRefresh),
                 keyEquivalent: "r"
                 )
@@ -361,6 +365,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             if let youTubeSubscriberCount: Int = Int(youTubeData.items?[0].statistics.subscriberCount! ?? "0")  {
             self.youTubeSubscribers.title = "Subscribers ጰ: \(String(format: "%U", locale: Locale.current, youTubeSubscriberCount))"
+//                statusItem.button?.title = ‰
         } else {
 //            self.youTubeSubscribers.title = " - "
         }
@@ -473,7 +478,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
     // Periodically update the menu every 30 minutes to see the current info
     
-    let timer = Timer.scheduledTimer(withTimeInterval: 1800.0, repeats: true) { timer in
+    let timer = Timer.scheduledTimer(withTimeInterval: 3600.0, repeats: true) { timer in
         self.menuRefresh()
     }
     
