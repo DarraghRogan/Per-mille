@@ -13,7 +13,7 @@ import Foundation
 struct YouTubeDataStructureChannels: Codable {
     var kind: String = ""
     var etag: String = ""
-    var pageInfo: PageInfo?
+//    var pageInfo: PageInfo?
     var items: [Item]?
 }
 
@@ -26,14 +26,14 @@ struct Item: Codable {
     var statistics: Statistics
 }
 
-struct ContentDetails: Codable {
-    var relatedPlaylists: RelatedPlaylists?
-}
-
-struct RelatedPlaylists: Codable {
-    var likes, favorites, uploads, watchHistory: String?
-    var watchLater: String? = ""
-}
+//struct ContentDetails: Codable {
+//    var relatedPlaylists: RelatedPlaylists?
+//}
+//
+//struct RelatedPlaylists: Codable {
+//    var likes, favorites, uploads, watchHistory: String?
+//    var watchLater: String? = ""
+//}
 
 struct Snippet: Codable {
     var title: String = ""
@@ -61,19 +61,19 @@ struct Localized: Codable {
     }
 }
 
-struct Thumbnails: Codable {
-    var thumbnailsDefault, medium, high: Default?
+//struct Thumbnails: Codable {
+//    var thumbnailsDefault, medium, high: Default?
+//
+//    enum CodingKeys: String, CodingKey {
+//        case thumbnailsDefault
+//        case medium, high
+//    }
+//}
 
-    enum CodingKeys: String, CodingKey {
-        case thumbnailsDefault
-        case medium, high
-    }
-}
-
-struct Default: Codable {
-    var url: String?
-    var width, height: String?
-}
+//struct Default: Codable {
+//    var url: String?
+//    var width, height: String?
+//}
 
 struct Statistics: Codable {
     var viewCount: String? = "0"
@@ -83,10 +83,10 @@ struct Statistics: Codable {
 //    var videoCount: Int = 0
 }
 
-struct PageInfo: Codable {
-    var totalResults: Int = 0
-    var resultsPerPage: Int = 0
-}
+//struct PageInfo: Codable {
+//    var totalResults: Int = 0
+//    var resultsPerPage: Int = 0
+//}
 
 // MARK: -
 

@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Per mille iOS
+//  Per mille Catalysed
 //
-//  Created by Darragh Rogan on 08/07/2020.
+//  Created by Darragh Rogan on 27/07/2020.
 //  Copyright © 2020 Darragh Rogan. All rights reserved.
 //
 
