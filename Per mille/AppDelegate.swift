@@ -238,7 +238,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         menu.addItem(
             NSMenuItem(
-                title: "Refresh (automatically every hour)",
+                title: "Refresh (automatically every 2 hours)",
                 action: #selector(AppDelegate.menuRefresh),
                 keyEquivalent: "r"
                 )
@@ -547,9 +547,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
             menuRefresh()
         
-    // Periodically update the menu every 30 minutes to see the current info
+    // Periodically update the menu every 240 minutes to see the current info
     
-    let timer = Timer.scheduledTimer(withTimeInterval: 3600.0, repeats: true) { timer in
+    let timer = Timer.scheduledTimer(withTimeInterval: 7200.0, repeats: true) { timer in
         self.menuRefresh()
     }
     

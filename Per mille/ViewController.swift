@@ -138,8 +138,8 @@ class ViewController: NSViewController {
         instagramSlider.state.self = AppDelegate().defaults.object(forKey:"InstagramInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
         instagramLabel.stringValue = AppDelegate().defaults.object(forKey:"InstagramUsername") as? String ?? String()
         
-        tikTokSlider.state.self = AppDelegate().defaults.object(forKey:"TikTokInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
-        tikTokLabel.stringValue = AppDelegate().defaults.object(forKey:"TikTokUsername") as? String ?? String()
+//        tikTokSlider.state.self = AppDelegate().defaults.object(forKey:"TikTokInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
+//        tikTokLabel.stringValue = AppDelegate().defaults.object(forKey:"TikTokUsername") as? String ?? String()
         
         tumblrSlider.state.self = AppDelegate().defaults.object(forKey:"TumblrInUse") as? NSControl.StateValue ?? NSControl.StateValue(0)
         tumblrLabel.stringValue = AppDelegate().defaults.object(forKey:"TumblrBlogIdentifier") as? String ?? String()

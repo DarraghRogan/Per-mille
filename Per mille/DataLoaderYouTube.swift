@@ -228,7 +228,7 @@ struct VideosItem: Codable {
 struct VideosStatistics: Codable {
     var viewCount: String
     var likeCount: String
-    var dislikeCount: String
+//    var dislikeCount: String
     var favoriteCount: String
     var commentCount: String? =  "0"
 }
